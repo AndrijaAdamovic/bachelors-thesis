@@ -1,6 +1,6 @@
 clear;
 clc;
-
+test = 0;
 n_true = 3; %prava state-space dimenzija, m = 1
 
 % Bitno da su eigs matrice A unutar jed. kruznice - stabilnost diskretnog sust. 
