@@ -1,0 +1,19 @@
+# Fdb version 4
+["pdflatex"] 1774717476.08142 "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" "bachelors_thesis.pdf" "bachelors_thesis" 1774717476.30545 0
+  "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" 1774717475.70046 89 de717857765320eec9b4b27159631c08 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls" 1748806692 20144 b966087dda3b194755eb460d32e2ef75 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty" 1738182759 5048 0270515b828149155424600fd2d58ac5 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo" 1748806692 8448 686612a86f0e04f41ea577f5ec7e83d8 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1761248321 30662 bfd6e864f4ffc5018b0e2b6260c3181c ""
+  "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1749313668 42213 4e2ca030e8e2640502016e9e45868dcb ""
+  "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1771677972 5541377 824b1e5beafd2ebda40585373b35bb6b ""
+  "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771678157 3636401 94e27571b6690e95e548df6ea55913d0 ""
+  "/usr/local/texlive/2025/texmf.cnf" 1771677965.89302 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "bachelors_thesis.aux" 1774717476.28718 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "bachelors_thesis.tex" 1774717475.70046 89 de717857765320eec9b4b27159631c08 ""
+  (generated)
+  "bachelors_thesis.aux"
+  "bachelors_thesis.log"
+  "bachelors_thesis.pdf"
+  (rewritten before read)
