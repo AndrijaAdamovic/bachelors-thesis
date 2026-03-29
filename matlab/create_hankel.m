@@ -1,6 +1,21 @@
+% function H = create_hankel(data, depth)
+%     H = zeros(depth, length(data) - depth + 1);
+%     for k = 1:depth
+%         H(k, :) = data(k : (length(data) - depth + k), :);
+%     end
+% end
 function H = create_hankel(data, depth)
-    H = zeros(depth, length(data) - depth + 1);
+    if isvector(data)
+        data = data(:);
+    end
+
+    [N, m] = size(data);
+
+    n_cols = N - depth + 1;
+    H = zeros(m * depth, n_cols);
+
     for k = 1:depth
-        H(k, :) = data(k : (length(data) - depth + k));
+        rows = (k - 1)*m + (1:m);
+        H(rows, :) = data(k : k + n_cols - 1, :).';
     end
 end

@@ -39,4 +39,4 @@ reconstructed_traj = H_data * g;
 
 % Prema fund. lemi traj_new mora biti u slici od H_data, tj ova razlika
 % mora bit 0
-disp(norm(traj_new - reconstructed_traj))
+disp(norm(traj_new - reconstructed_traj))   
