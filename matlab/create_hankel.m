@@ -1,3 +1,4 @@
+% Simpler than built in hankel function, better for MIMO systems
 function H = create_hankel(data, depth)
     if isvector(data)
         data = data(:);

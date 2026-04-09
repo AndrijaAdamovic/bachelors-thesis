@@ -1,6 +1,8 @@
+% Dual mass spring damper system example for demonstrating the Fundamental
+% lemma
+
 clear;
 clc;
-% Dual mass spring damper system
 
 %Masses [kg]
 m1 = 1.0;
@@ -32,10 +34,10 @@ Ts = 1e-2; % Sampling time
 sys_c = ss(A, B, C, D);
 sys_d = c2d(sys_c, Ts, 'zoh');
 
-T = 3000; %Trajectory length - # of samples
-
 N = 4; %Upper bound on system order, N >= n_true
 L = round(12 / Ts); %Length of reconstructed trajectory, lasting 12 seconds
+
+T = round(30 / Ts); %Initial trajectory length, T >= (m + 1)(N + L) -1; m - # of inputs
 
 [u, t] = generate_filtered_prbs(Ts, T * Ts, 2, 5, 0.03); % Filtered PRBS input
 
@@ -43,7 +45,7 @@ L = round(12 / Ts); %Length of reconstructed trajectory, lasting 12 seconds
 H_NL_u = create_hankel(u, N + L); %Hankel matrix of depth N + L
 shape_HNL = size(H_NL_u);
 
-fprintf("Persistently exciting of order N + L: %d \n", shape_HNL(1) == rank(H_NL_u)) % 1 - True, 0 - False
+fprintf("Persistently exciting of order N + L: %d \n", shape_HNL(1) == rank(H_NL_u)); % 1 - True, 0 - False
 
 %Input PRBS
 y = lsim(sys_d, u, t);
@@ -91,7 +93,7 @@ fprintf("||prbs_traj - reconstructed_traj|| = %d \n", norm(prbs_trajectory - rec
 recon_u_prbs = recon_prbs_trajectory(1:length(u_prbs));
 recon_y_prbs = reshape(recon_prbs_trajectory(length(u_prbs)+1:end), 2, []).';
 
-plot((1:L), y_prbs(:, 1), 'LineWidth', 2.0);
-hold on;
-plot((1:L), recon_y_prbs(:, 1), 'LineStyle', '--', 'LineWidth', 2.0);
-hold off;
+% plot((1:L), y_prbs(:, 2), 'LineWidth', 2.0);
+% hold on;
+% plot((1:L), recon_y_prbs(:, 2), 'LineStyle', '--', 'LineWidth', 2.0);
+% hold off;
