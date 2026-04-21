@@ -1,3 +1,5 @@
+% Function for generating a Pseudo Random Binary Sequence with optional low
+% pass filtering
 function [u, t, u_prbs] = generate_filtered_prbs(Ts, duration, amplitude, hold_samples, tau_f)
     N = round(duration / Ts);
     t = (0:N-1)' * Ts;

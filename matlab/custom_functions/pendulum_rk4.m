@@ -1,3 +1,5 @@
+% Function for simulating a discretized simple pendulum
+% mass -m; L - length, b - damping, g - gravitational acceleration
 function ynext = pendulum_rk4(y, u, Ts, m, L, b, g)
     f = @(x,u) [ 
         x(2),...

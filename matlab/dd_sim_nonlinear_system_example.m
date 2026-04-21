@@ -10,7 +10,6 @@ g = 9.81;
 %Sampling time
 Ts = 1e-2;
 
-
 T = 50 / Ts;
 
 %State
