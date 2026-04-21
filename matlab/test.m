@@ -1,3 +1,5 @@
+clear; clc; addpath('custom_functions');
+
 A = [-2 -6.25; 4 0];
 B = [2; 0];
 C = [0 3.125];

@@ -1,8 +1,6 @@
 % Dual mass spring damper system example for demonstrating the Fundamental
 % lemma
-
-clear;
-clc;
+clear; clc; addpath('custom_functions');
 
 %Masses [kg]
 m1 = 1.0;

@@ -1,5 +1,4 @@
-clear;
-clc;
+clear; clc; addpath('custom_functions');
 
 n_true = 3; %prava state-space dimenzija, m = 1
 

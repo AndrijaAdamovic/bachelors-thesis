@@ -1,6 +1,5 @@
 % Data-driven simulation of system from "fl_linear_system_example_1.m"
-clear;
-clc;
+clear; clc; addpath('custom_functions');
 
 %Masses [kg]
 m1 = 1.0;
