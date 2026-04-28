@@ -1,6 +1,34 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{newtxtext}
+
+\newcommand{\university}{University of Zagreb}
+\newcommand{\faculty}{Faculty of Mechanical Engineering and Naval Architecture}
+\newcommand{\thesistype}{Bachelor's Thesis}
+\newcommand{\authorname}{Andrija Adamovi\'{c}}
+\newcommand{\placeyear}{Zagreb, 2026}
 
 \begin{document}
-Text
+
+\begin{titlepage}
+    \centering
+    \thispagestyle{empty}
+
+    \vspace*{0mm}
+    {\LARGE\scshape \university\par}
+    \vspace{3mm}
+    {\LARGE\scshape \faculty\par}
+
+    \vspace*{70mm}
+    {\Huge\scshape \MakeUppercase{\thesistype}\par}
+
+    \vspace{38mm}
+    \hfill{\LARGE \authorname}\hspace{22mm}
+
+    \vfill
+    {\LARGE\scshape \placeyear\par}
+    \vspace*{18mm}
+\end{titlepage}
+
 \end{document}
