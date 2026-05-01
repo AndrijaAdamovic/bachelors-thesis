@@ -7,6 +7,7 @@
 \newcommand{\faculty}{Faculty of Mechanical Engineering and Naval Architecture}
 \newcommand{\thesistype}{Bachelor's Thesis}
 \newcommand{\authorname}{Andrija Adamovi\'{c}}
+\newcommand{\mentorone}{Prof.\ dr.\ sc.\ Andrej Joki\'{c}}
 \newcommand{\placeyear}{Zagreb, 2026}
 
 \begin{document}
@@ -24,11 +25,51 @@
     {\Huge\scshape \MakeUppercase{\thesistype}\par}
 
     \vspace{38mm}
-    \hfill{\LARGE \authorname}\hspace{22mm}
+    \noindent
+    \hfill
+    \begin{minipage}[t]{0.34\textwidth}
+        \raggedleft
+        {\LARGE Student:\par}
+        \vspace{9mm}
+        {\LARGE \authorname\par}
+    \end{minipage}
 
     \vfill
     {\LARGE\scshape \placeyear\par}
-    \vspace*{18mm}
+    \vspace*{0mm}
+\end{titlepage}
+
+\begin{titlepage}
+    \centering
+    \thispagestyle{empty}
+
+    \vspace*{0mm}
+    {\LARGE\scshape \university\par}
+    \vspace{3mm}
+    {\LARGE\scshape \faculty\par}
+
+    \vspace*{70mm}
+    {\Huge\scshape \MakeUppercase{\thesistype}\par}
+    
+    \vspace{38mm}
+    \noindent
+    \begin{minipage}[t]{0.48\textwidth}
+        \raggedright
+        {\LARGE Mentor:\par}
+        \vspace{9mm}
+        {\LARGE \mentorone\par}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.34\textwidth}
+        \raggedleft
+        {\LARGE Student:\par}
+        \vspace{9mm}
+        {\LARGE \authorname\par}
+    \end{minipage}
+
+    \vfill
+    {\LARGE\scshape \placeyear\par}
+    \vspace*{0mm}
 \end{titlepage}
 
 \end{document}
