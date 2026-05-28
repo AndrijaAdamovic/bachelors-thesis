@@ -1,4 +1,4 @@
-clear; clc; addpath('custom_functions');
+clear; clc; addpath(fullfile(fileparts(mfilename("fullpath")), "custom_functions"));
 
 A = [-2 -6.25; 4 0];
 B = [2; 0];

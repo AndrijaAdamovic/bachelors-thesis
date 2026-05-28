@@ -1,4 +1,4 @@
-clear; clc; addpath('custom_functions');
+clear; clc; addpath(fullfile(fileparts(mfilename("fullpath")), "custom_functions"));
 
 n_true = 3; %prava state-space dimenzija, m = 1
 
