@@ -11,6 +11,7 @@
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \usepackage[pdfpagelabels,plainpages=false]{hyperref}
 \usepackage{titlesec}
 \usepackage{tocloft}
@@ -23,8 +24,10 @@
 
 \setlength{\parindent}{1.2cm}
 \setlength{\parskip}{0pt}
-\setlength{\cftbeforechapskip}{4pt}
-\setlength{\cftbeforesecskip}{2pt}
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftbeforesecskip}{5pt}
+\setlength{\cftbeforefigskip}{5pt}
+\setlength{\cftbeforetabskip}{5pt}
 
 \captionsetup{
     font=small,
@@ -42,6 +45,11 @@
     {}
     {0pt}
     {}
+\titleformat{\section}[hang]
+    {\normalfont\large\bfseries}
+    {\thesection}
+    {1em}
+    {}
 \titlespacing*{\chapter}{0pt}{0pt}{18pt}
 \titlespacing*{\section}{0pt}{14pt}{8pt}
 
@@ -58,6 +66,7 @@
 \newcommand{\studentid}{}
 \newcommand{\keywords}{keyword one; keyword two; keyword three}
 \newcommand{\kljucnerijeci}{klju\v{c}na rije\v{c} jedan; klju\v{c}na rije\v{c} dva}
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -142,60 +151,30 @@
     \end{minipage}
 
     \vfill
-    {\LARGE\scshape \placeyear\par}
+    {\large\scshape \placeyear\par}
 \end{titlepage}
 
 \clearemptypage{}
 \vspace*{\fill}
-\noindent I declare that I have prepared this thesis independently, using the knowledge
-acquired during my studies and the literature cited in the bibliography.
+\noindent I hereby declare that I have written this thesis independently, using the knowledge
+acquired during my studies and the literature cited in the references.
 
 \vspace{8mm}
-\noindent I would like to thank my mentor, colleagues, family, and everyone who supported
-the preparation of this thesis.
+\noindent TODO\@: Zahvale
 
-\vspace{\fill}
-\vfill
+
+\vspace{10mm}
 \begin{flushright}
     \authorname{}
 \end{flushright}
+\vspace*{\fill}
 \clearpage
 
-\clearemptypage{}
-\begin{center}
-    {\large\bfseries \university\par}
-    \vspace{1mm}
-    {\large\bfseries \faculty\par}
-    \vspace{3mm}
-    {\normalsize Central Committee for Final and Graduate Examinations\par}
-    \vspace{12mm}
-    {\Large\bfseries BACHELOR'S THESIS ASSIGNMENT\par}
-\end{center}
-
-\vspace{8mm}
-\noindent
-\begin{tabular}{@{}p{0.28\textwidth}p{0.65\textwidth}@{}}
-Student: & \authorname{} \\
-Student identifier: & \studentid{} \\
-Thesis title in Croatian: & \thesistitlecroatian{} \\
-Thesis title in English: & \thesistitle{} \\
-\end{tabular}
-
-\vspace{8mm}
-\noindent\textbf{Assignment description:}
-
-\vspace{4mm}
-\noindent Replace this page with the official assignment text or insert a scan of the
-issued assignment.
-
-\vfill
-\noindent
-\begin{tabular}{@{}p{0.36\textwidth}p{0.28\textwidth}p{0.28\textwidth}@{}}
-Assignment issued: & Submission deadline: & Defence period: \\
-\vspace{12mm} & \vspace{12mm} & \vspace{12mm} \\
-Assigned by: & & Committee chair: \\
-\end{tabular}
-\clearpage
+\includepdf[
+    pages=1,
+    pagecommand={\thispagestyle{empty}},
+    width={\paperwidth}
+]{assignment.pdf}
 
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -203,21 +182,21 @@ Assigned by: & & Committee chair: \\
 \hypersetup{pageanchor=true}
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{Contents}
+\addcontentsline{toc}{chapter}{CONTENTS}
 \tableofcontents
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Figures}
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
 \listoffigures
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Tables}
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
 \listoftables
 \clearpage
 
-\frontmatterchapter{List of Symbols}
+\frontmatterchapter{LIST OF SYMBOLS}
 \begin{tabular}{@{}p{0.18\textwidth}p{0.58\textwidth}p{0.16\textwidth}@{}}
 \toprule
 Symbol & Description & Unit \\
@@ -228,7 +207,7 @@ $t$ & Time & s \\
 \end{tabular}
 \clearpage
 
-\frontmatterchapter{List of Abbreviations}
+\frontmatterchapter{LIST OF ABBREVIATIONS}
 \begin{tabular}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
 \toprule
 Abbreviation & Description \\
@@ -239,11 +218,11 @@ API & Application programming interface \\
 \end{tabular}
 \clearpage
 
-\frontmatterchapter{Sa\v{z}etak}
+\frontmatterchapter{SA\v{Z}ETAK}
 Ovdje upi\v{s}ite sa\v{z}etak rada na hrvatskom jeziku.
 
 \vspace{8mm}
-\noindent\textbf{Klju\v{c}ne rije\v{c}i:} \kljucnerijeci{}
+\noindent\textbf{KLJU\v{C}NE RIJE\v{C}I:} \kljucnerijeci{}
 \clearpage
 
 \frontmatterchapter{Abstract}
@@ -263,18 +242,7 @@ the motivation for the work, and define the scope of the thesis.
 \section{Motivation}
 Describe the background and motivation for the thesis.
 
-\begin{table}[h]
-    \centering
-    \caption{Example table\label{tab:example}}
-    \begin{tabular}{ccc}
-        \toprule
-        Column 1 & Column 2 & Column 3 \\
-        \midrule
-        Value & Value & Value \\
-        Value & Value & Value \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+\section{Literature Overview}
 
 \chapter{Theoretical Background}
 Write the theoretical background and related work here.
@@ -293,7 +261,7 @@ Present and discuss the results of the thesis.
 Summarize the main contributions, limitations, and possible directions for future work.
 
 \begin{thebibliography}{9}
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{References}
 
 \bibitem{example}
 Author Name.
