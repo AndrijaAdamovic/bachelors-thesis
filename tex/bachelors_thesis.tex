@@ -1,14 +1,92 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{report}
+
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper,margin=25mm]{geometry}
-\usepackage{newtxtext}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm,headheight=15pt]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[pdfpagelabels,plainpages=false]{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pageanchor=false
+}
+
+\setlength{\parindent}{1.2cm}
+\setlength{\parskip}{0pt}
+\setlength{\cftbeforechapskip}{4pt}
+\setlength{\cftbeforesecskip}{2pt}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    labelsep=colon
+}
+
+\titleformat{\chapter}[hang]
+    {\normalfont\Large\bfseries}
+    {\thechapter}
+    {1em}
+    {}
+\titleformat{name=\chapter,numberless}[hang]
+    {\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titlespacing*{\section}{0pt}{14pt}{8pt}
 
 \newcommand{\university}{University of Zagreb}
 \newcommand{\faculty}{Faculty of Mechanical Engineering and Naval Architecture}
 \newcommand{\thesistype}{Bachelor's Thesis}
+\newcommand{\runningthesistype}{Bachelor's Thesis}
 \newcommand{\authorname}{Andrija Adamovi\'{c}}
 \newcommand{\mentorone}{Prof.\ dr.\ sc.\ Andrej Joki\'{c}}
+\newcommand{\mentortwo}{}
 \newcommand{\placeyear}{Zagreb, 2026}
+\newcommand{\thesistitle}{Thesis Title}
+\newcommand{\thesistitlecroatian}{Naslov rada}
+\newcommand{\studentid}{}
+\newcommand{\keywords}{keyword one; keyword two; keyword three}
+\newcommand{\kljucnerijeci}{klju\v{c}na rije\v{c} jedan; klju\v{c}na rije\v{c} dva}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \authorname}
+\fancyhead[R]{\small \runningthesistype}
+\fancyfoot[L]{\small\textit{\faculty{}}}
+\fancyfoot[R]{\small\textit{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{\small \authorname}
+    \fancyhead[R]{\small \runningthesistype}
+    \fancyfoot[L]{\small\textit{\faculty{}}}
+    \fancyfoot[R]{\small\textit{\thepage}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\newcommand{\frontmatterchapter}[1]{%
+    \chapter*{#1}%
+    \addcontentsline{toc}{chapter}{#1}%
+}
+
+\newcommand{\clearemptypage}{%
+    \clearpage
+    \thispagestyle{empty}%
+}
 
 \begin{document}
 
@@ -16,60 +94,216 @@
     \centering
     \thispagestyle{empty}
 
-    \vspace*{0mm}
-    {\LARGE\scshape \university\par}
+    {\large\scshape \university\par}
     \vspace{3mm}
-    {\LARGE\scshape \faculty\par}
+    {\large\scshape \faculty\par}
 
-    \vspace*{70mm}
+    \vspace*{80mm}
     {\Huge\scshape \MakeUppercase{\thesistype}\par}
 
     \vspace{38mm}
-    \noindent
-    \hfill
-    \begin{minipage}[t]{0.34\textwidth}
-        \raggedleft
-        {\LARGE Student:\par}
-        \vspace{9mm}
-        {\LARGE \authorname\par}
-    \end{minipage}
+    \begin{flushright}
+        {\Large \authorname\par}
+    \end{flushright}
 
     \vfill
-    {\LARGE\scshape \placeyear\par}
-    \vspace*{0mm}
+    {\large\scshape \placeyear\par}
 \end{titlepage}
 
 \begin{titlepage}
     \centering
     \thispagestyle{empty}
 
-    \vspace*{0mm}
-    {\LARGE\scshape \university\par}
+    {\Large\scshape \university\par}
     \vspace{3mm}
-    {\LARGE\scshape \faculty\par}
+    {\Large\scshape \faculty\par}
 
-    \vspace*{70mm}
+    \vspace*{80mm}
     {\Huge\scshape \MakeUppercase{\thesistype}\par}
-    
+
     \vspace{38mm}
     \noindent
-    \begin{minipage}[t]{0.48\textwidth}
-        \raggedright
-        {\LARGE Mentor:\par}
+    \begin{minipage}[t]{0.52\textwidth}
+        \raggedright{}
+        {\Large Mentor:\par}
         \vspace{9mm}
-        {\LARGE \mentorone\par}
+        {\Large \mentorone\par}
+        \ifx\mentortwo\empty\else
+            \vspace{3mm}
+            {\Large \mentortwo\par}
+        \fi
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.34\textwidth}
-        \raggedleft
-        {\LARGE Student:\par}
+        \raggedleft{}
+        {\Large Student:\par}
         \vspace{9mm}
-        {\LARGE \authorname\par}
+        {\Large \authorname\par}
     \end{minipage}
 
     \vfill
     {\LARGE\scshape \placeyear\par}
-    \vspace*{0mm}
 \end{titlepage}
+
+\clearemptypage{}
+\vspace*{\fill}
+\noindent I declare that I have prepared this thesis independently, using the knowledge
+acquired during my studies and the literature cited in the bibliography.
+
+\vspace{8mm}
+\noindent I would like to thank my mentor, colleagues, family, and everyone who supported
+the preparation of this thesis.
+
+\vspace{\fill}
+\vfill
+\begin{flushright}
+    \authorname{}
+\end{flushright}
+\clearpage
+
+\clearemptypage{}
+\begin{center}
+    {\large\bfseries \university\par}
+    \vspace{1mm}
+    {\large\bfseries \faculty\par}
+    \vspace{3mm}
+    {\normalsize Central Committee for Final and Graduate Examinations\par}
+    \vspace{12mm}
+    {\Large\bfseries BACHELOR'S THESIS ASSIGNMENT\par}
+\end{center}
+
+\vspace{8mm}
+\noindent
+\begin{tabular}{@{}p{0.28\textwidth}p{0.65\textwidth}@{}}
+Student: & \authorname{} \\
+Student identifier: & \studentid{} \\
+Thesis title in Croatian: & \thesistitlecroatian{} \\
+Thesis title in English: & \thesistitle{} \\
+\end{tabular}
+
+\vspace{8mm}
+\noindent\textbf{Assignment description:}
+
+\vspace{4mm}
+\noindent Replace this page with the official assignment text or insert a scan of the
+issued assignment.
+
+\vfill
+\noindent
+\begin{tabular}{@{}p{0.36\textwidth}p{0.28\textwidth}p{0.28\textwidth}@{}}
+Assignment issued: & Submission deadline: & Defence period: \\
+\vspace{12mm} & \vspace{12mm} & \vspace{12mm} \\
+Assigned by: & & Committee chair: \\
+\end{tabular}
+\clearpage
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\hypersetup{pageanchor=true}
+
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+\clearpage
+
+\phantomsection{}
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+
+\phantomsection{}
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearpage
+
+\frontmatterchapter{List of Symbols}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.58\textwidth}p{0.16\textwidth}@{}}
+\toprule
+Symbol & Description & Unit \\
+\midrule
+$x$ & Example variable & m \\
+$t$ & Time & s \\
+\bottomrule
+\end{tabular}
+\clearpage
+
+\frontmatterchapter{List of Abbreviations}
+\begin{tabular}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
+\toprule
+Abbreviation & Description \\
+\midrule
+AI & Artificial intelligence \\
+API & Application programming interface \\
+\bottomrule
+\end{tabular}
+\clearpage
+
+\frontmatterchapter{Sa\v{z}etak}
+Ovdje upi\v{s}ite sa\v{z}etak rada na hrvatskom jeziku.
+
+\vspace{8mm}
+\noindent\textbf{Klju\v{c}ne rije\v{c}i:} \kljucnerijeci{}
+\clearpage
+
+\frontmatterchapter{Abstract}
+Write the thesis abstract in English here.
+
+\vspace{8mm}
+\noindent\textbf{Keywords:} \keywords{}
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introduction}
+Write the introductory chapter here. This section should introduce the topic, describe
+the motivation for the work, and define the scope of the thesis.
+
+\section{Motivation}
+Describe the background and motivation for the thesis.
+
+\begin{table}[h]
+    \centering
+    \caption{Example table\label{tab:example}}
+    \begin{tabular}{ccc}
+        \toprule
+        Column 1 & Column 2 & Column 3 \\
+        \midrule
+        Value & Value & Value \\
+        Value & Value & Value \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\chapter{Theoretical Background}
+Write the theoretical background and related work here.
+
+\section{Basic Concepts}
+Introduce the concepts, notation, and assumptions used in the thesis.
+
+\chapter{Methodology}
+Describe the methods, models, implementation, experiments, or design procedure used in
+the thesis.
+
+\chapter{Results}
+Present and discuss the results of the thesis.
+
+\chapter{Conclusion}
+Summarize the main contributions, limitations, and possible directions for future work.
+
+\begin{thebibliography}{9}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibitem{example}
+Author Name.
+\textit{Title of the Book or Article}.
+Publisher or Journal, year.
+
+\end{thebibliography}
+
+\appendix
+\chapter{Additional Material}
+Place supplementary derivations, tables, figures, or source listings here.
 
 \end{document}

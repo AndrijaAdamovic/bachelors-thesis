@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Contents}{i}{section*.1}%
+\contentsline {chapter}{List of Figures}{ii}{section*.2}%
+\contentsline {chapter}{List of Tables}{iii}{section*.3}%
+\contentsline {chapter}{List of Symbols}{iv}{chapter*.4}%
+\contentsline {chapter}{List of Abbreviations}{v}{chapter*.5}%
+\contentsline {chapter}{Sa\v {z}etak}{vi}{chapter*.6}%
+\contentsline {chapter}{Abstract}{vii}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Theoretical Background}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Basic Concepts}{2}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Methodology}{3}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Results}{4}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusion}{5}{chapter.5}%
+\contentsline {chapter}{Bibliography}{6}{chapter*.9}%
+\contentsline {chapter}{\numberline {A}Additional Material}{7}{appendix.A}%
