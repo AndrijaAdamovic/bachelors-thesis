@@ -5,7 +5,7 @@
 \contentsline {chapter}{LIST OF SYMBOLS}{iv}{chapter*.4}%
 \contentsline {chapter}{LIST OF ABBREVIATIONS}{v}{chapter*.5}%
 \contentsline {chapter}{SA\v {Z}ETAK}{vi}{chapter*.6}%
-\contentsline {chapter}{Abstract}{vii}{chapter*.7}%
+\contentsline {chapter}{ABSTRACT}{vii}{chapter*.7}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Literature Overview}{1}{section.1.2}%
