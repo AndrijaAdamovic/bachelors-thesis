@@ -6,6 +6,8 @@
 \usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm,headheight=15pt]{geometry}
 \usepackage{lmodern}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{caption}
@@ -97,6 +99,9 @@
     \clearpage
     \thispagestyle{empty}%
 }
+
+\newtheorem{definition}{Definition}
+
 
 \begin{document}
 
@@ -247,17 +252,33 @@ Describe the background and motivation for the thesis.
 \chapter{The Fundamental Lemma}
 
 \section{Theoretical Background}
-Write the theoretical background and related work here.
+The goal of this section is to provide introduction to mathematical concepts needed for understanding
+the rest of the thesis. 
+\subsection*{Dynamical Systems}
+Although Willems' Fundamental Lemma stems from the behavioural approach to sytems theory, in this thesis it is formulated using the 
+classical state-space LTI system formulation. This formulation is sufficient for the further chapters of the thesis. 
 
-% \section{Basic Concepts}
-% Introduce the concepts, notation, and assumptions used in the thesis.
+\begin{definition} 
+    A discrete-time linear time-invariant (LTI) system is a dynamical system whose dynamics are described by:
+    \begin{subequations}
+        \begin{align}
+            x(k+1) &= Ax(k) + Bu(k) \\
+            y(k) &= Cx(k) + Du(k)
+        \end{align}
+    \end{subequations}
+    Where \(t \in \mathbb{Z}_{\ge 0}\), \(x(t) \in \mathbb{R}^{n}\) is the state, \(u(t) \in \mathbb{R}^{m}\) is the input
+    and \(y(t) \in \mathbb{R}^{p}\) is the output of the system. \\
+    The true state space dimension is $n$ and system matrices \(A \in M_n(\mathbb{R})\), \(B \in M_{n \times m}(\mathbb{R})\), 
+    \(C \in M_{p \times n}(\mathbb{R})\), \(D \in M_{p \times m}(\mathbb{R})\).
+\end{definition}
 
-% \chapter{Methodology}
-% Describe the methods, models, implementation, experiments, or design procedure used in
-% the thesis.
+In our data-based approach, those matrices (i.e. the system model) are unknown. However, an upper bound on state space dimension is
+given $N \geq n$. Now lets define the system trajectories.
 
-% \chapter{Results}
-% Present and discuss the results of the thesis.
+\begin{definition}
+    A sequence of ordered triples \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) is called an input-state-output trajectory
+\end{definition}
+
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
