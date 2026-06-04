@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1780390620.18322 "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" "bachelors_thesis.pdf" "bachelors_thesis" 1780390620.83476 0
-  "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" 1780390620.0634 6543 f83da929991942483894a11c8a499aa7 ""
+["pdflatex"] 1780586632.76329 "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" "bachelors_thesis.pdf" "bachelors_thesis" 1780586634.50212 0
+  "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" 1780586634.46518 6519 982453b46b0e951e19482c77c33952eb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -110,12 +110,12 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771678157 3636401 94e27571b6690e95e548df6ea55913d0 ""
   "/usr/local/texlive/2025/texmf.cnf" 1771677965.89302 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "assignment.pdf" 1780324360.36514 701448 4d0db7398fa6b3b88bd37be9cf6f0164 ""
-  "bachelors_thesis.aux" 1780390620.76189 2542 6582f8851020f567ca900a8ec35e749f "pdflatex"
-  "bachelors_thesis.lof" 1780390620.76289 150 7460b00ca4c2d98f724b7acc062e00fd "pdflatex"
-  "bachelors_thesis.lot" 1780390620.76289 150 7460b00ca4c2d98f724b7acc062e00fd "pdflatex"
-  "bachelors_thesis.out" 1780390620.76289 1930 bf84aff1df3b8e7ed20a3015839ff9c8 "pdflatex"
-  "bachelors_thesis.tex" 1780390620.0634 6543 f83da929991942483894a11c8a499aa7 ""
-  "bachelors_thesis.toc" 1780390620.76289 1117 c6ac2885690a3a5d1065a5ccd3ef8e5a "pdflatex"
+  "bachelors_thesis.aux" 1780586634.29516 2002 f33f3111189c4735b0aa343ac325ca39 "pdflatex"
+  "bachelors_thesis.lof" 1780586634.29936 90 1258fa74a74880edec024276afdeb416 "pdflatex"
+  "bachelors_thesis.lot" 1780586634.29936 90 1258fa74a74880edec024276afdeb416 "pdflatex"
+  "bachelors_thesis.out" 1780586634.29816 1696 fbdb3d5e29d6108794e34fc325742b7d "pdflatex"
+  "bachelors_thesis.tex" 1780586634.46518 6519 982453b46b0e951e19482c77c33952eb ""
+  "bachelors_thesis.toc" 1780586634.29936 928 b4190b3b0f4ae90986e92358eba275ee "pdflatex"
   (generated)
   "bachelors_thesis.aux"
   "bachelors_thesis.lof"
