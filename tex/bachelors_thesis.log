@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  4 JUN 2026 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  5 JUN 2026 00:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,6 +377,7 @@ Now handling font encoding PU ...
 )
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4072.
 Package hyperref Info: Option `plainpages' set `false' on input line 4072.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4072.
 Package hyperref Info: Hyper figures OFF on input line 4201.
 Package hyperref Info: Link nesting OFF on input line 4206.
 Package hyperref Info: Hyper index ON on input line 4209.
@@ -403,7 +404,7 @@ Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
 Package hyperref Info: backreferencing OFF on input line 6099.
-Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring ON on input line 6102.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
 \Hy@abspage=\count320
@@ -474,36 +475,37 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip111
 \cfttabnumwidth=\skip112
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 26.
-Package hyperref Info: Option `pageanchor' set `false' on input line 26.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+Package hyperref Info: Option `pageanchor' set `false' on input line 37.
 \c@definition=\count327
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 106.
+\c@theorem=\count328
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 117.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
+\l__color_backend_stack_int=\count329
 ) (./bachelors_thesis.aux)
 \openout1 = `bachelors_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -544,16 +546,16 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count330
 \scratchdimen=\dimen264
 \scratchbox=\box60
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count331
+\nofMParguments=\count332
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count332
+\MPscratchCnt=\count333
 \MPscratchDim=\dimen265
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
 \everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -569,7 +571,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 106.
+Package hyperref Info: Link coloring ON on input line 117.
  (./bachelors_thesis.out) (./bachelors_thesis.out)
 \@outlinefile=\write3
 \openout3 = `bachelors_thesis.out'.
@@ -579,37 +581,37 @@ Package hyperref Info: Link coloring OFF on input line 106.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<assignment.pdf, id=73, 596.52861pt x 843.66193pt>
+<assignment.pdf, id=81, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf>
-Package pdftex.def Info: assignment.pdf  used on input line 183.
+Package pdftex.def Info: assignment.pdf  used on input line 194.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<assignment.pdf, id=75, page=1, 596.52861pt x 843.66193pt>
+<assignment.pdf, id=83, page=1, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 183.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 194.
 (pdftex.def)             Requested size: 597.50787pt x 845.07591pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 183.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 194.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 183.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 194.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 183.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 194.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 183.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 194.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
  [2
 
 
  <./assignment.pdf>]
-Package hyperref Info: Option `pageanchor' set `true' on input line 188.
+Package hyperref Info: Option `pageanchor' set `true' on input line 199.
  (./bachelors_thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -675,13 +677,20 @@ Chapter 1.
 
 ]
 Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+
+ []
+
 [2
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3
+
+] [4
 
 ]
 Appendix A.
-[4
+[5
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -689,21 +698,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FBDB3D5E29D6108794E34FC325742B7D;1696.
+(rerunfilecheck)             Checksum: 671024EF8ABBF2F9D40CF7FB5DC050DC;2186.
  ) 
 Here is how much of TeX's memory you used:
- 15468 strings out of 467533
- 246133 string characters out of 5419495
- 673940 words of memory out of 5000000
- 44116 multiletter control sequences out of 15000+600000
+ 15498 strings out of 467533
+ 246625 string characters out of 5419495
+ 679168 words of memory out of 5000000
+ 44138 multiletter control sequences out of 15000+600000
  684963 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,90p,588b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (15 pages, 931521 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bachelors_thesis.pdf (16 pages, 951016 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

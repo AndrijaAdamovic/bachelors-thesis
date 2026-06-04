@@ -14,12 +14,23 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{pdfpages}
-\usepackage[pdfpagelabels,plainpages=false]{hyperref}
+\usepackage{xcolor}
+\usepackage[
+    pdfpagelabels,
+    plainpages=false,
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
 \usepackage{titlesec}
 \usepackage{tocloft}
 
 \hypersetup{
-    colorlinks=false,
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
     pdfborder={0 0 0},
     linktoc=all,
     pageanchor=false
@@ -101,7 +112,7 @@
 }
 
 \newtheorem{definition}{Definition}
-
+\newtheorem{theorem}{Theorem}
 
 \begin{document}
 
@@ -254,31 +265,81 @@ Describe the background and motivation for the thesis.
 \section{Theoretical Background}
 The goal of this section is to provide introduction to mathematical concepts needed for understanding
 the rest of the thesis. 
-\subsection*{Dynamical Systems}
+\subsection{LTI Dynamical Systems}
 Although Willems' Fundamental Lemma stems from the behavioural approach to sytems theory, in this thesis it is formulated using the 
-classical state-space LTI system formulation. This formulation is sufficient for the further chapters of the thesis. 
+classical state-space LTI system formulation. This formulation is simpler, yet sufficient for the further chapters of the thesis. 
 
 \begin{definition} 
     A discrete-time linear time-invariant (LTI) system is a dynamical system whose dynamics are described by:
     \begin{subequations}
         \begin{align}
-            x(k+1) &= Ax(k) + Bu(k) \\
-            y(k) &= Cx(k) + Du(k)
+            x(t+1) &= Ax(t) + Bu(t) \\
+            y(t) &= Cx(t) + Du(t)
         \end{align}
+        \label{eq:lti}
     \end{subequations}
-    Where \(t \in \mathbb{Z}_{\ge 0}\), \(x(t) \in \mathbb{R}^{n}\) is the state, \(u(t) \in \mathbb{R}^{m}\) is the input
+    Where \(t \in \mathbb{Z}_{\ge 0}\) is the time axis, \(x(t) \in \mathbb{R}^{n}\) is the state, \(u(t) \in \mathbb{R}^{m}\) is the input
     and \(y(t) \in \mathbb{R}^{p}\) is the output of the system. \\
     The true state space dimension is $n$ and system matrices \(A \in M_n(\mathbb{R})\), \(B \in M_{n \times m}(\mathbb{R})\), 
     \(C \in M_{p \times n}(\mathbb{R})\), \(D \in M_{p \times m}(\mathbb{R})\).
 \end{definition}
 
-In our data-based approach, those matrices (i.e. the system model) are unknown. However, an upper bound on state space dimension is
+In our data-based approach, those matrices (i.e. the system model) are  generally unknown. However, an upper bound on state space dimension is
 given $N \geq n$. Now lets define the system trajectories.
 
 \begin{definition}
     A sequence of ordered triples \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) is called an input-state-output trajectory
+    if 
+    \[ \begin{bmatrix} x(t+1) \\ y(t) \end{bmatrix} = \begin{bmatrix} A & B \\ C & D  \end{bmatrix} 
+    \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}\] 
 \end{definition}
 
+It can be deduced trivialy that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
+trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
+ 
+Additionally, from time invariance \eqref{eq:lti} we deduce that: \\
+\[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]\\
+is an input-state-output trajectory for all \(\tau \in \mathbb{N}\)
+\begin{definition}
+    A sequence of ordered pairs \(\left( u(t), y(t) \right)_{t=0}^{\infty}\) is called an input-output trajectory if 
+there exists a sequence of states \(x: \mathbb{Z}_{\ge 0} \to \mathbb{R}^{n}\) such that \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) 
+is an input-state-output trajectory.
+\end{definition}
+
+In practice we are limited by finite computer memory so we cannot work with infinite sequences of data. Motivated by that we state the 
+next definition.
+
+\clearpage
+\begin{definition}
+    Let \(i,j \in\ \mathbb{Z}_{\ge 0}\ \) such that \(i \leq j\). Given an input-state-output trajectory  \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\),
+    the sequence  \(\left( u(t), x(t), y(t) \right)_{t=i}^{j}\) is called a \textit{restricted input-state-output trajectory}. Restricted 
+    input-output trajectories are defined in the same way.
+\end{definition}
+
+\subsection{The Concepts of Contollability and Observability}
+
+In this section the concepts of controllability and observability will be defined. Since, the LTI system \eqref{eq:lti} was defined
+classically it will be continued for these definitions. However, while the definitions of controllability/observability in classical 
+and behavioural approach are almost equivalent, there is an assumption when equating those definitions with behaviour from input-output
+trajectories.
+
+\begin{definition}
+    An LTI system \eqref{eq:lti} is controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
+    a finite-length sequence of inputs 
+    \[u(0), u(1), ..., u(N-1)\]
+    such that the system reaches \(x(N) = x_f\)
+\end{definition}
+
+In lays terms, it is telling that any state of the system can be reached in finite time by applying finitely many inputs. 
+
+Now the famous result for testing controllability will be stated. The pair $(A, B)$ is the pair of matrices from \eqref{eq:lti} and n is
+the true state space dimension of the system.
+
+\begin{theorem}(Kalman controllability theorem)
+    The pair $(A, B)$ is controllable if and only if the controllability block matrix
+    \[ \mathcal{C} = \begin{bmatrix} B & AB & A^{2}B & \cdots & A^{n-1}B\end{bmatrix}\]
+    is of full rank.
+\end{theorem}
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.

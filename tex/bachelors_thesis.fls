@@ -171,6 +171,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadat
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out
 INPUT bachelors_thesis.out
@@ -254,11 +255,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb

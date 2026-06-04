@@ -11,5 +11,7 @@
 \contentsline {section}{\numberline {1.2}Literature Overview}{1}{section.1.2}%
 \contentsline {chapter}{\numberline {2}The Fundamental Lemma}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Theoretical Background}{2}{section.2.1}%
-\contentsline {chapter}{References}{3}{chapter*.8}%
-\contentsline {chapter}{\numberline {A}Additional Material}{4}{appendix.A}%
+\contentsline {subsection}{\numberline {2.1.1}LTI Dynamical Systems}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}The Concepts of Contollability and Observability}{3}{subsection.2.1.2}%
+\contentsline {chapter}{References}{4}{chapter*.8}%
+\contentsline {chapter}{\numberline {A}Additional Material}{5}{appendix.A}%
