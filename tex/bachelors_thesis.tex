@@ -25,6 +25,7 @@
 ]{hyperref}
 \usepackage{titlesec}
 \usepackage{tocloft}
+\usepackage{theoremref}
 
 \hypersetup{
     colorlinks=true,
@@ -36,7 +37,7 @@
     pageanchor=false
 }
 
-\setlength{\parindent}{1.2cm}
+\setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\cftbeforechapskip}{10pt}
 \setlength{\cftbeforesecskip}{5pt}
@@ -218,8 +219,7 @@ acquired during my studies and the literature cited in the references.
 \toprule
 Symbol & Description & Unit \\
 \midrule
-$x$ & Example variable & m \\
-$t$ & Time & s \\
+$x$ & Example variable & / \\
 \bottomrule
 \end{tabular}
 \clearpage
@@ -229,8 +229,7 @@ $t$ & Time & s \\
 \toprule
 Abbreviation & Description \\
 \midrule
-AI & Artificial intelligence \\
-API & Application programming interface \\
+LTI & Linear time-invariant \\
 \bottomrule
 \end{tabular}
 \clearpage
@@ -296,6 +295,7 @@ given $N \geq n$. Now lets define the system trajectories.
 
 It can be deduced trivialy that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
 trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
+That space is called the \textit{behaviour} of the system.
  
 Additionally, from time invariance \eqref{eq:lti} we deduce that: \\
 \[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]\\
@@ -324,10 +324,10 @@ and behavioural approach are almost equivalent, there is an assumption when equa
 trajectories.
 
 \begin{definition}
-    An LTI system \eqref{eq:lti} is controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
+    A discrete LTI system \eqref{eq:lti} is called controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
     a finite-length sequence of inputs 
     \[u(0), u(1), ..., u(N-1)\]
-    such that the system reaches \(x(N) = x_f\)
+    such that the system reaches \(x(N) = x_f\). Otherwise, the system is said to be uncontrollable.
 \end{definition}
 
 In lays terms, it is telling that any state of the system can be reached in finite time by applying finitely many inputs. 
@@ -339,7 +339,83 @@ the true state space dimension of the system.
     The pair $(A, B)$ is controllable if and only if the controllability block matrix
     \[ \mathcal{C} = \begin{bmatrix} B & AB & A^{2}B & \cdots & A^{n-1}B\end{bmatrix}\]
     is of full rank.
+    \label{thm:ctrb}
 \end{theorem}
+
+Now the concept of observability is defined.
+
+\begin{definition}
+    A discrete LTI system \eqref{eq:lti} is called observable at $t = 0$ if the initial state x(0) can be uniquely reconstructed from a known 
+    restricted input-output trajectory. Otherwise, the system is said to be unobservable.
+\end{definition}
+
+Using time-invariance of \eqref{eq:lti} it can be shown that if the system is observable at $t = 0$ then for every  \(t \in \mathbb{Z}_{\ge 0}\) the state $x(t)$ is reconstructible.
+This result is important to control theory when it comes to state estimation (for example Kalman filter) because it gives a necessary condition for exact state estimation.
+
+Now the test for determining observability will be stated.
+
+\begin{theorem}(Kalman observability theorem)
+    The pair $(C, A)$ is observable if and only if the observability block matrix
+    \[ \mathcal{O} = \begin{bmatrix} C \\ CA \\ CA^{2} \\ \vdots \\ CA^{n-1}\end{bmatrix}\]
+    is of full rank.
+    \label{thm:obsv}
+\end{theorem}
+\clearpage
+
+The Kalman criteria for controllability/observability were stated but, there are more different equivalent
+statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests.
+
+From Theorems~\ref{thm:ctrb} and~\ref{thm:obsv}, a duality between observability and controllability matrices can be seen and
+it is not hard to show that using matrix operations we have:
+\begin{align*}
+    (A, B) \ \mbox{is controllable} &\iff (B^T, A^T) \ \mbox{is observable}.
+    \intertext{Similarly,}
+    (C, A) \ \mbox{is observable} &\iff (A^T, C^T) \ \mbox{is controllable}.
+\end{align*}
+
+\subsection{Persistency of Excitation}
+For the Willems' Fundamental Lemma to hold we need a so-called persistently exciting input. By that
+it means a rich and diverse enough input such that all modes of the system are expressed in the output.
+
+\subsection*{Hankel Matrices}
+For a sequence of vectors from time $t = i$ to $t = j$ we use the following vector notation:
+\[s_{[i, j]} = \begin{bmatrix} s(i) \\ s(i+1) \\ \vdots \\ s(j) \end{bmatrix}\]
+
+Where instead of vector $s$ we will use inputs($u$), states($x$) and outputs($y$). \\ \\
+Hankel matrix is a matrix whose entries are constant on the anti-diagonals, contrast to
+Toeplitz matrix whose entries are constant on the diagonals. Informally, Hankel matrix is
+a mirror image of a Toeplitz matrix. 
+
+\begin{definition}
+    Given an $T \in \mathbb{N}$, lets consider a restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\) of \eqref{eq:lti}. Hankel matrices
+    of depth $L \in \{1, ..., T\}$ of these inputs and outputs are given by:
+
+    \[H_{L}(u_{[0, T-1]}) = 
+    \begin{bmatrix}
+    u(0) & u(1) & \cdots & u(T-L) \\
+    u(1) & u(2) & \cdots & u(T-L+1)\\
+    \vdots & \vdots &  & \vdots \\
+    u(L-1) & u(L) & \cdots & u(T-1)
+    \end{bmatrix}\]
+
+    \[H_{L}(y_{[0, T-1]}) = 
+    \begin{bmatrix}
+    y(0) & y(1) & \cdots & y(T-L) \\
+    y(1) & y(2) & \cdots & y(T-L+1)\\
+    \vdots & \vdots &  & \vdots \\
+    y(L-1) & y(L) & \cdots & y(T-1)
+    \end{bmatrix}\]
+\end{definition}
+
+\clearpage
+
+Now precise definition of persistently exciting input is given.
+
+\begin{definition}
+    Given an sequence of inputs $u_{[0, T-1]}$ and \(k \in \{1, ..., T\}\). We say that
+    the given sequence of inputs is persistently exciting of order k if the Hankel matrix 
+    $H_{k}(u_{[0, T-1]})$ is of full row rank.
+\end{definition}
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.

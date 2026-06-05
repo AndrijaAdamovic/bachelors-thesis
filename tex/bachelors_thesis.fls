@@ -147,6 +147,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/theoremref/theoremref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/theoremref/theoremref.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
