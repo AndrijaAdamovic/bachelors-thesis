@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  8 JUN 2026 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  8 JUN 2026 16:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -575,6 +575,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 Package hyperref Info: Link coloring ON on input line 118.
+ (./bachelors_thesis.out) (./bachelors_thesis.out)
 \@outlinefile=\write3
 \openout3 = `bachelors_thesis.out'.
 
@@ -583,12 +584,12 @@ Package hyperref Info: Link coloring ON on input line 118.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<assignment.pdf, id=17, 596.52861pt x 843.66193pt>
+<assignment.pdf, id=85, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf>
 Package pdftex.def Info: assignment.pdf  used on input line 195.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<assignment.pdf, id=19, page=1, 596.52861pt x 843.66193pt>
+<assignment.pdf, id=87, page=1, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
 Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
@@ -614,56 +615,53 @@ Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
 
  <./assignment.pdf>]
 Package hyperref Info: Option `pageanchor' set `true' on input line 200.
-
-No file bachelors_thesis.toc.
-\tf@toc=\write4
-\openout4 = `bachelors_thesis.toc'.
-
-[1]
-No file bachelors_thesis.lof.
-\tf@lof=\write5
-\openout5 = `bachelors_thesis.lof'.
-
-[2
-
-]
-No file bachelors_thesis.lot.
-\tf@lot=\write6
-\openout6 = `bachelors_thesis.lot'.
-
-[3
-
-]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 218.
+ (./bachelors_thesis.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 218.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 218.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 218.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 218.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 218.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 218.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 218.
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 218.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+))
+\tf@toc=\write4
+\openout4 = `bachelors_thesis.toc'.
+
+ [1] (./bachelors_thesis.lof)
+\tf@lof=\write5
+\openout5 = `bachelors_thesis.lof'.
+
+ [2
+
+] (./bachelors_thesis.lot)
+\tf@lot=\write6
+\openout6 = `bachelors_thesis.lot'.
+
+ [3
+
+] [4
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] [5
@@ -683,80 +681,25 @@ Chapter 1.
 ]
 Chapter 2.
 
-LaTeX Warning: Reference `eq:lti' on page 2 undefined on input line 296.
-
-
-LaTeX Warning: Reference `eq:lti' on page 2 undefined on input line 300.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 [2
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-
-LaTeX Warning: Reference `eq:lti' on page 3 undefined on input line 321.
-
-
-LaTeX Warning: Reference `eq:lti' on page 3 undefined on input line 329.
-
-
-LaTeX Warning: Reference `eq:lti' on page 3 undefined on input line 337.
-
-
-LaTeX Warning: Reference `eq:lti' on page 3 undefined on input line 350.
-
-
-LaTeX Warning: Reference `eq:lti' on page 3 undefined on input line 354.
-
-[3
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3
 
 ]
-
-LaTeX Warning: Reference `thm:ctrb' on page 4 undefined on input line 369.
-
-
-LaTeX Warning: Reference `thm:obsv' on page 4 undefined on input line 369.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 385--389
 
  []
-
-
-LaTeX Warning: Reference `eq:lti' on page 4 undefined on input line 391.
 
 
 Overfull \hbox (34.64381pt too wide) in paragraph at lines 391--393
 [][]\T1/lmr/bx/n/12 Definition 7. []\T1/lmr/m/it/12 Given an $\OML/lmm/m/it/12 T \OMS/lmsy/m/n/12 2 \U/msb/m/n/12 N$\T1/lmr/m/it/12 , lets con-sider a re-stricted input-output tra-jec-tory $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 u[]; y[]\OT1/lmr/m/n/12 )$
  []
 
-[4]
-
-/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex:414: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.414 ...\ H_{L}(y(t)) \end{bmatrix} \in M_{{R})\(
-                                                  m+p)L \times (T-L+1)}}(\ma...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex:414: Extra }, or forgotten $.
-l.414 ...trix} \in M_{{R})\(m+p)L \times (T-L+1)}}
-                                                  (\mathbb{R})\]
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[5
+[4] [5
 
 ] [6
 
@@ -769,35 +712,22 @@ Appendix A.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `bachelors_thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `bachelors_thesis.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0C239A46CAA3FF6B0FB5E752B7321CFB;2379.
+Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 0C239A46CAA3FF6B0FB5E752B7321CFB;2379.
  ) 
 Here is how much of TeX's memory you used:
- 15535 strings out of 467533
- 247327 string characters out of 5419495
+ 15567 strings out of 467533
+ 247894 string characters out of 5419495
  682161 words of memory out of 5000000
- 44174 multiletter control sequences out of 15000+600000
+ 44196 multiletter control sequences out of 15000+600000
  684963 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,90p,588b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (18 pages, 960777 bytes).
+Output written on bachelors_thesis.pdf (18 pages, 964426 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 304 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
  46 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 
