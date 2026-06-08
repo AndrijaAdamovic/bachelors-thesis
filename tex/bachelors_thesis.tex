@@ -284,7 +284,7 @@ classical state-space LTI system formulation. This formulation is simpler, yet s
 \end{definition}
 
 In our data-based approach, those matrices (i.e. the system model) are  generally unknown. However, an upper bound on state space dimension is
-given $N \geq n$. Now lets define the system trajectories.
+given $N \geq n$. The concept of a system trajectory is defined now.
 
 \begin{definition}
     A sequence of ordered triples \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) is called an input-state-output trajectory
@@ -293,11 +293,11 @@ given $N \geq n$. Now lets define the system trajectories.
     \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}\] 
 \end{definition}
 
-It can be deduced trivialy that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
+We can be deduce that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
 trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
 That space is called the \textit{behaviour} of the system.
  
-Additionally, from time invariance \eqref{eq:lti} we deduce that: \\
+Additionally, from time invariance \eqref{eq:lti} it can be deduced that: \\
 \[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]\\
 is an input-state-output trajectory for all \(\tau \in \mathbb{N}\)
 \begin{definition}
@@ -306,8 +306,8 @@ there exists a sequence of states \(x: \mathbb{Z}_{\ge 0} \to \mathbb{R}^{n}\) s
 is an input-state-output trajectory.
 \end{definition}
 
-In practice we are limited by finite computer memory so we cannot work with infinite sequences of data. Motivated by that we state the 
-next definition.
+In practice we are limited by finite computer memory so it is not possible work with infinite sequences of data like the trajectories defined above, so we
+need to take a snippet of the trajectory relevant to us. Motivated by that we state the next definition.
 
 \clearpage
 \begin{definition}
@@ -318,10 +318,12 @@ next definition.
 
 \subsection{The Concepts of Contollability and Observability}
 
-In this section the concepts of controllability and observability will be defined. Since, the LTI system \eqref{eq:lti} was defined
-classically it will be continued for these definitions. However, while the definitions of controllability/observability in classical 
-and behavioural approach are almost equivalent, there is an assumption when equating those definitions with ones given in the behavioural
-approach. 
+In this section the concepts of controllability and observability will be defined. Since, we defined the LTI system \eqref{eq:lti} 
+classically the same will follow for the next definitions. However, although the classical and behavioral notions of controllability 
+and observability are closely related, they are not identified unconditionally. Their equivalence depends on how the behavior is represented. 
+In particular, when considering input-output behavior, equivalence with the classical state-space definitions typically requires a minimal realization; 
+for the full input-state-output behavior, the correspondence is more direct. We will not bother with those comparisons between approaches, more on that 
+topic can be found at (TODO: link za clanak/knjigu).
 
 \begin{definition}
     A discrete LTI system \eqref{eq:lti} is called controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
@@ -332,7 +334,7 @@ approach.
 
 In lays terms, it is telling that any state of the system can be reached in finite time by applying finitely many inputs. 
 
-Now the famous result for testing controllability will be stated. The pair $(A, B)$ is the pair of matrices from \eqref{eq:lti} and n is
+We will now state the famous result for testing system controllability stated and proven by Rudolf. E. Kalman. The pair $(A, B)$ is the pair of matrices from \eqref{eq:lti} and n is
 the true state space dimension of the system.
 
 \begin{theorem}(Kalman controllability theorem)
@@ -360,7 +362,6 @@ Now the test for determining observability will be stated.
     is of full rank.
     \label{thm:obsv}
 \end{theorem}
-\clearpage
 
 The Kalman criteria for controllability/observability were stated but, there are more different equivalent
 statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests.
@@ -408,6 +409,9 @@ a mirror image of a Toeplitz matrix.
 \end{definition}
 
 \clearpage
+
+Generally, we stack input and output Hankel matrices to obtain a single matrix used for computation:
+\[\begin{bmatrix} H_{L}(u(t)) \\ H_{L}(y(t)) \end{bmatrix} \in M_{{R})\(m+p)L \times (T-L+1)}}(\mathbb{R})\]
 
 Now precise definition of persistently exciting input is given.
 
