@@ -289,16 +289,20 @@ given $N \geq n$. The concept of a system trajectory is defined now.
 \begin{definition}
     A sequence of ordered triples \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) is called an input-state-output trajectory
     if 
+
     \[ \begin{bmatrix} x(t+1) \\ y(t) \end{bmatrix} = \begin{bmatrix} A & B \\ C & D  \end{bmatrix} 
-    \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}\] 
+    \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}\]
+
 \end{definition}
 
 We can be deduce that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
 trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
 That space is called the \textit{behaviour} of the system.
  
-Additionally, from time invariance \eqref{eq:lti} it can be deduced that: \\
-\[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]\\
+Additionally, from time invariance \eqref{eq:lti} it can be deduced that:
+
+\[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]
+
 is an input-state-output trajectory for all \(\tau \in \mathbb{N}\)
 \begin{definition}
     A sequence of ordered pairs \(\left( u(t), y(t) \right)_{t=0}^{\infty}\) is called an input-output trajectory if 
@@ -380,15 +384,18 @@ it means a rich and diverse enough input such that all modes of the system are e
 
 \subsection*{Hankel Matrices}
 For a sequence of vectors from time $t = i$ to $t = j$ we use the following vector notation:
+
 \[s_{[i, j]} = \begin{bmatrix} s(i) \\ s(i+1) \\ \vdots \\ s(j) \end{bmatrix}\]
 
-Where instead of vector $s$ we will use inputs($u$), states($x$) and outputs($y$). \\ \\
+Where instead of vector $s$ we will use inputs($u$), states($x$) and outputs($y$).
+
 Hankel matrix is a matrix whose entries are constant on the anti-diagonals, contrast to
 Toeplitz matrix whose entries are constant on the diagonals. Informally, Hankel matrix is
-a mirror image of a Toeplitz matrix. 
+a mirror image of a Toeplitz matrix.
+
 
 \begin{definition}
-    Given an $T \in \mathbb{N}$, lets consider a restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\) of \eqref{eq:lti}. Hankel matrices
+    Given an $T \in \mathbb{N}$, lets consider a restricted input-output trajectory \((u_{[0, T-1]},\allowbreak y_{[0, T-1]})\) of \eqref{eq:lti}. Hankel matrices
     of depth $L \in \{1, ..., T\}$ of these inputs and outputs are given by:
 
     \[H_{L}(u_{[0, T-1]}) = 
@@ -406,20 +413,30 @@ a mirror image of a Toeplitz matrix.
     \vdots & \vdots &  & \vdots \\
     y(L-1) & y(L) & \cdots & y(T-1)
     \end{bmatrix}\]
+
+    \label{def:hankel}
 \end{definition}
 
 \clearpage
 
-Generally, we stack input and output Hankel matrices to obtain a single matrix used for computation:
+Generally, we stack input and output Hankel matrices to obtain a single block Hankel matrix used for computation:
 \[\begin{bmatrix} H_{L}(u(t)) \\ H_{L}(y(t)) \end{bmatrix} \in M_{(m+p)L \times (T-L+1)}(\mathbb{R}) \]
 
-Now precise definition of persistently exciting input is given.
+It is now obvious that every column of the matrices from  \eqref{def:hankel} is a restricted input or output trajectory, depending on 
+which matrix is chosen.
+
+Now a precise definition of persistently exciting input is given.
 
 \begin{definition}
     Given an sequence of inputs $u_{[0, T-1]}$ and \(k \in \{1, ..., T\}\). We say that
     the given sequence of inputs is persistently exciting of order k if the Hankel matrix 
     $H_{k}(u_{[0, T-1]})$ is of full row rank.
 \end{definition}
+
+We have layed out all the necessary definitions and theorems needed for the statement of the main topic of this 
+thesis, the Lemma.
+
+
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.

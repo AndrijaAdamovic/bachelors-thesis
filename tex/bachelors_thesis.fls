@@ -2,7 +2,7 @@ PWD /home/andrija/bachelors-thesis/tex
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/andrija/bachelors-thesis/tex/bachelors_thesis.tex
+INPUT bachelors_thesis.tex
 OUTPUT bachelors_thesis.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
