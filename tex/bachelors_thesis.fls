@@ -149,6 +149,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/theoremref/theoremref.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/theoremref/theoremref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/arydshln/arydshln.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/arydshln/arydshln.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -258,6 +260,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out
@@ -265,6 +274,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb

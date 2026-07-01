@@ -26,6 +26,8 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{theoremref}
+\usepackage{arydshln}
+
 
 \hypersetup{
     colorlinks=true,
@@ -420,7 +422,7 @@ a mirror image of a Toeplitz matrix.
 \clearpage
 
 Generally, we stack input and output Hankel matrices to obtain a single block Hankel matrix used for computation:
-\[\begin{bmatrix} H_{L}(u(t)) \\ H_{L}(y(t)) \end{bmatrix} \in M_{(m+p)L \times (T-L+1)}(\mathbb{R}) \]
+\[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} \in M_{(m+p)L \times (T-L+1)}(\mathbb{R}) \]
 
 It is now obvious that every column of the matrices from  \eqref{def:hankel} is a restricted input or output trajectory, depending on 
 which matrix is chosen.
@@ -438,6 +440,48 @@ thesis, the Lemma.
 
 \section{The Lemma}
 
+The main result of the Lemma is that every restricted trajectory of length $L$ of the system can be obtained by linear combination
+of finitely many trajectories which span the whole trajectory space i.e. the behaviour.
+
+\begin{theorem} (Willems' Fundamental Lemma) Given a LTI system \eqref{eq:lti}, assume the pair $(A, B)$ is controllable and let \((u_{[0, T-1]}, y_{[0, T-1]}), \ T \in \mathbb{N}\)
+be it's restricted input-output trajectory. Let \( L \in \{1, ..., T\}\), if the input $u_{[0, T-1]}$ is persistently exciting of order $N + L$ then:
+\((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) is a restricted input-output trajectory of \eqref{eq:lti} if and only if
+\[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
+for some $g \in \mathbb{R}^{T-L+1}.$
+\end{theorem}
+
+\begin{proof}
+    Solving the difference equations of \eqref{eq:lti} we obtain the following result:
+    \[y(t) = CA^{t}x(0) + \left(\sum_{k=0}^{t-1}CA^{t - k - 1}Bu(k)\right) + Du(t)\]
+    where $x(0) \in \mathbb{R}^n$ is the initial state. Generally, this could be adapted to any initial state $x_{ini} = x(t_{ini})$ using the time-invariance of the system. Now for the input-output
+    trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we can write the result from above in matrix notation like this:
+    \[ 
+    \begin{bmatrix} \bar{y}(0) \\ \bar{y}(1) \\ \bar{y}(2) \\ \vdots \\ \bar{y}(L-1)\end{bmatrix} = 
+    \underbrace{\begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{L-1} \end{bmatrix}}_\text{$\Omega_L$}x(0) +
+    \underbrace{\begin{bmatrix} D \\ CB & D \\ CAB & CB & D \\ \vdots & \ddots & \ddots & \ddots \\ CA^{L-2}B & \dots & \dots & \dots & D\end{bmatrix}}_\text{$\Theta_L$}
+    \begin{bmatrix} \bar{u}(0) \\ \bar{u}(1) \\ \bar{u}(2) \\ \vdots \\ \bar{u}(L-1)\end{bmatrix}
+    \]
+    \clearpage
+    Matrix  $\Omega_L$ is the classical observability matrix and  $\Theta_L$ is the block Toeplitz matrix of, so called, Markov parameters. Now we can reformulate the last expression
+    like this:
+
+    \begin{equation}
+        \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]}\end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix}x_{ini} \\ \bar{u}_{[0, L-1]} \end{bmatrix}
+        \label{eq:io}
+    \end{equation}
+
+    Since on the left side is a general input-output trajectory of length $L$ (assuming time-invariance), we conclude that the space of all such trajectories is spanned by the columns of the 
+    \(\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \) i.e. that space is the image of that matrix. It can be simply shown by rank-nullity theorem that:
+    \[\mbox{rank} \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = dim \ im \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = \mbox{rank}(\Omega_L) + mL \]
+    The columns of the Hankel matrix \(\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix}\) are input-output trajectories so we conclude that:
+    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subseteq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
+    To prove the Lemma we need to prove the equality of those spaces. We assume the strict inclusion:
+    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subsetneq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
+    The expression \eqref{eq:io} can be used to formulate an analog expression using Hankel matrices like this:
+    \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
+    By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank. That implies that the left kernel of $J_L$ is non-trivial
+
+\end{proof}
 
 
 % \chapter{Conclusion}

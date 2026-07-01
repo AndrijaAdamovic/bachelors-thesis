@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  29 JUN 2026 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  1 JUL 2026 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,38 +477,61 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/theoremref/theoremref.sty
 Package: theoremref 2013/05/22 References with automatic theorem names
 \thmref@num=\count327
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2019/02/21 v1.76 
+\dashlinedash=\dimen264
+\dashlinegap=\dimen265
+\adl@box=\box60
+\adl@height=\dimen266
+\adl@heightsave=\dimen267
+\adl@depth=\dimen268
+\adl@depthsave=\dimen269
+\adl@finaldepth=\dimen270
+\adl@columns=\count328
+\adl@ncol=\count329
+\adl@currentcolumn=\count330
+\adl@currentcolumnsave=\count331
+\adl@totalheight=\count332
+\adl@totalheightsave=\count333
+\adl@dash=\count334
+\adl@gap=\count335
+\adl@cla=\count336
+\adl@clb=\count337
+\adl@everyvbox=\toks38
+\adl@LTpagetotal=\dimen271
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 38.
-Package hyperref Info: Option `pageanchor' set `false' on input line 38.
-\c@definition=\count328
-\c@theorem=\count329
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 118.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
+==> First Aid for arydshln.sty applied!
+Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+Package hyperref Info: Option `pageanchor' set `false' on input line 40.
+\c@definition=\count338
+\c@theorem=\count339
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 120.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count330
+\l__color_backend_stack_int=\count340
 ) (./bachelors_thesis.aux)
 \openout1 = `bachelors_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -549,17 +572,17 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
-\scratchdimen=\dimen264
-\scratchbox=\box60
-\nofMPsegments=\count332
-\nofMParguments=\count333
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count334
-\MPscratchDim=\dimen265
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count341
+\scratchdimen=\dimen272
+\scratchbox=\box61
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count344
+\MPscratchDim=\dimen273
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
+\everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -574,7 +597,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 118.
+Package hyperref Info: Link coloring ON on input line 120.
  (./bachelors_thesis.out) (./bachelors_thesis.out)
 \@outlinefile=\write3
 \openout3 = `bachelors_thesis.out'.
@@ -587,34 +610,34 @@ Package hyperref Info: Link coloring ON on input line 118.
 <assignment.pdf, id=89, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf>
-Package pdftex.def Info: assignment.pdf  used on input line 195.
+Package pdftex.def Info: assignment.pdf  used on input line 197.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
 <assignment.pdf, id=91, page=1, 596.52861pt x 843.66193pt>
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 197.
 (pdftex.def)             Requested size: 597.50787pt x 845.07591pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 197.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 197.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 197.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: assignment.pdf Graphic file (type pdf)
 <use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 195.
+Package pdftex.def Info: assignment.pdf , page1 used on input line 197.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
  [2
 
 
  <./assignment.pdf>]
-Package hyperref Info: Option `pageanchor' set `true' on input line 200.
+Package hyperref Info: Option `pageanchor' set `true' on input line 202.
  (./bachelors_thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -688,9 +711,11 @@ Chapter 2.
 
 ] [6
 
+] [7
+
 ]
 Appendix A.
-[7
+[8
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -701,18 +726,18 @@ Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2726B575758C4096C4CFD650F3E1E3F7;2482.
  ) 
 Here is how much of TeX's memory you used:
- 15570 strings out of 467533
- 247930 string characters out of 5419495
- 682161 words of memory out of 5000000
- 44198 multiletter control sequences out of 15000+600000
- 684963 words of font info for 72 fonts, out of 8000000 for 9000
+ 15801 strings out of 467533
+ 251182 string characters out of 5419495
+ 695831 words of memory out of 5000000
+ 44415 multiletter control sequences out of 15000+600000
+ 694942 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,90p,588b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (18 pages, 965494 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bachelors_thesis.pdf (19 pages, 978107 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
  160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
