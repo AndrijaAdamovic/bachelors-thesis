@@ -452,7 +452,9 @@ for some $g \in \mathbb{R}^{T-L+1}.$
 
 \begin{proof}
     Solving the difference equations of \eqref{eq:lti} we obtain the following result:
-    \[y(t) = CA^{t}x(0) + \left(\sum_{k=0}^{t-1}CA^{t - k - 1}Bu(k)\right) + Du(t)\]
+    \begin{equation}
+        y(t) = CA^{t}x(0) + \left(\sum_{k=0}^{t-1}CA^{t - k - 1}Bu(k)\right) + Du(t)
+    \end{equation}
     where $x(0) \in \mathbb{R}^n$ is the initial state. Generally, this could be adapted to any initial state $x_{ini} = x(t_{ini})$ using the time-invariance of the system. Now for the input-output
     trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we can write the result from above in matrix notation like this:
     \[ 
@@ -479,9 +481,56 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subsetneq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
     The expression \eqref{eq:io} can be used to formulate an analog expression using Hankel matrices like this:
     \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
-    By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank. That implies that the left kernel of $J_L$ is non-trivial
+    Where \(X_{[0, T-L]} := [x(0) \ x(1) \ ... \ x(T-L)]\).
+    By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank. That implies that the left kernel of $J_L$ is non-trivial, in other words,
+    there exists a non-zero vector \(v = (a^T, b_{0}^T, b_{1}^T, ... , b_{L-1}^T), \ a\in\mathbb{R}^n, \ b_{i} \ \in\mathbb{R}^{mL}\) such that \(vJ_L = 0\). Expanding we get:
+    \begin{equation}a^{T}x(t) + \sum_{k=0}^{L-1}b_{k}^Tu(t+k) = 0, \ \ \forall t \in \{0, 1, ..., T-L\} \label{eq:p0}\end{equation} Shifting the above equation by an arbitray $j\in\mathbb{N}$ and solving the difference equations of \eqref{eq:lti} for the shifted state
+    (similar to \eqref{eq:io}) we obtain:
+    \begin{equation}
+        a^{T}A^{j}x(t) +  \sum_{i=0}^{j-1}a^{T}A^{j-i-1}Bu(t+i) + \sum_{k=0}^{L-1}b_{k}^{T}u(t+k+j) = 0
+        \label{eq:p1}
+    \end{equation}
+    We want to get rid of the state $x(t)$, the easiest way to do it is to leverge the Cayley-Hamilton theorem which states that matrix A satisfies it's characteristic polynomial 
+    \(p(\lambda) = \lambda^n + \alpha_{n-1}\lambda^{n-1} + ... + \alpha_1\lambda + \alpha_0\);
+    \[p(A) = A^n + \alpha_{n-1}A^{n-1} + ... + \alpha_1A + \alpha_0I = 0 \]
+    \clearpage
+    Now, if we take $n+1$ copies of equation \eqref{eq:p1} for each $j = 0, 1, ..., n$, and multiply each one with its corresponding $\alpha_j$ and and sum them all, the terms with $x(t)$ cancel
+    as a result of C-H theorem. Now we get the following expression with only the inputs:
+    \begin{equation}
+        \sum_{l=0}^{n+L-1}\beta_{l}u(t+l) = 0, \ \ \forall t \in \{0, 1, ..., T-L\}
+        \label{eq:beta}
+    \end{equation}
 
+    The expression for $\beta_l$ can be computed by equating terms with the sum in which C-H was used and the result is:
+    \begin{equation}
+        \beta_l = \sum_{j = max(0, l-L+1)}^{min(n, l)}\alpha_{j}b_{l-j}^T + a^T\sum_{j = l+1}^{n}\alpha_{j}A^{j-l-1}B
+        \label{eq:beta2}
+    \end{equation} 
+
+
+    Equation \eqref{eq:beta}, by the definition of a Hankel matrix, can be rewritten as:    
+    \[\begin{bmatrix} \beta_0 & \beta_1 & \dots & \beta_{n+L-1}\end{bmatrix}H_{n+L}(u_{[0, T-1]}) = 0\]
+    Since, $u_{[0, T-1]}$ is persistently exciting of order $N+L$, and $N \geq n$, it is clear that $H_{n+L}(u_{[0, T-1]})$ is of full row rank so we conclude that:
+    \[\beta_0 = \beta_1 = ... = \beta_{n+L-1} = 0\]
+
+    From \eqref{eq:beta2} if $l\geq n$ the right sum is empty so \(\beta_n, ..., \beta_{n+L-1}\) depend only on $b_k$-s. Now we get:
+    \[\beta_{n+L-1} = \alpha_{n}b_{L-1}^T \underbrace{=}_\text{$\alpha_n = 1$} b_{L-1}^T = 0 \]
+    \[\beta_{n+L-2} = b_{L-2}^T + \alpha_{n-2}b_{L-1}^T = b_{L-2}^T = 0 \]
+    continuing until $l = n$ we get \(b_0 = b_1 = ... = b_{L-1} = 0\) so the left sum of \eqref{eq:beta2} is 0 and thus for $l \leq n$ the right sum remains. Now:
+    \[\beta_{n-1} = \alpha_{n}a^{T}B = a^{T}B = 0\]
+    \[\beta_{n-2} = a^{T}(AB + \alpha_{n-1}B) = a^{T}AB + a^{T}\alpha_{n-1}B \implies a^{T}AB = 0\]
+    continuing until $l = 0$ we obtain the following result:
+    \[a^{T}\underbrace{\begin{bmatrix} B & AB & \dots & A^{n-1}B \end{bmatrix}}_\text{$\mathcal{C}$} = 0\]
+    Since (A, B) is controllable then $\mathcal{C}$ is of full rank, and thus \(a = 0 \implies v = 0\). Which contradicts our assumption. Thus:
+    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} = im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
+    Which means there exists a $g\in\mathbb{R}^{T-L+1}$ such that for any restricted input-output trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we have:
+    \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
 \end{proof}
+
+\clearpage
+
+Technically, the proof above is just the ($\implies$) direction, however, since each column of the stacked Hankel matrix is an restricted input-output trajectory the 
+($\impliedby$) direction follows directly from that.
 
 
 % \chapter{Conclusion}

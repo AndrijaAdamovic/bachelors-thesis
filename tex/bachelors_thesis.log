@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  1 JUL 2026 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  2 JUL 2026 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,9 +713,13 @@ Chapter 2.
 
 ] [7
 
+] [8
+
+] [9
+
 ]
 Appendix A.
-[8
+[10
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -726,18 +730,18 @@ Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2726B575758C4096C4CFD650F3E1E3F7;2482.
  ) 
 Here is how much of TeX's memory you used:
- 15801 strings out of 467533
- 251182 string characters out of 5419495
- 695831 words of memory out of 5000000
- 44415 multiletter control sequences out of 15000+600000
+ 15812 strings out of 467533
+ 251288 string characters out of 5419495
+ 699831 words of memory out of 5000000
+ 44419 multiletter control sequences out of 15000+600000
  694942 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,90p,588b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (19 pages, 978107 bytes).
+Output written on bachelors_thesis.pdf (21 pages, 988178 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 287 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
  160 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,5 +15,5 @@
 \contentsline {subsection}{\numberline {2.1.2}The Concepts of Contollability and Observability}{3}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Persistency of Excitation}{4}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}The Lemma}{5}{section.2.2}%
-\contentsline {chapter}{References}{7}{chapter*.8}%
-\contentsline {chapter}{\numberline {A}Additional Material}{8}{appendix.A}%
+\contentsline {chapter}{References}{9}{chapter*.8}%
+\contentsline {chapter}{\numberline {A}Additional Material}{10}{appendix.A}%
