@@ -28,6 +28,7 @@
 \usepackage{theoremref}
 \usepackage{arydshln}
 \usepackage{tikz}
+\usepackage{svg}
 
 \hypersetup{
     colorlinks=true,
@@ -552,11 +553,14 @@ In this chapter we will demonstrate the Fundamental Lemma on concrete linear sys
 for the Hankel matrices and then use them to verify for a random trajectory that it lies in the image of the Hankel matrix. For this we use MATLAB because it is
 easier to work with its Control System Toolbox for system simulation. TODO:text
 
-\subsection{Simple SISO System}
+\section{Simple SISO System}
 
 Consider a discrete time LTI system \eqref{eq:lti} with state space matrices:
-\[A = \begin{bmatrix} 0.5 & 0.1 & 0.1 \\ 0.1 & 0.4 & 0.2 \\ -0.1 & 0.2 & 0.3\end{bmatrix}, \ B = \begin{bmatrix} -1 \\ 0.1 \\ 0.7\end{bmatrix}\]
-\[C = \begin{bmatrix} 0.1 & 2 & 1.5\end{bmatrix}, \ D = \begin{bmatrix} 0 \end{bmatrix}\]
+\begin{alignat}{2}
+    A &= \begin{bmatrix} 0.5 & 0.1 & 0.1 \\ 0.1 & 0.4 & 0.2 \\ -0.1 & 0.2 & 0.3\end{bmatrix} \ & B &= \begin{bmatrix} -1 \\ 0.1 \\ 0.7\end{bmatrix} \\
+    C &= \begin{bmatrix} 0.1 & 2 & 1.5\end{bmatrix}  \ & D &= \begin{bmatrix} 0 \end{bmatrix}
+\end{alignat}
+
 
 Clearly \(n=3, m=p=1\) and the eigenvalues of A are \{0.5834, 0.4657, 0.1509\} which all have their absolute value less then 1 which means the system is stable. Also 
 the controllability and observability matrix have a non-zero determinant to the system is both controllable and observable, which means, it is suitable for the Fundamental Lemma. For 
@@ -578,11 +582,65 @@ get result in MATLAB:
 The norm is not exactly 0 but it is really close, the small error arises from truncation of real numbers due to floating point arithmetic, so we can assume the result is valid. Our reconstructed trajectory is found in the image
 of the Hankel matrix created from recorded data.
 
-\subsection{Mechanical MIMO System}
+\section{Mechanical MIMO System}
 
-In this example we will demonstrate the Lemma on a concrete mechanical system. We will show, like in the last example, that we can reconstruct a trajectory from previously recorded data.
+In this example we will demonstrate the Lemma on a concrete mechanical system. We will show, like in the last example, that we can reconstruct a trajectory from previously recorded data. TODO: Finish drawing
 
+\begin{figure}[ht]
+    \centering
+    \input{figures/double_spring_mass_damper.tex}
+    \caption{Double spring--mass--damper system with force input acting on second mass.}
+    \label{fig:double-spring-mass-damper}
+\end{figure}
 
+The states of the system are positions and velocities of each mass, the input is a force on the second mass. We chose the output to be a vector of positions of both mass thus this is a MIMO system. Using mechanical equilibrium equations we can get a system of coupled linear differential equations
+which can be represented as a continuous LTI system like this:
+\begin{align*}
+    \dot{x}(t) &= Ax(t) + Bu(t) \\
+    y(t) &= Cx(t) + Du(t)
+\end{align*}
+
+Where:
+
+\begin{alignat}{2}
+    A &= \begin{bmatrix} 
+        0 & 1 & 0 & 0 \\ -\frac{k_1+k_2}{m_1} & -\frac{c_1+c_2}{m_1} & -\frac{k_2}{m_1} & -\frac{c_2}{m_1} \\ 
+        0 & 0 & 0 & 1 \\ \frac{k_2}{m_2} & \frac{c_2}{m_2} & -\frac{k_2}{m_2} & -\frac{c_2}{m_2}
+    \end{bmatrix} \ \ & B &= \begin{bmatrix}0 \\ 0 \\ 0 \\ \frac{1}{m_2}\end{bmatrix} \\
+    C &= \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix}  & D &= \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\end{alignat}
+
+This is a continuos state-space model but we need a discrete model so we need to discretize this. There are many ways of discretizing the continuous model, we will derive the discrete version matrices
+$A_d, B_d, C_d, D_d$ using zero order hold (ZOH). Assume sampling period $T_s$, we chose $T_s = 10^{-2}s$. Now we will begin from the solution of the general continuous state space system:
+
+\[x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau\]
+
+\clearpage
+
+Let \(k \in \mathbb{Z}_{\geq 0}\) and \(t_0 = kT_s, \ t = (k+1)T_s\). Define \(x_k:=x(kT_s), \ u_k:=u(kT_s)\). Now we have:
+\[x_{k+1} = e^{AT_s}x_k + \int_{kT_s}^{(k+1)T_s}e^{A[(k+1)T_s - \tau]}Bu(\tau)d\tau\]
+
+Now assume \(u(\tau) = u(kT_s) = u_k = const. \ \forall \tau \in (kT_s, (k+1)T_s), \ \forall k \in \mathbb{Z}_{\geq 0}\). This is the ZOH, we assume the input is constant between sampling. After a change of variables
+for integration we arrive at this result since B and $u_k$ are constants they can go outside the integral. 
+\begin{align*}
+    x_{k+1} &= e^{AT_s}x_k + \left(\int_{0}^{T_s}e^{Az}dz\right)Bu_k \\
+    y_k &= Cx_k + Du_k
+\end{align*}
+
+We can now see that this is essentially \eqref{eq:lti} but where:
+\[A_d = e^{AT_s}, \ B_d = \left(\int_{0}^{T_s}e^{Az}dz\right)B, \ C_d = C, \ D_d = D\]
+
+This was a general derivation, in MATLAB we use the function \textit{c2d} to convert the system from continuos to discrete time. Now we can see that $n=4, \ m=1, \ p=2$. The initial trajectory we recorded
+is 30 seconds long in MATLAB this was converted to number of samples with \textit{T = round(30/Ts)}. The length of reconstructed trajectories $L$ is 12 seconds. We set $N=n$ because the systems has four 
+energy tanks. For the input, instead of a random sequence of real numbers between 0 and 1, we use a pseudo-random binary sequence (PRBS) - a binary signal which jumps randomly between +1 and -1, we multiply
+that signal with a positive real number (amplitude) and feed it through a low-pass filter to make it a bit smoother and more realistic.
+
+\begin{figure}[ht]
+    \centering
+    % \includesvg[width=0.8\textwidth]{figures/PRBS.svg}
+    \caption{Low-pass filtered PRBS input signal}
+    \label{fig:prbs}
+\end{figure}
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.

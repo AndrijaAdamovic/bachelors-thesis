@@ -1,0 +1,89 @@
+\begin{tikzpicture}[
+    x=1cm,
+    y=1cm,
+    >=stealth,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\small}
+]
+    \newcommand{\masswidth}{1.8}
+    \newcommand{\massheight}{1.0}
+    \newcommand{\groundy}{-0.55}
+    \newcommand{\wheely}{-0.28}
+
+    \newcommand{\ground}[2]{%
+        \draw[thick] (#1,\groundy) -- (#2,\groundy);
+        \foreach \x in {0.25,0.65,...,9.85} {
+            \draw (\x,\groundy) -- ++(-0.22,-0.22);
+        }
+    }
+
+    \newcommand{\wall}[2]{%
+        \draw[thick] (#1,\groundy) -- (#1,#2);
+        \foreach \y in {-0.35,0.00,...,2.95} {
+            \draw (#1,\y) -- ++(-0.20,-0.24);
+        }
+    }
+
+    \newcommand{\spring}[4]{%
+        \draw (#1,#2)
+            -- ++(0.16,0.18) -- ++(0.26,-0.36)
+            -- ++(0.26,0.36) -- ++(0.26,-0.36)
+            -- ++(0.26,0.36) -- ++(0.26,-0.36)
+            -- ++(0.26,0.36) -- ++(0.26,-0.36)
+            -- ++(0.16,0.18) -- (#3,#4);
+    }
+
+    \newcommand{\damper}[4]{%
+        \draw (#1,#2) -- ++(0.78,0);
+        \draw ({#1+0.78},{#2-0.30}) -- ++(0,0.60);
+        \draw ({#1+0.78},{#2-0.30}) -- ++(0.55,0)
+            -- ++(0,0.60) -- ++(-0.55,0);
+        \draw ({#1+1.33},#2) -- (#3,#4);
+    }
+
+    % Fixed wall and sliding ground.
+    \wall{0}{3.1}
+    \ground{0}{10.1}
+
+    % Mass carts.
+    \draw[thick] (2.7, -0.2) rectangle ++(\masswidth,\massheight);
+    \node at (3.6,0.28) {$m_1$};
+
+    \foreach \x in {3.05,4.15,6.90,7.95} {
+        \draw[thick] (\x,\wheely) circle (0.2);
+    }
+
+    % \draw[thick] (6.55,0) rectangle ++(\masswidth,\massheight);
+    % \node at (7.45,0.48) {$m_2$};
+
+    % % Wall-to-mass elements.
+    % \draw (0,0.65) -- (0.35,0.65);
+    % \spring{0.35}{0.65}{2.70}{0.65}
+    % \node[above] at (1.35,0.88) {$k_1$};
+
+    % \draw (0,0.08) -- (0.75,0.08);
+    % \damper{0.75}{0.08}{2.70}{0.08}
+    % \node[below] at (1.55,-0.10) {$c_1$};
+
+    % % Coupling elements between the masses.
+    % \spring{4.50}{0.76}{6.55}{0.76}
+    % \node[above] at (5.52,1.00) {$k_2$};
+
+    % \damper{4.50}{0.22}{6.55}{0.22}
+    % \node[below] at (5.55,0.03) {$c_2$};
+
+    % % Reference markers and positive motion directions.
+    % \draw[dashed] (3.48,1.0) -- (3.48,2.55);
+    % \draw[->] (3.48,2.30) -- (4.08,2.30)
+    %     node[right] {$x_1,\dot{x}_1$};
+
+    % \draw[dashed] (7.08,1.0) -- (7.08,2.75);
+    % \draw[->] (7.08,2.48) -- (7.68,2.48)
+    %     node[right] {$x_2,\dot{x}_2$};
+
+    % % External input on the second cart.
+    % \fill (8.35,0.48) circle (0.04);
+    % \draw[->, thick] (8.35,0.48) -- (9.45,0.48)
+    %     node[right] {$u(t)$};
+\end{tikzpicture}
