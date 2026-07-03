@@ -45,11 +45,29 @@ fprintf("||step_traj - reconstructed_traj|| = %d \n", norm(step_trajectory - rec
 recon_u_step = recon_step_trajectory(1:length(u_step));
 recon_y_step = reshape(recon_step_trajectory(length(u_step)+1:end), 2, []).';
 
-
-plot((1:L), y_step(:, 1), 'LineWidth', 2.0);
-hold on;
-plot((1:L), recon_y_step(:, 1), 'LineStyle', '--', 'LineWidth', 2.0);
-hold off;
+% ax1 = subplot(2, 1, 1);
+% plot((1:L)*Ts, y_step(:, 1), 'LineWidth', 2.0, "Color", [1 0 0]);
+% hold on;
+% plot((1:L)*Ts, recon_y_step(:, 1), 'LineStyle', '--', 'LineWidth', 2.0, "Color", [0 0 1]);
+% hold off;
+% legend("Original trajectory", "Reconstructed trajectory");
+% grid on;
+% ylabel("Mass 1 position [mm]");
+% ax1.YAxis.Exponent = -3;
+% ax1.FontSize = 16;
+% 
+% 
+% ax2 = subplot(2, 1, 2);
+% plot((1:L)*Ts, y_step(:, 2), 'LineWidth', 2.0, "Color", [1 0 0]);
+% hold on;
+% plot((1:L)*Ts, recon_y_step(:, 2), 'LineStyle', '--', 'LineWidth', 2.0, "Color", [0 0 1]);
+% hold off;
+% legend("Original trajectory", "Reconstructed trajectory");
+% grid on;
+% ylabel("Mass 2 position [mm]");
+% ax2.YAxis.Exponent = -3;
+% xlabel("Time [s]"); 
+% ax2.FontSize = 16;
 
 % PRBS reconstruction
 u_prbs = generate_filtered_prbs(Ts, L * Ts, 4, 10, 0.02); 
@@ -66,7 +84,26 @@ fprintf("||prbs_traj - reconstructed_traj|| = %d \n", norm(prbs_trajectory - rec
 recon_u_prbs = recon_prbs_trajectory(1:length(u_prbs));
 recon_y_prbs = reshape(recon_prbs_trajectory(length(u_prbs)+1:end), 2, []).';
 
-plot((1:L), y_prbs(:, 2), 'LineWidth', 2.0);
+ax1 = subplot(2, 1, 1);
+plot((1:L)*Ts, y_prbs(:, 1), 'LineWidth', 2.0, "Color", [1 0 0]);
 hold on;
-plot((1:L), recon_y_prbs(:, 2), 'LineStyle', '--', 'LineWidth', 2.0);
+plot((1:L)*Ts, recon_y_prbs(:, 1), 'LineStyle', '--', 'LineWidth', 2.0, "Color", [0 0 1]);
 hold off;
+legend("Original trajectory", "Reconstructed trajectory");
+grid on;
+ylabel("Mass 1 position [mm]");
+ax1.YAxis.Exponent = -3;
+ax1.FontSize = 16;
+
+
+ax2 = subplot(2, 1, 2);
+plot((1:L)*Ts, y_prbs(:, 2), 'LineWidth', 2.0, "Color", [1 0 0]);
+hold on;
+plot((1:L)*Ts, recon_y_prbs(:, 2), 'LineStyle', '--', 'LineWidth', 2.0, "Color", [0 0 1]);
+hold off;
+legend("Original trajectory", "Reconstructed trajectory");
+grid on;
+ylabel("Mass 2 position [mm]");
+ax2.YAxis.Exponent = -3;
+xlabel("Time [s]"); 
+ax2.FontSize = 16;

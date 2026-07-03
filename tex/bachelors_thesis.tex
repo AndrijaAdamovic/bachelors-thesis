@@ -28,7 +28,7 @@
 \usepackage{theoremref}
 \usepackage{arydshln}
 \usepackage{tikz}
-\usepackage{svg}
+\usepackage{subcaption}
 
 \hypersetup{
     colorlinks=true,
@@ -505,9 +505,9 @@ for some $g \in \mathbb{R}^{T-L+1}.$
         \label{eq:beta}
     \end{equation}
 
-    The expression for $\beta_l$ can be computed by equating terms with the sum in which C-H was used and the result is:
+    The expression for $\beta_l$-s can be computed by equating terms with the sum in which C-H was used and the result is:
     \begin{equation}
-        \beta_l = \sum_{j = max(0, l-L+1)}^{min(n, l)}\alpha_{j}b_{l-j}^T + a^T\sum_{j = l+1}^{n}\alpha_{j}A^{j-l-1}B
+        \beta_l := \sum_{j = max(0, l-L+1)}^{min(n, l)}\alpha_{j}b_{l-j}^T + a^T\sum_{j = l+1}^{n}\alpha_{j}A^{j-l-1}B
         \label{eq:beta2}
     \end{equation} 
 
@@ -571,12 +571,17 @@ Now we generate a new random input-output trajectory of the system \((\bar{u}_{[
 as a least-squares problem since the Hankel matrix is generally not square and the system of equations is underdetermined (fewer rows than columns). The objective for a minimization problem is the following:
 \begin{equation}
     \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}}_{2}^{2}
+    \label{eq:gmin}
 \end{equation}
 
 In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} rather than \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
 both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
 get result in MATLAB:
-\[\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} < 10^{-10}\]
+\begin{equation}
+\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} < 10^{-10}
+\label{eq:norm}
+\end{equation}
+
 \clearpage
 
 The norm is not exactly 0 but it is really close, the small error arises from truncation of real numbers due to floating point arithmetic, so we can assume the result is valid. Our reconstructed trajectory is found in the image
@@ -631,16 +636,50 @@ We can now see that this is essentially \eqref{eq:lti} but where:
 \[A_d = e^{AT_s}, \ B_d = \left(\int_{0}^{T_s}e^{Az}dz\right)B, \ C_d = C, \ D_d = D\]
 
 This was a general derivation, in MATLAB we use the function \textit{c2d} to convert the system from continuos to discrete time. Now we can see that $n=4, \ m=1, \ p=2$. The initial trajectory we recorded
-is 30 seconds long in MATLAB this was converted to number of samples with \textit{T = round(30/Ts)}. The length of reconstructed trajectories $L$ is 12 seconds. We set $N=n$ because the systems has four 
+is 30 seconds long, in MATLAB this was converted to number of samples with \textit{T = round(30/Ts)}. The length of reconstructed trajectories $L$ is 12 seconds. We set $N=n$ because the systems has four 
 energy tanks. For the input, instead of a random sequence of real numbers between 0 and 1, we use a pseudo-random binary sequence (PRBS) - a binary signal which jumps randomly between +1 and -1, we multiply
-that signal with a positive real number (amplitude) and feed it through a low-pass filter to make it a bit smoother and more realistic.
+that signal with a positive real number (amplitude) and feed it through a low-pass filter to make it a bit smoother and more realistic. This choice of T, L and N satisfy the \eqref{eq:length}.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
-    % \includesvg[width=0.8\textwidth]{figures/PRBS.svg}
+    \includegraphics[width=0.8\textwidth]{figures/PRBS.pdf}
     \caption{Low-pass filtered PRBS input signal}
     \label{fig:prbs}
 \end{figure}
+
+Since this type of input data has enough "randomnes" it is a good choice for a persistently exciting input. And after testing the rank condition
+for PE it was always satisfied. 
+
+\clearpage
+
+Now, as before, we input that PE signal to the system and place the recorded trajectories into the according Hankel matrix. We will test the Lemma on two inputs, first will be a step
+function and second will be a new PRBS signal. We simulate the output trajectories using the system model and solve for vector g like in \eqref{eq:gmin}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{figures/step.pdf}
+        \caption{Output trajectories for a unit step input}
+        \label{fig:step-out}
+    \end{subfigure}
+
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{figures/prbs_out.pdf}
+        \caption{Output trajectories for a PRBS input}
+        \label{fig:prbs-out}
+    \end{subfigure}
+    \caption{Comparison of original and reconstructed trajectories of the system}
+\end{figure}
+
+It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} and seeing that for both trajectories we have the norm $< 10^{-10}$.
+Thus, the Lemma holds for this example.
+
+\clearpage
+
+\chapter{Data driven simulation of LTI systems}
+
 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
