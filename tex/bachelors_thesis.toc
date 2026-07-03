@@ -15,5 +15,8 @@
 \contentsline {subsection}{\numberline {2.1.2}The Concepts of Contollability and Observability}{3}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Persistency of Excitation}{4}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}The Lemma}{5}{section.2.2}%
-\contentsline {chapter}{References}{9}{chapter*.8}%
-\contentsline {chapter}{\numberline {A}Additional Material}{10}{appendix.A}%
+\contentsline {chapter}{\numberline {3}Lemma - Numerical Examples}{9}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Simple SISO System}{9}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}Mechanical MIMO System}{10}{subsection.3.0.2}%
+\contentsline {chapter}{References}{11}{chapter*.8}%
+\contentsline {chapter}{\numberline {A}Additional Material}{12}{appendix.A}%

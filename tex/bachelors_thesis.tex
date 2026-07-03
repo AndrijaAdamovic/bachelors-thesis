@@ -27,7 +27,7 @@
 \usepackage{tocloft}
 \usepackage{theoremref}
 \usepackage{arydshln}
-
+\usepackage{tikz}
 
 \hypersetup{
     colorlinks=true,
@@ -85,6 +85,7 @@
 \newcommand{\kljucnerijeci}{klju\v{c}na rije\v{c} jedan; klju\v{c}na rije\v{c} dva}
 \addto\captionsenglish{\renewcommand{\bibname}{References}}
 
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small \authorname}
@@ -116,6 +117,8 @@
 
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 
 \begin{document}
 
@@ -530,7 +533,55 @@ for some $g \in \mathbb{R}^{T-L+1}.$
 \clearpage
 
 Technically, the proof above is just the ($\implies$) direction, however, since each column of the stacked Hankel matrix is an restricted input-output trajectory the 
-($\impliedby$) direction follows directly from that.
+($\impliedby$) direction follows directly from that. Stability of the system is not needed because the Lemma uses finite-horizon trajectories and thus doesn't require boundedness of state as $t \to \infty$, also the observability
+is not needed as it can be seen in the formulation and proof. In the proof we have also showed that the matrix:
+\[\begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
+is of full rank. Also we have made an indirect assumption regarding row rank for PE. For a matrix to have full row rank, a necessary condition is that the number of columns needs to be atleast equal to the
+number of rows, thus PE condition needs that condition fullfilled. When we impose that condition on $H_{N+L}(u_{[0, T-1]})$ we get that:
+\begin{equation}
+    T - (N + L + 1) \geq m(N+L) \iff T \geq (m+1)(N+L) - 1
+    \label{eq:length}
+\end{equation}
+
+So for PE the length of initial trajectory $T$ needs to satisfy the condition above for a given $L$. Generally, for a long enough recorded trajectory if can use the Lemma
+for shorter length trajectory. 
+
+\chapter{Lemma - Numerical Examples}
+
+In this chapter we will demonstrate the Fundamental Lemma on concrete linear systems. We will use the system model to gather the necessary data
+for the Hankel matrices and then use them to verify for a random trajectory that it lies in the image of the Hankel matrix. For this we use MATLAB because it is
+easier to work with its Control System Toolbox for system simulation. TODO:text
+
+\subsection{Simple SISO System}
+
+Consider a discrete time LTI system \eqref{eq:lti} with state space matrices:
+\[A = \begin{bmatrix} 0.5 & 0.1 & 0.1 \\ 0.1 & 0.4 & 0.2 \\ -0.1 & 0.2 & 0.3\end{bmatrix}, \ B = \begin{bmatrix} -1 \\ 0.1 \\ 0.7\end{bmatrix}\]
+\[C = \begin{bmatrix} 0.1 & 2 & 1.5\end{bmatrix}, \ D = \begin{bmatrix} 0 \end{bmatrix}\]
+
+Clearly \(n=3, m=p=1\) and the eigenvalues of A are \{0.5834, 0.4657, 0.1509\} which all have their absolute value less then 1 which means the system is stable. Also 
+the controllability and observability matrix have a non-zero determinant to the system is both controllable and observable, which means, it is suitable for the Fundamental Lemma. For 
+this example the length of initial trajectory and length of trajectories for reconstruction are chosen as $T = 50, L = 22$ it can be checked that for $N=n$ the \eqref{eq:length} is satisfied.
+For the input for this example we are using a randomly generated input using MATLAB's \textit{rand} function. Since the input is random there is a high chance for persistency of excitation before
+testing the lemma we check the rank of the $H_{N+L}(u_{[0, T-1]})$. We input the noisy input to the system and record the output data, we then create the Hankel matrix $\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}$.
+Now we generate a new random input-output trajectory of the system \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\). We now use the Hankel matrix and the new data to find the vector $g$. We impose that
+as a least-squares problem since the Hankel matrix is generally not square and the system of equations is underdetermined (fewer rows than columns). The objective for a minimization problem is the following:
+\begin{equation}
+    \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}}_{2}^{2}
+\end{equation}
+
+In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} rather than \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
+both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
+get result in MATLAB:
+\[\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} < 10^{-10}\]
+\clearpage
+
+The norm is not exactly 0 but it is really close, the small error arises from truncation of real numbers due to floating point arithmetic, so we can assume the result is valid. Our reconstructed trajectory is found in the image
+of the Hankel matrix created from recorded data.
+
+\subsection{Mechanical MIMO System}
+
+In this example we will demonstrate the Lemma on a concrete mechanical system. We will show, like in the last example, that we can reconstruct a trajectory from previously recorded data.
+
 
 
 % \chapter{Conclusion}
