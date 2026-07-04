@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  3 JUL 2026 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  4 JUL 2026 13:26
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -791,36 +791,36 @@ Package hyperref Info: Link coloring ON on input line 124.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<assignment.pdf, id=108, 596.52861pt x 843.66193pt>
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf>
-Package pdftex.def Info: assignment.pdf  used on input line 201.
+<figures/assignment.pdf, id=112, 596.52861pt x 843.66193pt>
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf>
+Package pdftex.def Info: figures/assignment.pdf  used on input line 201.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<assignment.pdf, id=110, page=1, 596.52861pt x 843.66193pt>
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 201.
+<figures/assignment.pdf, id=114, page=1, 596.52861pt x 843.66193pt>
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf, page 1>
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
 (pdftex.def)             Requested size: 597.50787pt x 845.07591pt.
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 201.
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf, page 1>
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 201.
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf, page 1>
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 201.
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf, page 1>
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
-File: assignment.pdf Graphic file (type pdf)
-<use assignment.pdf, page 1>
-Package pdftex.def Info: assignment.pdf , page1 used on input line 201.
+File: figures/assignment.pdf Graphic file (type pdf)
+<use figures/assignment.pdf, page 1>
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
  [2
 
 
- <./assignment.pdf>]
+ <./figures/assignment.pdf>]
 Package hyperref Info: Option `pageanchor' set `true' on input line 206.
  (./bachelors_thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
@@ -902,7 +902,7 @@ Chapter 2.
 ]
 Chapter 3.
 
-Overfull \hbox (1.39806pt too wide) in paragraph at lines 577--580
+Overfull \hbox (1.39806pt too wide) in paragraph at lines 587--590
 \T1/lmr/m/it/12 com-plete or-thog-o-nal de-com-po-si-tion (COD) \T1/lmr/m/n/12 rather than \T1/lmr/m/it/12 sin-gu-lar value de-com-po-si-tion (SVD)
  []
 
@@ -914,32 +914,35 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=312, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=320, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
-Package pdftex.def Info: figures/PRBS.pdf  used on input line 645.
+Package pdftex.def Info: figures/PRBS.pdf  used on input line 655.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=329, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=337, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
-Package pdftex.def Info: figures/step.pdf  used on input line 662.
+Package pdftex.def Info: figures/step.pdf  used on input line 672.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=330, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=338, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
-Package pdftex.def Info: figures/prbs_out.pdf  used on input line 669.
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 679.
 (pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
  [12
 
  <./figures/step.pdf> <./figures/prbs_out.pdf>]
 Chapter 4.
-[13
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 701.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [13
 
 
-] [14
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [14
 
 ]
 Appendix A.
@@ -951,21 +954,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 77A99294C2A7F9B280C98E370A8D3679;3232.
+(rerunfilecheck)             Checksum: 97CE5D6AAE550FE6B72FF9952C0DC413;3375.
  ) 
 Here is how much of TeX's memory you used:
- 26002 strings out of 467533
- 474999 string characters out of 5419495
- 888439 words of memory out of 5000000
- 54378 multiletter control sequences out of 15000+600000
- 707935 words of font info for 87 fonts, out of 8000000 for 9000
+ 26043 strings out of 467533
+ 476092 string characters out of 5419495
+ 888471 words of memory out of 5000000
+ 54412 multiletter control sequences out of 15000+600000
+ 708310 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (26 pages, 1137340 bytes).
+Output written on bachelors_thesis.pdf (26 pages, 1142167 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 397 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 504 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

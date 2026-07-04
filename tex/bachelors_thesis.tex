@@ -198,7 +198,7 @@ acquired during my studies and the literature cited in the references.
     pages=1,
     pagecommand={\thispagestyle{empty}},
     width={\paperwidth}
-]{assignment.pdf}
+]{figures/assignment.pdf}
 
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -545,7 +545,17 @@ number of rows, thus PE condition needs that condition fullfilled. When we impos
 \end{equation}
 
 So for PE the length of initial trajectory $T$ needs to satisfy the condition above for a given $L$. Generally, for a long enough recorded trajectory if can use the Lemma
-for shorter length trajectory. 
+for shorter length traject  ory. In our Lemma formulation we only used trajectories of length $L$ starting from 0, but it can be shown that the Lemma holds for a general restricted
+input output trajectory of length $L$, i.e. for time window of $[i, i + L -1] \ \forall i \in \mathbb{Z}_{\geq 0}$ we have:
+\begin{equation}
+    \begin{bmatrix} \bar{u}_{[i, i+L-1]} \\ \bar{y}_{[i, i+L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g
+    \label{eq:fl-i}
+\end{equation}
+
+Now we will define the lag $\ell$ of the system. Smallest positive integer $k$ s.t. rank \(\Omega_k = \) rank \(\Omega_{k+1}\), where $\Omega_k$ is the observability matrix from 
+\eqref{eq:io}, is called the lag of the system, in other words, the smallest $k$ after which the rank of the observability matrix does not change. Clearly, by C-H theorem, $\ell \leq n-1$. For an observable system that is the minimal trajectory length such that the initial state
+$x_{ini}$ can be reconstructed.
+
 
 \chapter{Lemma - Numerical Examples}
 
@@ -599,13 +609,13 @@ In this example we will demonstrate the Lemma on a concrete mechanical system. W
 \end{figure}
 
 The states of the system are positions and velocities of each mass, the input is a force on the second mass. We chose the output to be a vector of positions of both mass thus this is a MIMO system. Using mechanical equilibrium equations we can get a system of coupled linear differential equations
-which can be represented as a continuous LTI system like this:
+which can be represented as a continuous state space LTI system like this:
 \begin{align*}
     \dot{x}(t) &= Ax(t) + Bu(t) \\
     y(t) &= Cx(t) + Du(t)
 \end{align*}
 
-Where:
+Where (for this concrete example: $m_1 = 1.0kg,\ m_2 = 0.8kg,\ k_1=120Nm^{-1},\ k_2=180Nm^{-1},\ c_1=1.5Nsm^{-1},\ c_2=2.0Nsm^{-1}$):
 
 \begin{alignat}{2}
     A &= \begin{bmatrix} 
@@ -673,12 +683,29 @@ function and second will be a new PRBS signal. We simulate the output trajectori
     \caption{Comparison of original and reconstructed trajectories of the system}
 \end{figure}
 
-It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} and seeing that for both trajectories we have the norm $< 10^{-10}$.
+It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} seeing that for both trajectories we have the norm $< 10^{-10}$.
 Thus, the Lemma holds for this example.
 
 \clearpage
 
 \chapter{Data driven simulation of LTI systems}
+In the last chapter we used the FL to demonstrate that any length $L$ trajectory of a linear system can be found
+in the image of a Hankel matrix that is built using a previous trajectory with a PE input. This is really interesting, however,
+there are no direct use cases when it comes to control. In this chapter we will build up on the FL and use it to
+simulate a future of a given trajectory using the same Hankel matrix.
+
+\section{Problem statement}
+Take the system \eqref{eq:lti} and assume (A, B) is controllable. Let $L_{ini} \in \mathbb{Z}_{\geq 0}$ be the past length of the trajectory we want to simulate and $L_{ref} \in \mathbb{Z}_{\geq 0}$ 
+be the length of the future part. Let $L:=L_{ini} + L_{ref}$. Assume the following are given:
+\begin{itemize}
+    \item Upper bound on state dimension $N \geq n$ 
+    \item Restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $T$ satisfies \eqref{eq:length}
+    \item An initial restricted input-output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\)
+    \item Reference input \(\bar{u}_{[L_{ini}, L-1]}\)
+\end{itemize}
+
+We want to find the output \(\bar{y}_{[L_{ini}, L-1]}\) such that \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) is a restricted input-output trajectory of \eqref{eq:lti}. So based
+on recorded data, previous history of a trajectory and future input we want to find the future output part of that trajectory.
 
 
 % \chapter{Conclusion}
