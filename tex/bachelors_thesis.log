@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  4 JUL 2026 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  4 JUL 2026 19:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -684,38 +684,61 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count359
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count360
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen322
+\pgfdecoratedremainingdistance=\dimen323
+\pgfdecoratedinputsegmentcompleteddistance=\dimen324
+\pgfdecoratedinputsegmentremainingdistance=\dimen325
+\pgf@decorate@distancetomove=\dimen326
+\pgf@decorate@repeatstate=\count361
+\pgfdecorationsegmentamplitude=\dimen327
+\pgfdecorationsegmentlength=\dimen328
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
-Package hyperref Info: Option `pageanchor' set `false' on input line 41.
-\c@definition=\count361
-\c@theorem=\count362
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 124.
+\tikz@lib@dec@box=\box72
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen329
+\pgfarrowlength=\dimen330
+\pgfarrowwidth=\dimen331
+\pgfarrowlinewidth=\dimen332
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 43.
+Package hyperref Info: Option `pageanchor' set `false' on input line 43.
+\c@definition=\count362
+\c@theorem=\count363
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 126.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count363
+\l__color_backend_stack_int=\count364
 ) (./bachelors_thesis.aux)
 \openout1 = `bachelors_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -756,16 +779,16 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count364
-\scratchdimen=\dimen322
-\scratchbox=\box72
-\nofMPsegments=\count365
-\nofMParguments=\count366
+\scratchcounter=\count365
+\scratchdimen=\dimen333
+\scratchbox=\box73
+\nofMPsegments=\count366
+\nofMParguments=\count367
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count367
-\MPscratchDim=\dimen323
-\MPnumerator=\count368
-\makeMPintoPDFobject=\count369
+\MPscratchCnt=\count368
+\MPscratchDim=\dimen334
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
 \everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -781,7 +804,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 124.
+Package hyperref Info: Link coloring ON on input line 126.
  (./bachelors_thesis.out) (./bachelors_thesis.out)
 \@outlinefile=\write4
 \openout4 = `bachelors_thesis.out'.
@@ -791,37 +814,37 @@ Package hyperref Info: Link coloring ON on input line 124.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<figures/assignment.pdf, id=112, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=116, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
-Package pdftex.def Info: figures/assignment.pdf  used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf  used on input line 203.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<figures/assignment.pdf, id=114, page=1, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=118, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
 (pdftex.def)             Requested size: 597.50787pt x 845.07591pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 201.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
  [2
 
 
  <./figures/assignment.pdf>]
-Package hyperref Info: Option `pageanchor' set `true' on input line 206.
+Package hyperref Info: Option `pageanchor' set `true' on input line 208.
  (./bachelors_thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -902,7 +925,7 @@ Chapter 2.
 ]
 Chapter 3.
 
-Overfull \hbox (1.39806pt too wide) in paragraph at lines 587--590
+Overfull \hbox (1.39806pt too wide) in paragraph at lines 589--592
 \T1/lmr/m/it/12 com-plete or-thog-o-nal de-com-po-si-tion (COD) \T1/lmr/m/n/12 rather than \T1/lmr/m/it/12 sin-gu-lar value de-com-po-si-tion (SVD)
  []
 
@@ -910,33 +933,37 @@ Overfull \hbox (1.39806pt too wide) in paragraph at lines 587--590
 
 ] (./figures/double_spring_mass_damper.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 51.
+(Font)              <14.4> on input line 25.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 25.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 25.
 ) [10
 
 ]
-<figures/PRBS.pdf, id=320, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=327, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
-Package pdftex.def Info: figures/PRBS.pdf  used on input line 655.
+Package pdftex.def Info: figures/PRBS.pdf  used on input line 658.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=337, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=344, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
-Package pdftex.def Info: figures/step.pdf  used on input line 672.
+Package pdftex.def Info: figures/step.pdf  used on input line 675.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=338, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=345, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
-Package pdftex.def Info: figures/prbs_out.pdf  used on input line 679.
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 682.
 (pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
  [12
 
  <./figures/step.pdf> <./figures/prbs_out.pdf>]
 Chapter 4.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 701.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 704.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [13
@@ -944,9 +971,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [14
 
+] [15
+
 ]
 Appendix A.
-[15
+[16
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -954,21 +983,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 97CE5D6AAE550FE6B72FF9952C0DC413;3375.
+(rerunfilecheck)             Checksum: 5FA1A1439B2D5E51F6D2094823CF9678;3668.
  ) 
 Here is how much of TeX's memory you used:
- 26043 strings out of 467533
- 476092 string characters out of 5419495
- 888471 words of memory out of 5000000
- 54412 multiletter control sequences out of 15000+600000
- 708310 words of font info for 88 fonts, out of 8000000 for 9000
+ 27060 strings out of 467533
+ 506836 string characters out of 5419495
+ 917463 words of memory out of 5000000
+ 55395 multiletter control sequences out of 15000+600000
+ 716346 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,94p,588b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (26 pages, 1142167 bytes).
+ 84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bachelors_thesis.pdf (27 pages, 1146178 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 78 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 524 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

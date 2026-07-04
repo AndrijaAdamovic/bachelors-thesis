@@ -50,8 +50,4 @@ hold on;
 plot(t_s(L_ini+1:end), y_f(:, 1));
 hold off;
 
-legend("Model sim", "Data-driven")
-
-
-
-
+legend("Model sim", "Data-based")  

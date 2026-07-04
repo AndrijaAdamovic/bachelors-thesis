@@ -19,6 +19,7 @@
 \contentsline {section}{\numberline {3.1}Simple SISO System}{9}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Mechanical MIMO System}{10}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Data driven simulation of LTI systems}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Problem statement}{13}{section.4.1}%
-\contentsline {chapter}{References}{14}{chapter*.11}%
-\contentsline {chapter}{\numberline {A}Additional Material}{15}{appendix.A}%
+\contentsline {section}{\numberline {4.1}Problem statement and solution}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Simulating LTI system from data}{14}{section.4.2}%
+\contentsline {chapter}{References}{15}{chapter*.11}%
+\contentsline {chapter}{\numberline {A}Additional Material}{16}{appendix.A}%
