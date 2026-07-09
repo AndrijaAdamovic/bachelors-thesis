@@ -422,6 +422,14 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT ./figures/dd_sim_linear.pdf
+INPUT ./figures/dd_sim_linear.pdf
+INPUT ./figures/dd_sim_linear.pdf
+INPUT ./figures/dd_sim_linear.pdf
+INPUT ./figures/dd_sim_linear.pdf
+INPUT ./figures/pendulum.tex
+INPUT ./figures/pendulum.tex
+INPUT figures/pendulum.tex
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out

@@ -16,7 +16,7 @@ T = 50 / Ts;
 y = zeros(T, 2);
 y(1, :) = [0; 0]; % Inital state
 
-[u, t] = generate_filtered_prbs(Ts, T * Ts, 0.1, 2, 0.05);
+[u, t] = generate_filtered_prbs(Ts, T * Ts, 0.15, 2, 0.05);
 
 for k = 1:T-1
     y(k+1, :) = pendulum_rk4(y(k, :), u(k), Ts, m, l, b, g); 
@@ -59,12 +59,12 @@ g_vec = lsqminnorm(M, b_d);
 y_f_vec = Y_f * g_vec;
 y_f = reshape(y_f_vec, 2, []).';
 
-plot(t_s, y_s(:, 1), '');
-ylim([-pi pi]);
-xlim([0 t_s(end)]);
-grid on;
-hold on;
-plot(t_s(L_ini+1:end), y_f(:, 1));
+% plot(t_s, y_s(:, 1), '');
+% ylim([-pi pi]);
+% xlim([0 t_s(end)]);
+% grid on;
+% hold on;
+% plot(t_s(L_ini+1:end), y_f(:, 1));
 
 % plot(t, y(:, 1), '');
 % ylim([-pi pi]);

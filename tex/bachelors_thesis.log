@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 13:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 16:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -814,12 +814,12 @@ Package hyperref Info: Link coloring ON on input line 126.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<figures/assignment.pdf, id=116, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=120, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
 Package pdftex.def Info: figures/assignment.pdf  used on input line 203.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<figures/assignment.pdf, id=118, page=1, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=122, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
 Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
@@ -939,41 +939,47 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=329, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=341, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
-Package pdftex.def Info: figures/PRBS.pdf  used on input line 668.
+Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=346, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=358, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
-Package pdftex.def Info: figures/step.pdf  used on input line 685.
+Package pdftex.def Info: figures/step.pdf  used on input line 686.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=347, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=359, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
-Package pdftex.def Info: figures/prbs_out.pdf  used on input line 692.
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 693.
 (pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
  [12
 
  <./figures/step.pdf> <./figures/prbs_out.pdf>]
 Chapter 4.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 714.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 715.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [13
 
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [14
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/dd_sim_linear.pdf, id=419, 804.00375pt x 424.58624pt>
+File: figures/dd_sim_linear.pdf Graphic file (type pdf)
+<use figures/dd_sim_linear.pdf>
+Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 769.
+(pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
+ [14
 
-] [15
+ <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [15] [16
 
 ]
 Appendix A.
-[16
+[17
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -981,21 +987,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5FA1A1439B2D5E51F6D2094823CF9678;3668.
+(rerunfilecheck)             Checksum: 65D1075DD3491CE739D311E7DE4F4E1A;3978.
  ) 
 Here is how much of TeX's memory you used:
- 27060 strings out of 467533
- 506836 string characters out of 5419495
- 917463 words of memory out of 5000000
- 55395 multiletter control sequences out of 15000+600000
+ 27189 strings out of 467533
+ 509719 string characters out of 5419495
+ 917742 words of memory out of 5000000
+ 55515 multiletter control sequences out of 15000+600000
  716346 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (27 pages, 1148329 bytes).
+Output written on bachelors_thesis.pdf (28 pages, 1195270 bytes).
 PDF statistics:
- 528 PDF objects out of 1000 (max. 8388607)
- 433 compressed objects within 5 object streams
- 83 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 561 PDF objects out of 1000 (max. 8388607)
+ 461 compressed objects within 5 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

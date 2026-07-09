@@ -600,7 +600,7 @@ In MATLAB we solve the following problem using the \textit{lsqminnorm} function,
 both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
 get result in MATLAB:
 \begin{equation}
-\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} < 10^{-10}
+\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} \leq 10^{-10}
 \label{eq:norm}
 \end{equation}
 
@@ -610,6 +610,7 @@ The norm is not exactly 0 but it is really close, the small error arises from tr
 of the Hankel matrix created from recorded data.
 
 \section{Mechanical MIMO System}
+\label{sec:mimo}
 
 In this example we will demonstrate the Lemma on a concrete mechanical system. We will show, like in the last example, that we can reconstruct a trajectory from previously recorded data.
 
@@ -696,7 +697,7 @@ function and second will be a new PRBS signal. We simulate the output trajectori
     \caption{Comparison of original and reconstructed trajectories of the system}
 \end{figure}
 
-It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} seeing that for both trajectories we have the norm $< 10^{-10}$.
+It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} seeing that for both trajectories we have the norm $\leq 10^{-10}$.
 Thus, the Lemma holds for this example.
 
 \clearpage
@@ -758,13 +759,56 @@ least-squares problem from the last chapter \eqref{eq:gmin}:
 
 Solving with MATLAB's \textit{lsqminnorm} we obtain the vector $g$. Using $g$ we calculate the future output trajectory \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\). By theorem (\ref{thm:sim}) this
 output part is unique since $L_{ini} \geq \ell = 2 $ (for the parameters given in \eqref{eq:dsmd-abcd}), generally, the lag is unknown, but if we take large enough $L_{ini}$ we can be sure that it is larger.
-Now we will compare the data based future output trajectories with one calculated using the system model. For the input signal we used a multi-sine input like this:
+Now we will compare the data based future output trajectories with one calculated using the system model - the first $L_{ini}$ points using the model. For the input signal we used a multi-sine input like this:
 \[u(k) = 10\sin(2\pi kT_s) + \frac{1}{3}\sin(2\pi 3 kT_s), \ k \in \{0, 1, \dots, L-1\}\]
 
+The simulation output is:
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/dd_sim_linear.pdf}
+    \caption{Data-based vs. model-based future trajectory simulation}
+    \label{fig:dd-lin}
+\end{figure}
 
+\newpage
 
+We can see that the data-based simulated trajectories perfectly match the model-based ones. Numerically, like before, we get the following confirmation that the future output trajectories coincide:
+\[\norm{\bar{y}_{[L_{ini}, L-1]} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \leq 10^{-10}\]
 
+\section{Simulating a nonlinear system around equilibrium}
+In the last section we showed that it is possible to simulate a LTI system directly from recorded data without the model. For nonlinear systems, a classical approach is to linearize the 
+dynamics around a stationary point around which the linearized model is mostly valid. We want to gather the data around the stationary (equilibrium) point of the system and apply the data-based
+simulation of the future trajectory. For this example we will take a classical torque driven pendulum: 
+
+\begin{figure}[htbp]
+    \centering
+    \input{figures/pendulum.tex}
+    \caption{Torque driven simple pendulum}
+    \label{fig:pendulum}
+\end{figure}
+
+Assuming damping is proportional to angular velocity with proportionality constant $b$ we write the state space dynamics which can be derived with various approaches from classical mechanics, state vector is \(x = (\theta, \ \dot{\theta})^T\):
+
+\begin{equation}
+    \dot{x} = \dfrac{d}{dt} \begin{bmatrix} \theta \\ \dot{\theta}\end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ \dfrac{-b}{mL^2}\dot{\theta} - \dfrac{g}{L}\sin(\theta) + \dfrac{u}{mL^2}\end{bmatrix} = f(x, u)
+    \label{eq:pend-dyn}
+\end{equation}
+
+Since this is in continous state space forumlation we need to derive a discrete time version of it. Using sampling period \(T_s = 10^{-2} \ s\) and assuming
+ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method like this:
+\begin{equation}
+    x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) 
+\end{equation}
+Where, 
+\begin{align*}
+    k_1 &= f(x_k, u_k) \\
+    k_2 &= f(x_k + \frac{T_s}{2}k_1, u_k) \\
+    k_3 &= f(x_k + \frac{T_s}{2}k_2, u_k) \\
+    k_4 &= f(x_k + T_sk_3, u_k)
+\end{align*}
+
+Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state of the system ($y_k = x_k$) we supply a PRBS input for 50 seconds to the system and record the output. We configured the amplitude of the PRBS such that angle $\theta$ is always $\leq \frac{\pi}{18}$ (10 degrees).
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 

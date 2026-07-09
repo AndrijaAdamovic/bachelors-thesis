@@ -45,9 +45,27 @@ g = lsqminnorm(M, b);
 y_f_vec = Y_f * g;
 y_f = reshape(y_f_vec, 2, []).';
 
-plot(t_s, y_s(:, 1));
-hold on;
-plot(t_s(L_ini+1:end), y_f(:, 1));
-hold off;
 
-legend("Model sim", "Data-based")  
+
+subplot(2, 1, 1);
+plot(t_s, y_s(:, 1), "LineWidth",2.0, "Color",'r');
+hold on;
+plot(t_s(L_ini+1:end), y_f(:, 1), "LineWidth",2.0,"Color",'b', "LineStyle","--");
+hold off;
+ylabel("Mass 1 position [m]");
+grid on;
+legend("Model sim", "Data-based");
+ax = gca;
+ax.FontSize = 14;
+
+subplot(2, 1, 2);
+plot(t_s, y_s(:, 2), "LineWidth",2.0, "Color",'r');
+hold on;
+plot(t_s(L_ini+1:end), y_f(:, 2), "LineWidth",2.0,"Color",'b', "LineStyle","--");
+hold off;
+ylabel("Mass 2 position [m]");
+xlabel("Time [s]")
+grid on;
+legend("Model sim", "Data-based");
+ax = gca;
+ax.FontSize = 14;

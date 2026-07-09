@@ -21,5 +21,6 @@
 \contentsline {chapter}{\numberline {4}Data driven simulation of LTI systems}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Problem statement and solution}{13}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Simulating LTI system from data}{14}{section.4.2}%
-\contentsline {chapter}{References}{15}{chapter*.11}%
-\contentsline {chapter}{\numberline {A}Additional Material}{16}{appendix.A}%
+\contentsline {section}{\numberline {4.3}Simulating a nonlinear system around equilibrium}{15}{section.4.3}%
+\contentsline {chapter}{References}{16}{chapter*.13}%
+\contentsline {chapter}{\numberline {A}Additional Material}{17}{appendix.A}%

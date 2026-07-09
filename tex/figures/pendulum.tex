@@ -1,0 +1,34 @@
+% This image code was generated using Google Gemini 3.1 Pro model
+
+\begin{tikzpicture}[scale=0.8, >=Stealth]
+    
+    % Gravity arrow on the left
+    \draw[->, thick] (-2, -1) -- (-2, -2) node[midway, left, font=\large] {$g$};
+    
+    % Ceiling (Support)
+    \draw[thick] (-1.5, 0) -- (1.5, 0);
+    \fill[pattern=north east lines] (-1.5, 0) rectangle (1.5, 0.2);
+    
+    % Pivot point
+    \fill (0,0) circle (2.5pt);
+    
+    % Vertical dashed reference line
+    \draw[dashed, gray!80, thick] (0, 0) -- (0, -3.5);
+    
+    % Pendulum bob and rod (Angle = -40 degrees from vertical)
+    \coordinate (bob) at (-40:3.5);
+    \draw[thick] (0,0) -- (bob);
+    \draw[fill=white, thick] (bob) circle (0.35) node {$m$};
+    
+    % Length label L
+    \path (0,0) -- (bob) node[midway, right, xshift=4pt, yshift=-1pt] {$L$};
+    
+    % Angle theta (counter-clockwise from vertical)
+    \draw[->, thick] (0, -1.5) arc (-90:-40:1.5);
+    \node at (-65:1.1) {$\theta$};
+    
+    % Input Torque tau = u(t) arrow and label
+    \draw[<-, thick] (-100:0.6) arc (-100:-160:0.6);
+    \node[left, xshift=-2pt, yshift=-4pt] at (-130:0.6) {$\tau = u(t)$};
+    
+  \end{tikzpicture}
