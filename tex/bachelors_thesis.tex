@@ -744,6 +744,7 @@ Where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $p
 \clearpage
 
 \section{Simulating LTI system from data}
+\label{sec:lti-sim}
 
 This theorem gives us the method on how to simulate the future trajectory of the system. We will test this result on examples. Firstly, we will test try to simulate future output trajectory
 for the LTI MIMO example from the previous chapter (\ref{fig:double-spring-mass-damper}). We simulated the system with a PRBS input for 50 seconds ($T_s = 0.01s \ T = 5000$) and recorded the trajectory 
@@ -788,14 +789,17 @@ simulation of the future trajectory. For this example we will take a classical t
     \label{fig:pendulum}
 \end{figure}
 
-Assuming damping is proportional to angular velocity with proportionality constant $b$ we write the state space dynamics which can be derived with various approaches from classical mechanics, state vector is \(x = (\theta, \ \dot{\theta})^T\):
+Parameters for our pendulum are:
+\[m = 0.2\ kg, \ l = 0.5 \ m, \ b = 0.05\ Nms, \ g = 9.81 \ \frac{m}{s^2}\]
+
+Assuming damping is proportional to angular velocity with proportionality constant $b$, we write the state space dynamics which can be derived with various approaches from classical mechanics, state vector is \(x = (\theta, \ \dot{\theta})^T\):
 
 \begin{equation}
-    \dot{x} = \dfrac{d}{dt} \begin{bmatrix} \theta \\ \dot{\theta}\end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ \dfrac{-b}{mL^2}\dot{\theta} - \dfrac{g}{L}\sin(\theta) + \dfrac{u}{mL^2}\end{bmatrix} = f(x, u)
+    \dot{x} = \dfrac{d}{dt} \begin{bmatrix} \theta \\ \dot{\theta}\end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ \dfrac{-b}{ml^2}\dot{\theta} - \dfrac{g}{l}\sin(\theta) + \dfrac{u}{ml^2}\end{bmatrix} = f(x, u)
     \label{eq:pend-dyn}
 \end{equation}
 
-Since this is in continous state space forumlation we need to derive a discrete time version of it. Using sampling period \(T_s = 10^{-2} \ s\) and assuming
+Since this is in continous state space forumlation we need to derive a discrete time version of it. Using sampling period \(T_s = 0.01s\) and assuming
 ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method like this:
 \begin{equation}
     x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) 
@@ -809,6 +813,65 @@ Where,
 \end{align*}
 
 Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state of the system ($y_k = x_k$) we supply a PRBS input for 50 seconds to the system and record the output. We configured the amplitude of the PRBS such that angle $\theta$ is always $\leq \frac{\pi}{18}$ (10 degrees).
+
+\newpage
+
+Since $\theta$ is small enough and the model is approximately linear around 0 we will try to simulte the future trajectory of the system using the FL.
+We chose the following trajectory lengths \(L_{ini} = 50, \ L_{ref} = 600 \implies L = 650\), we assumed $N=4$. Since a PRBS input is PE of order $N + L$  we can repeat the procedure in \ref{sec:lti-sim}.
+We give a zero input and set the initial state to $\left(\dfrac{\pi}{10}, 0\right)^T$ for the simulating trajectory - autonomous system.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/pend_1.pdf}
+    \caption{Pendulum trajectory simulation - data-based vs. model}
+    \label{fig:pend-1}
+\end{figure}
+
+If we now calculate the norm of the difference between the two output trajectories we get:
+\[\norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \sim 10^{-2}\]
+
+Our trajectories do not coincide exactly, but that is to be expected because the model is nonlinear, since the error is small we can say that
+data-based simulation works well for small angles. Now we will try simulating with a larger angle and we changed $L_{ini} = 10$. We will also compare
+a linearized model of \eqref{eq:pend-dyn} which uses \(\sin(\theta) \approx \theta\) linearization. For initial angle of $\frac{\pi}{3}$ and zero input we get
+the following results (for a specific simulation):
+
+\begin{align}
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 0.428618 \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ lin. model} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 1.446429
+    \label{eq:lin-model-err}
+\end{align}
+
+We can see that the error for the data-based simulation is quite smaller, which can be seen on the following plot:
+
+\newpage
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/pend_sim_comp.pdf}
+    \caption{Pendulum trajectory simulation - large angles; - data-based vs. model vs. linearized model}
+    \label{fig:pend-2}
+\end{figure}
+
+We can see that the data-based simulation is closer to the nonlinear model one and it is considerably more accurate for larger angles.
+However, this MATLAB script inputs a new PRBS to the system for the data every time the script is run, randomness of that signal implies that the result from above is not
+general, in fact, we sometimes got that the linearized model produces a lower error than the data-based. In practice, this could be fixed by recording multiple data sets
+with PRBS and keeping the one which makes the data-based simulation the best. We ran the MATLAB script 1000 times and recorded the norm of the difference for
+each one, the linearized model error \eqref{eq:lin-model-err} is constant because it does not depend on a PRBS input. These are the results:
+
+\begin{align*}
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{average} &= 0.685848 \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{max} &=  3.47226 \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{min} &= 0.238929 
+\end{align*}
+
+This proves that with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" PE input we can get worse results. 
+
+\vspace{1cm}
+
+In this chapter we demonstrated that it is possible to simulate future trajectories of LTI systems directly from recorded data and knowledge about the input. This
+hints at the following chapter which uses this approach to implement predictive control of such systems entirely from input-output data.
+
+
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 

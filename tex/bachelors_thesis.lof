@@ -8,4 +8,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Data-based vs. model-based future trajectory simulation}}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Torque driven simple pendulum}}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Pendulum trajectory simulation - data-based vs. model}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pendulum trajectory simulation - large angles; - data-based vs. model vs. linearized model}}{17}{figure.caption.14}%
 \addvspace {10\p@ }

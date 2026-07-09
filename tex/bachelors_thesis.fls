@@ -430,6 +430,16 @@ INPUT ./figures/dd_sim_linear.pdf
 INPUT ./figures/pendulum.tex
 INPUT ./figures/pendulum.tex
 INPUT figures/pendulum.tex
+INPUT ./figures/pend_1.pdf
+INPUT ./figures/pend_1.pdf
+INPUT ./figures/pend_1.pdf
+INPUT ./figures/pend_1.pdf
+INPUT ./figures/pend_1.pdf
+INPUT ./figures/pend_sim_comp.pdf
+INPUT ./figures/pend_sim_comp.pdf
+INPUT ./figures/pend_sim_comp.pdf
+INPUT ./figures/pend_sim_comp.pdf
+INPUT ./figures/pend_sim_comp.pdf
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out
