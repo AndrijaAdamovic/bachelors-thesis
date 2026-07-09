@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  4 JUL 2026 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 13:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -918,14 +918,12 @@ Chapter 2.
 
 ] [6
 
-] [7
-
-] [8
+] [7] [8
 
 ]
 Chapter 3.
 
-Overfull \hbox (1.39806pt too wide) in paragraph at lines 589--592
+Overfull \hbox (1.39806pt too wide) in paragraph at lines 599--602
 \T1/lmr/m/it/12 com-plete or-thog-o-nal de-com-po-si-tion (COD) \T1/lmr/m/n/12 rather than \T1/lmr/m/it/12 sin-gu-lar value de-com-po-si-tion (SVD)
  []
 
@@ -941,29 +939,29 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=327, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=329, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
-Package pdftex.def Info: figures/PRBS.pdf  used on input line 658.
+Package pdftex.def Info: figures/PRBS.pdf  used on input line 668.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=344, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=346, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
-Package pdftex.def Info: figures/step.pdf  used on input line 675.
+Package pdftex.def Info: figures/step.pdf  used on input line 685.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=345, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=347, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
-Package pdftex.def Info: figures/prbs_out.pdf  used on input line 682.
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 692.
 (pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
  [12
 
  <./figures/step.pdf> <./figures/prbs_out.pdf>]
 Chapter 4.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 704.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 714.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [13
@@ -994,10 +992,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (27 pages, 1146178 bytes).
+Output written on bachelors_thesis.pdf (27 pages, 1148329 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
+ 528 PDF objects out of 1000 (max. 8388607)
+ 433 compressed objects within 5 object streams
  83 named destinations out of 1000 (max. 500000)
  239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

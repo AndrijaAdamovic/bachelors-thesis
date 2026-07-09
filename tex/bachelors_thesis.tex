@@ -465,7 +465,7 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we can write the result from above in matrix notation like this:
     \[ 
     \begin{bmatrix} \bar{y}(0) \\ \bar{y}(1) \\ \bar{y}(2) \\ \vdots \\ \bar{y}(L-1)\end{bmatrix} = 
-    \underbrace{\begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{L-1} \end{bmatrix}}_\text{$\Omega_L$}x(0) +
+    \underbrace{\begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{L-1} \end{bmatrix}}_\text{$\Omega_L$}x_{ini} +
     \underbrace{\begin{bmatrix} D \\ CB & D \\ CAB & CB & D \\ \vdots & \ddots & \ddots & \ddots \\ CA^{L-2}B & \dots & \dots & \dots & D\end{bmatrix}}_\text{$\Theta_L$}
     \begin{bmatrix} \bar{u}(0) \\ \bar{u}(1) \\ \bar{u}(2) \\ \vdots \\ \bar{u}(L-1)\end{bmatrix}
     \]
@@ -479,8 +479,17 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \end{equation}
 
     Since on the left side is a general input-output trajectory of length $L$ (assuming time-invariance), we conclude that the space of all such trajectories is spanned by the columns of the 
-    \(\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \) i.e. that space is the image of that matrix. It can be simply shown by rank-nullity theorem that:
-    \[\mbox{rank} \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = dim \ im \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = \mbox{rank}(\Omega_L) + mL \]
+    \(M := \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \) i.e. that space is the image of that matrix. By setting the RHS of \eqref{eq:io} equal to 0 and applying 
+    the rank-nullity theorem (R-N) we get:
+    \[        \bar{u}_{[0, L-1]} = 0, \ \Omega_L x_{ini} = 0; \]
+    \begin{align*}
+        \implies \dim(\ker M) &= \dim(\ker \Omega_L) \underbrace{=}_\text{R-N} n - \mbox{rank}\ \Omega_L \\
+        \underbrace{\implies}_\text{R-N} \mbox{rank} \ M &= (n + mL) - \dim(\ker M) = \\ 
+        &= (n + mL) - (n - \mbox{rank}\ \Omega_L) = \\
+        &= \mbox{rank}\ \Omega_L + mL
+    \end{align*}
+    % \[ \dim(\ker M)\]
+    % \[\mbox{rank} \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = dim \ im \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = \mbox{rank}(\Omega_L) + mL \]
     The columns of the Hankel matrix \(\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix}\) are input-output trajectories so we conclude that:
     \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subseteq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
     To prove the Lemma we need to prove the equality of those spaces. We assume the strict inclusion:
@@ -488,7 +497,8 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     The expression \eqref{eq:io} can be used to formulate an analog expression using Hankel matrices like this:
     \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
     Where \(X_{[0, T-L]} := [x(0) \ x(1) \ ... \ x(T-L)]\).
-    By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank. That implies that the left kernel of $J_L$ is non-trivial, in other words,
+    By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank, if it were full row rank than the rank of Hankel matrix on the left would be
+    equal to the rank of $J_L$ and thus the image spaces would be equal. That implies that the left kernel of $J_L$ is non-trivial, in other words,
     there exists a non-zero vector \(v = (a^T, b_{0}^T, b_{1}^T, ... , b_{L-1}^T), \ a\in\mathbb{R}^n, \ b_{i} \ \in\mathbb{R}^{mL}\) such that \(vJ_L = 0\). Expanding we get:
     \begin{equation}a^{T}x(t) + \sum_{k=0}^{L-1}b_{k}^Tu(t+k) = 0, \ \ \forall t \in \{0, 1, ..., T-L\} \label{eq:p0}\end{equation} Shifting the above equation by an arbitray $j\in\mathbb{N}$ and solving the difference equations of \eqref{eq:lti} for the shifted state
     (similar to \eqref{eq:io}) we obtain:
@@ -496,10 +506,10 @@ for some $g \in \mathbb{R}^{T-L+1}.$
         a^{T}A^{j}x(t) +  \sum_{i=0}^{j-1}a^{T}A^{j-i-1}Bu(t+i) + \sum_{k=0}^{L-1}b_{k}^{T}u(t+k+j) = 0
         \label{eq:p1}
     \end{equation}
-    We want to get rid of the state $x(t)$, the easiest way to do it is to leverge the Cayley-Hamilton theorem which states that matrix A satisfies it's characteristic polynomial 
+    We want to remove the state $x(t)$ from the equation, the easiest way to do it is to leverge the Cayley-Hamilton theorem which states that matrix A satisfies it's characteristic polynomial 
     \(p(\lambda) = \lambda^n + \alpha_{n-1}\lambda^{n-1} + ... + \alpha_1\lambda + \alpha_0\);
     \[p(A) = A^n + \alpha_{n-1}A^{n-1} + ... + \alpha_1A + \alpha_0I = 0 \]
-    \clearpage
+
     Now, if we take $n+1$ copies of equation \eqref{eq:p1} for each $j = 0, 1, ..., n$, and multiply each one with its corresponding $\alpha_j$ and and sum them all, the terms with $x(t)$ cancel
     as a result of C-H theorem. Now we get the following expression with only the inputs:
     \begin{equation}
