@@ -446,7 +446,7 @@ thesis, the Lemma.
 
 \section{The Lemma}
 
-The main result of the Lemma is that every restricted trajectory of length $L$ of the system can be obtained by linear combination
+The main result of the Lemma is that every restricted input-output trajectory of length $L$ of the system can be obtained by linear combination
 of finitely many trajectories which span the whole trajectory space i.e. the behaviour.
 
 \begin{theorem} (Willems' Fundamental Lemma) Given a LTI system \eqref{eq:lti}, assume the pair $(A, B)$ is controllable and let \((u_{[0, T-1]}, y_{[0, T-1]}), \ T \in \mathbb{N}\)
@@ -565,7 +565,7 @@ input output trajectory of length $L$, i.e. for time window of $[i, i + L -1] \ 
 \end{equation}
 
 Now we will define the lag $\ell$ of the system. Smallest positive integer $k$ s.t. rank \(\Omega_k = \) rank \(\Omega_{k+1}\), where $\Omega_k$ is the observability matrix from 
-\eqref{eq:io}, is called the lag of the system, in other words, the smallest $k$ after which the rank of the observability matrix does not change. Clearly, by C-H theorem, $\ell \leq n-1$. For an observable system that is the minimal trajectory length such that the initial state
+\eqref{eq:io}, is called the lag of the system, in other words, the smallest $k$ after which the rank of the observability matrix does not change. Clearly, by C-H theorem, $\ell \leq n$. For an observable system that is the minimal trajectory length such that the initial state
 $x_{ini}$ can be reconstructed.
 
 
@@ -871,7 +871,17 @@ This proves that with data-based simulation we can get a better result than a li
 In this chapter we demonstrated that it is possible to simulate future trajectories of LTI systems directly from recorded data and knowledge about the input. This
 hints at the following chapter which uses this approach to implement predictive control of such systems entirely from input-output data.
 
+\newpage
 
+\chapter{Data-Enabled Predictive Control - DeePC}
+
+\section{Introduction}
+
+\section{Model predictive control}
+
+\section{DeePC for LTI systems}
+
+\section{Regularizations}
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 

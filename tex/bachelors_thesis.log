@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 19:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -814,12 +814,12 @@ Package hyperref Info: Link coloring ON on input line 126.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<figures/assignment.pdf, id=120, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=140, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
 Package pdftex.def Info: figures/assignment.pdf  used on input line 203.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<figures/assignment.pdf, id=122, page=1, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=142, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
 Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
@@ -875,32 +875,32 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [1])
 \tf@toc=\write5
 \openout5 = `bachelors_thesis.toc'.
 
- [1] (./bachelors_thesis.lof)
+ [2] (./bachelors_thesis.lof)
 \tf@lof=\write6
 \openout6 = `bachelors_thesis.lof'.
 
- [2
+ [3
 
 ] (./bachelors_thesis.lot)
 \tf@lot=\write7
 \openout7 = `bachelors_thesis.lot'.
 
- [3
+ [4
 
-] [4
-
-
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] [5
+] [5
 
 
-] [6
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] [6
 
 
 ] [7
+
+
+] [8
 
 
 ]
@@ -939,7 +939,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=348, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=382, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
 Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
@@ -947,12 +947,12 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=365, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=399, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
 Package pdftex.def Info: figures/step.pdf  used on input line 686.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=366, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=400, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
 Package pdftex.def Info: figures/prbs_out.pdf  used on input line 693.
@@ -968,7 +968,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<figures/dd_sim_linear.pdf, id=426, 804.00375pt x 424.58624pt>
+<figures/dd_sim_linear.pdf, id=461, 804.00375pt x 424.58624pt>
 File: figures/dd_sim_linear.pdf Graphic file (type pdf)
 <use figures/dd_sim_linear.pdf>
 Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
@@ -976,22 +976,26 @@ Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
  [14
 
  <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [15]
-<figures/pend_1.pdf, id=453, 797.98125pt x 424.58624pt>
+<figures/pend_1.pdf, id=487, 797.98125pt x 424.58624pt>
 File: figures/pend_1.pdf Graphic file (type pdf)
 <use figures/pend_1.pdf>
 Package pdftex.def Info: figures/pend_1.pdf  used on input line 825.
 (pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
  [16 <./figures/pend_1.pdf>]
-<figures/pend_sim_comp.pdf, id=472, 797.98125pt x 419.5675pt>
+<figures/pend_sim_comp.pdf, id=506, 797.98125pt x 419.5675pt>
 File: figures/pend_sim_comp.pdf Graphic file (type pdf)
 <use figures/pend_sim_comp.pdf>
 Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 850.
 (pdftex.def)             Requested size: 455.24411pt x 239.36082pt.
- [17 <./figures/pend_sim_comp.pdf>] [18
+ [17 <./figures/pend_sim_comp.pdf>]
+Chapter 5.
+[18
+
+] [19
 
 ]
 Appendix A.
-[19
+[20
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -999,21 +1003,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: ABCBB362466182143E79962E17937031;3978.
+(rerunfilecheck)             Checksum: 36ED798434AD0A47486953267F6F36B9;4824.
  ) 
 Here is how much of TeX's memory you used:
- 27213 strings out of 467533
- 510291 string characters out of 5419495
+ 27225 strings out of 467533
+ 510423 string characters out of 5419495
  918089 words of memory out of 5000000
- 55533 multiletter control sequences out of 15000+600000
+ 55538 multiletter control sequences out of 15000+600000
  716346 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (30 pages, 1245078 bytes).
+Output written on bachelors_thesis.pdf (32 pages, 1247606 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
