@@ -25,8 +25,8 @@
 \contentsline {chapter}{\numberline {5}Data-Enabled Predictive Control (DeePC)}{18}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introduction}{18}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Model predictive control}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}DeePC for LTI systems}{19}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Regularizations}{19}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusion}{20}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Additional Material}{21}{appendix.A}%
-\contentsline {chapter}{Bibliography}{22}{appendix*.15}%
+\contentsline {section}{\numberline {5.3}DeePC for LTI systems}{20}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Regularizations}{20}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Additional Material}{22}{appendix.A}%
+\contentsline {chapter}{Bibliography}{23}{appendix*.17}%

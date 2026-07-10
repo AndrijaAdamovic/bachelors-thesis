@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  10 JUL 2026 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  10 JUL 2026 19:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -701,6 +701,8 @@ File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowlength=\dimen330
 \pgfarrowwidth=\dimen331
 \pgfarrowlinewidth=\dimen332
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
@@ -970,7 +972,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=388, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=394, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
 Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
@@ -978,12 +980,12 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=405, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=411, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
 Package pdftex.def Info: figures/step.pdf  used on input line 686.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=406, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=412, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
 Package pdftex.def Info: figures/prbs_out.pdf  used on input line 693.
@@ -999,7 +1001,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<figures/dd_sim_linear.pdf, id=467, 804.00375pt x 424.58624pt>
+<figures/dd_sim_linear.pdf, id=473, 804.00375pt x 424.58624pt>
 File: figures/dd_sim_linear.pdf Graphic file (type pdf)
 <use figures/dd_sim_linear.pdf>
 Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
@@ -1007,32 +1009,36 @@ Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
  [14
 
  <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [15]
-<figures/pend_1.pdf, id=493, 797.98125pt x 424.58624pt>
+<figures/pend_1.pdf, id=499, 797.98125pt x 424.58624pt>
 File: figures/pend_1.pdf Graphic file (type pdf)
 <use figures/pend_1.pdf>
 Package pdftex.def Info: figures/pend_1.pdf  used on input line 825.
 (pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
  [16 <./figures/pend_1.pdf>]
-<figures/pend_sim_comp.pdf, id=512, 797.98125pt x 419.5675pt>
+<figures/pend_sim_comp.pdf, id=518, 797.98125pt x 419.5675pt>
 File: figures/pend_sim_comp.pdf Graphic file (type pdf)
 <use figures/pend_sim_comp.pdf>
 Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 850.
 (pdftex.def)             Requested size: 455.24411pt x 239.36082pt.
  [17 <./figures/pend_sim_comp.pdf>]
 Chapter 5.
-[18
+(./figures/control_diagram.tex
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (./figures/predictive_control.tex) [18
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 914.
- [19]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 938.
+ [19] [20]
 Chapter 6.
-[20
+[21
 
 ]
 Appendix A.
-[21
+[22
 
-] [22
+] [23
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -1040,21 +1046,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E1609DF3A32EC41FCF8B55BDA4C7323D;4932.
+(rerunfilecheck)             Checksum: A0AE47528B9EE61D7985278B292A884D;4932.
  ) 
 Here is how much of TeX's memory you used:
- 27855 strings out of 467533
- 520570 string characters out of 5419495
- 928054 words of memory out of 5000000
- 56148 multiletter control sequences out of 15000+600000
- 716346 words of font info for 98 fonts, out of 8000000 for 9000
+ 27996 strings out of 467533
+ 523755 string characters out of 5419495
+ 929173 words of memory out of 5000000
+ 56273 multiletter control sequences out of 15000+600000
+ 721914 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (34 pages, 1255314 bytes).
+ 84i,17n,94p,588b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bachelors_thesis.pdf (35 pages, 1281714 bytes).
 PDF statistics:
- 666 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 107 named destinations out of 1000 (max. 500000)
+ 683 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 110 named destinations out of 1000 (max. 500000)
  310 words of extra memory for PDF output out of 10000 (max. 10000000)
 

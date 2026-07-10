@@ -1,0 +1,23 @@
+\begin{tikzpicture}[
+    >=Stealth, 
+    node distance=3.5cm and 10cm, % Controls horizontal and vertical spacing
+    every node/.style={font=\sffamily\large}
+]
+
+    % Nodes
+    \node (data) {Data};
+    \node (control) [right= of data] {Control};
+    \node (model) [above=of $(data)!0.5!(control)$, yshift=-1.5cm] {Model};
+
+    % Slanted Paths with Text
+    \draw[->, thick] (data) -- (model) 
+        node[midway, above, sloped, yshift=2pt] {System Identification};
+        
+    \draw[->, thick] (model) -- (control) 
+        node[midway, above, sloped, yshift=2pt] {Model-Based};
+
+    % Direct Path
+    \draw[->, thick] (data) -- (control) 
+        node[midway, below, yshift=-4pt] {Data-Based};
+
+\end{tikzpicture}

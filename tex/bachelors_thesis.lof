@@ -11,5 +11,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Pendulum trajectory simulation - data-based vs. model}}{16}{figure.caption.13}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Pendulum trajectory simulation - large angles; - data-based vs. model vs. linearized model}}{17}{figure.caption.14}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Different control design approaches from data}}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces General predictive control illustration}}{18}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

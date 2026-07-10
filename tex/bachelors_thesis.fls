@@ -263,6 +263,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/p
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/algorithms/algorithm.sty
@@ -448,6 +450,17 @@ INPUT ./figures/pend_sim_comp.pdf
 INPUT ./figures/pend_sim_comp.pdf
 INPUT ./figures/pend_sim_comp.pdf
 INPUT ./figures/pend_sim_comp.pdf
+INPUT ./figures/control_diagram.tex
+INPUT ./figures/control_diagram.tex
+INPUT figures/control_diagram.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT ./figures/predictive_control.tex
+INPUT ./figures/predictive_control.tex
+INPUT figures/predictive_control.tex
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out
@@ -465,6 +478,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

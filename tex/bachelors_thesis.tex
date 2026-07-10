@@ -28,7 +28,7 @@
 \usepackage{theoremref}
 \usepackage{arydshln}
 \usepackage{tikz}
-\usetikzlibrary{calc, patterns, decorations.pathmorphing, arrows.meta}
+\usetikzlibrary{calc, patterns, decorations.pathmorphing, arrows.meta, positioning}
 \usepackage{subcaption}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -271,7 +271,7 @@ Describe the background and motivation for the thesis.
 
 \section{Theoretical Background}
 The goal of this section is to provide introduction to mathematical concepts needed for understanding
-the rest of the thesis. 
+the rest of the thesis. We will lay out some famous results from linear control systems theory.
 \subsection{LTI Dynamical Systems}
 Although Willems' Fundamental Lemma stems from the behavioural approach to sytems theory, in this thesis it is formulated using the 
 classical state-space LTI system formulation. This formulation is simpler, yet sufficient for the further chapters of the thesis. 
@@ -877,14 +877,37 @@ hints at the following chapter which uses this approach to implement predictive 
 
 \section{Introduction}
 
-The golden standard of modern control has been Model Predictive Control (MPC), which is an optimal control technique which minimizes a const
-function constrained by model. TODO: text 
+Classical control theory almost always uses a model of the system to synthesise a controller. Usually that model is obtain by system identification from recorded data, but when the model
+is too complex to be easily identified or approximated from first principles people started developing control methods based solely on data.
+During the last decade data availability and processing power have been growing sharply thus data-driven control methods have started do develop intensively, there has been a lot of progress in the machine learning approach. In this chapter we will build up on
+results from previous chapters to create a controller that uses only input/output data, bypassing a model. A needed prerequisite for our data-based controller is model predictive control (MPC),
+an optimal control algorithm which finds optimal input to the system on a finite and recending horizon whose data is constrained with the model and other (physical) limitations.
+The DeePC algorithm, essentially, does the same thing as MPC - same optimization problem, just instead of the model it uses previously recorded data for the prediction part. This 
+algorithm relies on the Fundamental Lemma since it's result states that it is possible to predict future trajectory of a linear system given input data and recorded data. First formulation (and naming)
+of DeePC was given by [TODO: insert reference dorfler deepc]. A good overview on data-based control that stems from the behavioural framework and the FL can be found at [TODO: special issue control systems mag ieee] and [annual reviews in control 100914]
+
+\begin{figure}[htbp]
+    \centering
+    \input{figures/control_diagram.tex}
+    \caption{Different control design approaches from data}
+    \label{fig:data-based-vs-model}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+s
+    \resizebox{0.7\textwidth}{!}{
+    \input{figures/predictive_control.tex}
+    }
+    \caption{General predictive control illustration}
+    \label{fig:pred-control}
+\end{figure}
 
 \newpage
 
 \section{Model predictive control}
 As mentioned before, MPC is a control algorithm which uses optimization with system model and limitations as constraints to find optimal control input over a finite, receding horizon.
-At each time step future trajectory of the system is predicted using the model and optimal sequence of control input is computed taking constraints on inputs and states of the system. Only the first
+At each time step future trajectory of the system is predicted using the model and optimal sequence of control input is computed taking constraints on inputs and states of the system. Typically, only the first
 input of the optimal input sequence is applied after which the procedure is repeated with new measurements.
 In this section we will formulate classical MPC for LTI systems which is needed for later understanding of DeePC.
 
@@ -894,11 +917,11 @@ Given an LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization
 
 \begin{equation}
     \begin{aligned}
-        \min_{u, x, y} \quad  &\sum_{j=0}^{N-1} \left(\norm{y_j - r_{t+j}}^{2}_{Q} + \norm{u_j}^{2}_{R}\right) \\
+        \min_{x,y,u} \quad  &\sum_{j=0}^{N-1} \left(\norm{y_j - r_{t+j}}^{2}_{Q} + \norm{u_j}^{2}_{R}\right) \\
         \text{subject to:} \quad &x_0 = \hat{x}(t), \\
         &x_{j+1} = Ax_j + Bu_j, \quad j=0,\dots,N-1; \\
         &y_j = Cx_j + Du_j, \quad j=0,\dots,N-1; \\
-        &y_j \in \mathcal{Y}, \quad j=0,\dots,N; \\
+        &y_j \in \mathcal{Y}, \quad j=0,\dots,N-1; \\
         &u_j \in \mathcal{U}, \quad j=0,\dots,N-1; \\
     \end{aligned}
     \label{eq:mpc}
@@ -908,7 +931,8 @@ Given an LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization
 Where: \(\norm{z}^{2}_P := z^{T}Pz\), for a symmetric positive semidefinite matrix P (notation $P \succeq 0$). Matrix \(Q\in M_{p\times p}(\mathbb{R}), \ Q \succeq 0\) is the 
 output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succeq 0\) is the input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
 output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track. We use estimated state $\hat{x}$ instead of the true state because, generally,
-the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. Now we will lay out the MPC algorithm.
+the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. This MPC optimization problem is usually a convex quadratic program (QP).
+Now we will lay out the MPC algorithm for reference tracking.
 
 \begin{algorithm}
 \caption{MPC}
@@ -920,9 +944,15 @@ the output is not the whole state i.e. we cannot measure the whole state thus we
     \State[2] Solve \eqref{eq:mpc} for $u^{*} = (u^{*}_0, u^{*}_1, ..., u^{*}_{N-1})$ 
     \State[3] Apply input $u(t) = u^{*}_0$ and update past input/output data
 \EndFor
-
 \end{algorithmic}
 \end{algorithm}
+
+This formulation of MPC assumes stationary state inputs are 0, also terminal cost is omitted because when we transfer to DeePC we do not know the full state of the system. 
+It can be shown, under typical assumptions, that MPC algorithm is recursively feasable and stabilizing. This algorithm can produce excellent results
+if the system model is precise and if it is possible to estimate the initial state $\hat{x}(t)$.
+
+\newpage
+
 
 
 \section{DeePC for LTI systems}
