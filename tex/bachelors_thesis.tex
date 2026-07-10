@@ -28,9 +28,10 @@
 \usepackage{theoremref}
 \usepackage{arydshln}
 \usepackage{tikz}
-\usepackage{subcaption}
 \usetikzlibrary{calc, patterns, decorations.pathmorphing, arrows.meta}
-
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \hypersetup{
     colorlinks=true,
@@ -86,7 +87,6 @@
 \newcommand{\studentid}{}
 \newcommand{\keywords}{keyword one; keyword two; keyword three}
 \newcommand{\kljucnerijeci}{klju\v{c}na rije\v{c} jedan; klju\v{c}na rije\v{c} dva}
-\addto\captionsenglish{\renewcommand{\bibname}{References}}
 
 
 \pagestyle{fancy}
@@ -866,18 +866,64 @@ each one, the linearized model error \eqref{eq:lin-model-err} is constant becaus
 
 This proves that with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" PE input we can get worse results. 
 
-\vspace{1cm}
+\vspace{1em}
 
 In this chapter we demonstrated that it is possible to simulate future trajectories of LTI systems directly from recorded data and knowledge about the input. This
 hints at the following chapter which uses this approach to implement predictive control of such systems entirely from input-output data.
 
 \newpage
 
-\chapter{Data-Enabled Predictive Control - DeePC}
+\chapter{Data-Enabled Predictive Control (DeePC)}
 
 \section{Introduction}
 
+The golden standard of modern control has been Model Predictive Control (MPC), which is an optimal control technique which minimizes a const
+function constrained by model. TODO: text 
+
+\newpage
+
 \section{Model predictive control}
+As mentioned before, MPC is a control algorithm which uses optimization with system model and limitations as constraints to find optimal control input over a finite, receding horizon.
+At each time step future trajectory of the system is predicted using the model and optimal sequence of control input is computed taking constraints on inputs and states of the system. Only the first
+input of the optimal input sequence is applied after which the procedure is repeated with new measurements.
+In this section we will formulate classical MPC for LTI systems which is needed for later understanding of DeePC.
+
+\vspace{1em}
+
+Given an LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization problem at time step $t$ can be written as:
+
+\begin{equation}
+    \begin{aligned}
+        \min_{u, x, y} \quad  &\sum_{j=0}^{N-1} \left(\norm{y_j - r_{t+j}}^{2}_{Q} + \norm{u_j}^{2}_{R}\right) \\
+        \text{subject to:} \quad &x_0 = \hat{x}(t), \\
+        &x_{j+1} = Ax_j + Bu_j, \quad j=0,\dots,N-1; \\
+        &y_j = Cx_j + Du_j, \quad j=0,\dots,N-1; \\
+        &y_j \in \mathcal{Y}, \quad j=0,\dots,N; \\
+        &u_j \in \mathcal{U}, \quad j=0,\dots,N-1; \\
+    \end{aligned}
+    \label{eq:mpc}
+\end{equation}
+
+
+Where: \(\norm{z}^{2}_P := z^{T}Pz\), for a symmetric positive semidefinite matrix P (notation $P \succeq 0$). Matrix \(Q\in M_{p\times p}(\mathbb{R}), \ Q \succeq 0\) is the 
+output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succeq 0\) is the input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
+output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track. We use estimated state $\hat{x}$ instead of the true state because, generally,
+the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. Now we will lay out the MPC algorithm.
+
+\begin{algorithm}
+\caption{MPC}
+\begin{algorithmic}
+\Require System model $(A, B, C, D)$; reference trajectory $r$; past input/output data $(u, y)$; contraints sets $\mathcal{U}, \mathcal{Y}$; cost matrices $Q, R$;
+
+\For{$t = 0, 1, ...$}
+    \State[1] Estimate $\hat{x}(t)$ from previous input/output data
+    \State[2] Solve \eqref{eq:mpc} for $u^{*} = (u^{*}_0, u^{*}_1, ..., u^{*}_{N-1})$ 
+    \State[3] Apply input $u(t) = u^{*}_0$ and update past input/output data
+\EndFor
+
+\end{algorithmic}
+\end{algorithm}
+
 
 \section{DeePC for LTI systems}
 
@@ -885,8 +931,13 @@ hints at the following chapter which uses this approach to implement predictive 
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 
+\chapter{Conclusion}
+
+\appendix
+\chapter{Additional Material}
+
 \begin{thebibliography}{9}
-\addcontentsline{toc}{chapter}{References}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 \bibitem{example}
 Author Name.
@@ -895,7 +946,6 @@ Publisher or Journal, year.
 
 \end{thebibliography}
 
-\appendix
-\chapter{Additional Material}
+
 
 \end{document}

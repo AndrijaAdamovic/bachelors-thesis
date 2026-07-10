@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  9 JUL 2026 19:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  10 JUL 2026 16:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -678,13 +678,7 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikz@expandcount=\count358
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
-Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count359
-Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count360
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -696,7 +690,7 @@ File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen324
 \pgfdecoratedinputsegmentremainingdistance=\dimen325
 \pgf@decorate@distancetomove=\dimen326
-\pgf@decorate@repeatstate=\count361
+\pgf@decorate@repeatstate=\count359
 \pgfdecorationsegmentamplitude=\dimen327
 \pgfdecorationsegmentlength=\dimen328
 )
@@ -707,17 +701,53 @@ File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowlength=\dimen330
 \pgfarrowwidth=\dimen331
 \pgfarrowlinewidth=\dimen332
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count360
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count361
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count362
+\float@exts=\toks51
+\float@box=\box73
+\@float@everytoks=\toks52
+\@floatcapt=\box74
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 43.
-Package hyperref Info: Option `pageanchor' set `false' on input line 43.
-\c@definition=\count362
-\c@theorem=\count363
+\@float@every@algorithm=\toks53
+\c@algorithm=\count363
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count364
+\c@ALG@rem=\count365
+\c@ALG@nested=\count366
+\ALG@tlm=\skip113
+\ALG@thistlm=\skip114
+\c@ALG@Lnr=\count367
+\c@ALG@blocknr=\count368
+\c@ALG@storecount=\count369
+\c@ALG@tmpcounter=\count370
+\ALG@tmplength=\skip115
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `pageanchor' set `false' on input line 44.
+\c@definition=\count371
+\c@theorem=\count372
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 126.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count364
+\l__color_backend_stack_int=\count373
 ) (./bachelors_thesis.aux)
 \openout1 = `bachelors_thesis.aux'.
 
@@ -775,21 +805,22 @@ LaTeX Font Info:    ... okay on input line 126.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count365
+\scratchcounter=\count374
 \scratchdimen=\dimen333
-\scratchbox=\box73
-\nofMPsegments=\count366
-\nofMParguments=\count367
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count368
+\scratchbox=\box75
+\nofMPsegments=\count375
+\nofMParguments=\count376
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count377
 \MPscratchDim=\dimen334
-\MPnumerator=\count369
-\makeMPintoPDFobject=\count370
-\everyMPtoPDFconversion=\toks52
+\MPnumerator=\count378
+\makeMPintoPDFobject=\count379
+\everyMPtoPDFconversion=\toks55
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -814,12 +845,12 @@ Package hyperref Info: Link coloring ON on input line 126.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<figures/assignment.pdf, id=140, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=144, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
 Package pdftex.def Info: figures/assignment.pdf  used on input line 203.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<figures/assignment.pdf, id=142, page=1, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=146, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
 Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
@@ -939,7 +970,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=382, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=388, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
 Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
@@ -947,12 +978,12 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=399, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=405, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
 Package pdftex.def Info: figures/step.pdf  used on input line 686.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=400, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=406, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
 Package pdftex.def Info: figures/prbs_out.pdf  used on input line 693.
@@ -968,7 +999,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<figures/dd_sim_linear.pdf, id=461, 804.00375pt x 424.58624pt>
+<figures/dd_sim_linear.pdf, id=467, 804.00375pt x 424.58624pt>
 File: figures/dd_sim_linear.pdf Graphic file (type pdf)
 <use figures/dd_sim_linear.pdf>
 Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
@@ -976,13 +1007,13 @@ Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 770.
  [14
 
  <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [15]
-<figures/pend_1.pdf, id=487, 797.98125pt x 424.58624pt>
+<figures/pend_1.pdf, id=493, 797.98125pt x 424.58624pt>
 File: figures/pend_1.pdf Graphic file (type pdf)
 <use figures/pend_1.pdf>
 Package pdftex.def Info: figures/pend_1.pdf  used on input line 825.
 (pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
  [16 <./figures/pend_1.pdf>]
-<figures/pend_sim_comp.pdf, id=506, 797.98125pt x 419.5675pt>
+<figures/pend_sim_comp.pdf, id=512, 797.98125pt x 419.5675pt>
 File: figures/pend_sim_comp.pdf Graphic file (type pdf)
 <use figures/pend_sim_comp.pdf>
 Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 850.
@@ -991,11 +1022,17 @@ Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 850.
 Chapter 5.
 [18
 
-] [19
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 914.
+ [19]
+Chapter 6.
+[20
 
 ]
 Appendix A.
-[20
+[21
+
+] [22
 
 ] (./bachelors_thesis.aux)
  ***********
@@ -1003,21 +1040,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 36ED798434AD0A47486953267F6F36B9;4824.
+(rerunfilecheck)             Checksum: E1609DF3A32EC41FCF8B55BDA4C7323D;4932.
  ) 
 Here is how much of TeX's memory you used:
- 27225 strings out of 467533
- 510423 string characters out of 5419495
- 918089 words of memory out of 5000000
- 55538 multiletter control sequences out of 15000+600000
+ 27855 strings out of 467533
+ 520570 string characters out of 5419495
+ 928054 words of memory out of 5000000
+ 56148 multiletter control sequences out of 15000+600000
  716346 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (32 pages, 1247606 bytes).
+Output written on bachelors_thesis.pdf (34 pages, 1255314 bytes).
 PDF statistics:
- 647 PDF objects out of 1000 (max. 8388607)
- 534 compressed objects within 6 object streams
- 102 named destinations out of 1000 (max. 500000)
- 302 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 666 PDF objects out of 1000 (max. 8388607)
+ 551 compressed objects within 6 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 310 words of extra memory for PDF output out of 10000 (max. 10000000)
 
