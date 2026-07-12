@@ -13,5 +13,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Different control design approaches from data}}{18}{figure.caption.15}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces General predictive control illustration}}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mass 2 position controlled with DeePC}}{21}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Force input for mass 2 position control with DeePC}}{22}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Position of mass 2 and force input with DeePC - y limit}}{22}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

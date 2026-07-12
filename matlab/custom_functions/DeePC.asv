@@ -1,0 +1,102 @@
+% Taken from https://github.com/iamKaiZhang/DeePC/ and modified 
+
+classdef DeePC < handle
+    properties
+        nu  % input dimension
+        ny  % output dimension
+
+        % Equilibrium
+        yf
+        uf
+
+        % Hankel matrices
+        Up
+        Yp
+        Uf
+        Yf
+
+        ioconstraints
+        params
+        yalmip_optimizer
+    end
+
+    methods
+        function obj = DeePC(Up, Uf, Yp, Yf, Q, R)
+            obj.yf = yf;
+            obj.uf = uf;
+            
+            % Q = params.Q;
+            % R = params.R;
+            ny = size(Q, 1);
+            nu = size(R, 1);
+
+            L_ini = ;
+            N = params.N;
+
+            obj.nu = size(R, 1);
+            obj.ny = size(Q, 1);
+
+            obj.Up = Up;
+            obj.Uf = Uf;
+            obj.Yp = Yp;
+            obj.Yf = Yf;
+
+            obj.ioconstraints = constraints;
+            obj.params = params;
+
+            obj.init_optimizer();
+        end
+
+        function init_optimizer(obj)
+            T_ini = obj.params.T_ini;
+            N = obj.params.N;
+            Q = obj.params.Q;
+            R = obj.params.R;
+            Hu = obj.ioconstraints.Hu;
+            hu = obj.ioconstraints.hu;
+            Hy = obj.ioconstraints.Hy;
+            hy = obj.ioconstraints.hy;
+
+            ng = size(obj.Up, 2);
+
+            u_var = sdpvar(obj.nu, N, 'full');
+            y_var = sdpvar(obj.ny, N, 'full');
+            u_ini = sdpvar(obj.nu, T_ini, 'full');
+            y_ini = sdpvar(obj.ny, T_ini, 'full');
+            g = sdpvar(ng, 1, 'full');
+
+            objective = 0;
+            constraints = [
+                obj.Up * g == reshape(u_ini, [], 1), ...
+                obj.Yp * g == reshape(y_ini, [], 1), ...
+                obj.Uf * g == reshape(u_var, [], 1), ...
+                obj.Yf * g == reshape(y_var, [], 1), ...
+            ];
+            for i = 1:N
+                objective = objective ...
+                    + (y_var(:, i)-obj.yf)'*Q*(y_var(:, i)-obj.yf) ...
+                    + (u_var(:, i)-obj.uf)'*R*(u_var(:, i)-obj.uf);
+                constraints = [
+                    constraints, ...
+                    Hu * u_var(:, i) <= hu, ...
+                    Hy * y_var(:, i) <= hy, ...
+                ];
+            end
+
+            opts = sdpsettings('verbose', 1, 'solver', 'mosek');
+            opts.mosek.MSK_DPAR_INTPNT_QO_TOL_REL_GAP = 1e-8;
+            obj.yalmip_optimizer = optimizer( ...
+                constraints, objective, opts, ...
+                {u_ini, y_ini}, ...  % params: initial condition
+                {u_var, y_var, objective} ...  % outputs
+            );
+        end
+
+        function [u, info] = solve(obj, u_ini, y_ini)
+            [out, errorcode] = obj.yalmip_optimizer({u_ini, y_ini});
+            [U, Y, objective] = out{:};
+            u = U(:, 1);
+            info = struct('errorcode', errorcode, 'objective', objective, 'U', U, 'Y', Y);
+        end
+    end
+end

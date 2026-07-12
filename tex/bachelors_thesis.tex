@@ -703,6 +703,7 @@ Thus, the Lemma holds for this example.
 \clearpage
 
 \chapter{Data driven simulation of LTI systems}
+\label{chp:dd-sim}
 In the last chapter we used the FL to demonstrate that any length $L$ trajectory of a linear system can be found
 in the image of a Hankel matrix that is built using a previous trajectory with a PE input. This is really interesting, however,
 there are no direct use cases when it comes to control. In this chapter we will build up on the FL and use it to
@@ -722,6 +723,7 @@ We want to find the output \(\bar{y}_{[L_{ini}, L-1]}\) such that \((\bar{u}_{[0
 on recorded data, previous history of a trajectory and future input we want to find the future output part of that trajectory. We can split the Hankel matrices of recorded data like this:
 \begin{equation}
     \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix} = \begin{bmatrix}U_p \\ U_f \\ Y_p \\ Y_f\end{bmatrix}
+    \label{eq:uy-pf}
 \end{equation}
 
 Where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $pL_{ini}$ and $pL_{ref}$ rows, respectively. Now we will formulate a solution of the problem like in  
@@ -908,12 +910,12 @@ s
 \section{Model predictive control}
 As mentioned before, MPC is a control algorithm which uses optimization with system model and limitations as constraints to find optimal control input over a finite, receding horizon.
 At each time step future trajectory of the system is predicted using the model and optimal sequence of control input is computed taking constraints on inputs and states of the system. Typically, only the first
-input of the optimal input sequence is applied after which the procedure is repeated with new measurements.
-In this section we will formulate classical MPC for LTI systems which is needed for later understanding of DeePC.
+input of the optimal input sequence is applied after which the procedure is repeated with new measurements. We can say that, other than MPC, we do not have another control solution for multivariable systems with constraints 
+on inputs and outputs with stability guarantees. In this section we will formulate classical MPC for LTI systems which is needed for later understanding of DeePC.
 
 \vspace{1em}
 
-Given an LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization problem at time step $t$ can be written as:
+Given a LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization problem at time step $t$ can be written as:
 
 \begin{equation}
     \begin{aligned}
@@ -930,19 +932,20 @@ Given an LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization
 
 Where: \(\norm{z}^{2}_P := z^{T}Pz\), for a symmetric positive semidefinite matrix P (notation $P \succeq 0$). Matrix \(Q\in M_{p\times p}(\mathbb{R}), \ Q \succeq 0\) is the 
 output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succeq 0\) is the input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
-output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track. We use estimated state $\hat{x}$ instead of the true state because, generally,
+output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track, $N\in\mathbb{Z}_{>0}$ is the prediction horizon length. We use estimated state $\hat{x}$ instead of the true state because, generally,
 the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. This MPC optimization problem is usually a convex quadratic program (QP).
 Now we will lay out the MPC algorithm for reference tracking.
 
 \begin{algorithm}
-\caption{MPC}
+\caption{Model predictive control (MPC)}
 \begin{algorithmic}
 \Require System model $(A, B, C, D)$; reference trajectory $r$; past input/output data $(u, y)$; contraints sets $\mathcal{U}, \mathcal{Y}$; cost matrices $Q, R$;
 
 \For{$t = 0, 1, ...$}
     \State[1] Estimate $\hat{x}(t)$ from previous input/output data
     \State[2] Solve \eqref{eq:mpc} for $u^{*} = (u^{*}_0, u^{*}_1, ..., u^{*}_{N-1})$ 
-    \State[3] Apply input $u(t) = u^{*}_0$ and update past input/output data
+    \State[3] Apply input $u(t) = u^{*}_0$ 
+    \State[4] Update past input/output data with new inputs/measurements
 \EndFor
 \end{algorithmic}
 \end{algorithm}
@@ -953,11 +956,118 @@ if the system model is precise and if it is possible to estimate the initial sta
 
 \newpage
 
-
-
 \section{DeePC for LTI systems}
+In this section we will formulate predictive control based on data. We will use the same simulation method for prediction from Chapter \ref{chp:dd-sim}.
+The following are required for the DeePC algorithm:
+\begin{itemize}
+    \item[(i)] An upper bound on state dimension $N$
+    \item[(ii)] Past/future trajectory lengths $L_{ini}$ and $L_{ref}$, with $L_{ini} \geq \ell$; $L:=L_{ini}+L_{ref}$  
+    \item[(iii)] Recorded restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $u_{[0, T-1]}$ is PE of order N+L and $T \geq (m+1)(N+L) - 1$, $m$ is the number of inputs
+    \item[(iv)] Initial (past) trajectory \((\bar{u}_{ini}, \bar{y}_{ini}) = (\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\) 
+    \item[(v)] Reference trajectory $(r_0, r_1, ...) \in (\mathbb{R}^p)^{\mathbb{Z}_{\geq 0}}$ 
+    \item[(vi)] Input and output cost matrices $Q \succeq 0,\ R \succeq 0$
+    \item[(vii)] Constraits sets $\mathcal{U}, \ \mathcal{Y}$ 
+\end{itemize}
 
-\section{Regularizations}
+Requirement (ii) assuemes initial trajectory length longer than the lag of the system which is unknown, in practice we take long enough initial trajectory. That condition 
+is essentially equivalent to having long past input-output data for initial state estimation in MPC. Now we define matrices
+$U_p, U_f, Y_p, Y_f$ like in \eqref{eq:uy-pf}. Conditions above allow for application of Theorem \ref{thm:sim}. We now formulate the DeePC optimization problem at time step $t$:
+
+\begin{equation}
+    \begin{aligned}
+        \min_{g,y,u} \quad  &\sum_{j=0}^{L_{ref}-1} \left(\norm{\bar{y}_j - r_{t+j}}^{2}_{Q} + \norm{\bar{u}_j}^{2}_{R}\right) \\
+        \text{subject to:} \quad & \begin{bmatrix} U_p \\ Y_P \\ U_f \\ Y_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{ini} \\ \bar{y}_{ini} \\ \bar{u} \\ \bar{y}\end{bmatrix}\\ 
+        &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1; \\
+        &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1; \\
+    \end{aligned}
+    \label{eq:deepc}
+\end{equation}
+
+Where:
+\begin{align*}
+    \bar{u} &= col(\bar{u}_0, \dots, \bar{u}_{L_{ref} - 1}) \\
+    \bar{y} &= col(\bar{y}_0, \dots, \bar{y}_{L_{ref} - 1}) 
+\end{align*}
+
+We deviate from previos nomenclature in favor of easier formulation. Initial trajectory $(u_{ini}, y_{ini})$ will be updated with new meausred data such that it keeps the same length thus the oldest
+data pair will be removed.
+
+\vspace{1em}
+
+We can see that the DeePC optimization problem is \textit{de facto} a MPC problem but where instead of prediction using the model we use previous input-output data, thus this problem aviods the model
+completely. We now formulate the DeePC algorithm:
+
+\newpage
+
+\begin{algorithm}
+\caption{Data-Enabled predictive control (DeePC)}
+\begin{algorithmic}
+\Require Requirements (i) - (vii) listed above
+
+\For{$t = 0, 1, ...$}
+    \State[1] Solve \eqref{eq:deepc} for the vector g
+    \State[2] Compute optimal input sequence $\bar{u}^{*} = U_{f}g$
+    \State[3] Apply the first input $u(t) = \bar{u}^{*}(0)$
+    \State[4] Update the initial trajectory $(u_{ini}, y_{ini})$ with new inputs/measurements 
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+It can be shown that this DeePC is equivalent to MPC under the assumptions of the Fundamental Lemma, i.e. given the same reference and initial trajectory 
+they will give the identical output.
+
+\vspace{1em}
+
+Now, will we try to control the double spring mass damper system \ref{fig:double-spring-mass-damper} with DeePC. We will try to control
+the position of mass 2 so we changed  the output equation (\(C = \begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix}, \ D = 0\)) to only give position of mass 2 to reduce computational cost.
+We put an input constraint \(-100 \leq u(t) \leq 100\). We chose the following parameters $T = 100, \ L_{ini} = 5, \ L_{ref} = 25, \ Q = 10000, \ R = 0.001$ - changing them we can
+tune the behaviour of our controller. Initial trajectory is set to 0.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/deepc_step_y.pdf}
+    \caption{Mass 2 position controlled with DeePC}
+    \label{fig:deepc-step-y}
+\end{figure}
+
+We can see that we were able to reach tracking of the given trajectory, however, it could be tuned for a better result, but as a proof of concept it is sufficient. Now lets display
+the limited force input.
+
+\newpage
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/deepc_step_u.pdf}
+    \caption{Force input for mass 2 position control with DeePC}
+    \label{fig:deepc-step-u}
+\end{figure}
+
+We can see that the limit on the input is working. Now lets try limiting the position $y \leq 1$ to eliminate overshoot. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/deepc_step_ylim.pdf}
+    \caption{Position of mass 2 and force input with DeePC - y limit}
+    \label{fig:deepc-step-ylim}
+\end{figure}
+
+Tuning the paramters gave us this result, which can be considered relatively good, we got a short settling time with no overshoot. For these simulations we used MATLAB with YALMIP
+toolbox and MOSEK solver.
+
+\vspace{1em}
+
+In simulation where systems are completely linear and there is zero noise we get a good result, however, when we consider realistic systems with noise and nonlinearites this 
+DeePC performs poorly - it is not robust. To improve on robustness we implement regularizations to our optimization problem. 
+
+
+
+\newpage
+
+
+
+\newpage
+
+\section{Regularized DeePC}
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 
