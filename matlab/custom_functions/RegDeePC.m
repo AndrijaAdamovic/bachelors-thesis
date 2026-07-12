@@ -1,4 +1,7 @@
-classdef DeePCc < handle
+% Code is taken from https://github.com/iamKaiZhang/DeePC/ and modified to
+% our needs
+
+classdef RegDeePC < handle
     properties
         Up, Uf, Yp, Yf,
         y_f,
@@ -6,11 +9,13 @@ classdef DeePCc < handle
         ny, nu, ng,
         L_ini, L_ref
         u_max, y_max,
+        lambda_y, lambda_g,
         yalmip_optimizer
     end
 
     methods
-        function obj = DeePCc(Up, Uf, Yp, Yf, y_f, Q, R, u_max, y_)
+        function obj = RegDeePC(Up, Uf, Yp, Yf, y_f, Q, R, ...
+                lambda_y, lambda_g, u_max, y_max)
             obj.Up = Up;
             obj.Uf = Uf;
             obj.Yp = Yp;
@@ -19,6 +24,9 @@ classdef DeePCc < handle
             obj.y_f = y_f;
             obj.Q = Q;
             obj.R = R;
+
+            obj.lambda_y = lambda_y;
+            obj.lambda_g = lambda_g;
 
             obj.ny = size(Q, 1);
             obj.nu = size(R, 1);
@@ -40,11 +48,12 @@ classdef DeePCc < handle
             u_ini = sdpvar(obj.nu, obj.L_ini, 'full');
             y_ini = sdpvar(obj.ny, obj.L_ini, 'full');
             g = sdpvar(obj.ng, 1, 'full');
+            sigma_y = sdpvar(obj.ny * obj.L_ini, 1);
 
-            objective = 0;
+            objective = obj.lambda_g * (g')*g + obj.lambda_y * (sigma_y')*sigma_y;
             constraints = [
                 obj.Up * g == reshape(u_ini, [], 1), ...
-                obj.Yp * g == reshape(y_ini, [], 1), ...
+                obj.Yp * g == reshape(y_ini, [], 1) + sigma_y, ...
                 obj.Uf * g == reshape(u_var, [], 1), ...
                 obj.Yf * g == reshape(y_var, [], 1), ...
             ]; 
@@ -53,6 +62,10 @@ classdef DeePCc < handle
                 objective = objective ...
                     + (y_var(:, i)-obj.y_f)'*obj.Q*(y_var(:, i)-obj.y_f) ...
                     + (u_var(:, i))'*obj.R*(u_var(:, i));
+                constraints = [constraints,...
+                    u_var(:, i) <= obj.u_max * ones(obj.nu, 1), ...
+                    y_var(:, i) <= obj.y_max * ones(obj.ny, 1)
+                ];
             end
 
             opts = sdpsettings('verbose', 1, 'solver', 'mosek');

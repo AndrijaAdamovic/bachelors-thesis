@@ -1057,21 +1057,36 @@ toolbox and MOSEK solver.
 \vspace{1em}
 
 In simulation where systems are completely linear and there is zero noise we get a good result, however, when we consider realistic systems with noise and nonlinearites this 
-DeePC performs poorly - it is not robust. To improve on robustness we implement regularizations to our optimization problem. 
-
-
+DeePC performs poorly - it is not robust. To improve on robustness we implement regularizations to our optimization problem.
 
 \newpage
 
-
-
-\newpage
 
 \section{Regularized DeePC}
+The paper [todo: deepc] introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their result and simulate it.
+The Fundamental lemma is an result which completely falls apart when we introduce measurement noise (or nonlinearity) to our system since there is a high probability that the image of Hankel matrix of input-output
+data spans the whole space instead of the aforementioned subspace (the behaviour). There is an approach where we can maybe remove the noise from recorded data with SVD or similar techniques, that is good for recorded data but for DeePC where
+we use real-time data it is not that simple. Now we will formulate regularized DeePC optimization problem:
+
+\begin{equation}
+    \begin{aligned}
+        \min_{g,y,u, \sigma_y} \quad  &\sum_{j=0}^{L_{ref}-1} \left(\norm{\bar{y}_j - r_{t+j}}^{2}_{Q} + \norm{\bar{u}_j}^{2}_{R}\right) \\
+        &+ \lambda_g\norm{g}_2^{2}\ + \lambda_y\norm{\sigma_y}_2^{2}\\ 
+        \text{subject to:} \quad & \begin{bmatrix} U_p \\ Y_P \\ U_f \\ Y_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{ini} \\ \bar{y}_{ini} + \sigma_y \\ \bar{u} \\ \bar{y}\end{bmatrix}\\ 
+        &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1; \\
+        &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1; \\
+    \end{aligned}
+    \label{eq:deepc-reg}
+\end{equation}
+
+The equality constraint in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
+to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
+is infeasible i.e. that data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by previous robust optimization problems, more detail in [ref]. 
+In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 
-\chapter{Conclusion}
+    \chapter{Conclusion}
 
 \appendix
 \chapter{Additional Material}

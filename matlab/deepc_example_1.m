@@ -39,7 +39,7 @@ y_f = 1; %Step
 tol = 1e-6;
 u_max = 100;
 y_max = 1;
-deepc = DeePCc(U_p, U_f, Y_p, Y_f, y_f, Q, R, u_max, y_max);
+deepc = DeePC(U_p, U_f, Y_p, Y_f, y_f, Q, R, u_max, y_max);
 
 T_sim = 35;
 
