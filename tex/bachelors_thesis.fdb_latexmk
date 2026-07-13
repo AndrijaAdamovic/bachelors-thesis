@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1783887121.48192 "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" "bachelors_thesis.pdf" "bachelors_thesis" 1783887122.76024 0
-  "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" 1783887121.25389 59199 c40f6047d65d42d57298194bdbb49633 ""
+["pdflatex"] 1783935400.28076 "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" "bachelors_thesis.pdf" "bachelors_thesis" 1783935403.37586 0
+  "/home/andrija/bachelors-thesis/tex/bachelors_thesis.tex" 1783935397.78355 59204 72230947e3ed4360aaa46401d36dd5b6 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -229,12 +229,12 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1771677972 5541377 824b1e5beafd2ebda40585373b35bb6b ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771678157 3636401 94e27571b6690e95e548df6ea55913d0 ""
   "/usr/local/texlive/2025/texmf.cnf" 1771677965.89302 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "bachelors_thesis.aux" 1783887122.64625 10223 68047627a786554b35981eb704e6be94 "pdflatex"
-  "bachelors_thesis.lof" 1783887122.64855 1781 4c8b6a6e44cbbc8f09e09659f01ed3d1 "pdflatex"
-  "bachelors_thesis.lot" 1783887122.64855 170 5172fc40d96ddf0ade05c2687a3253b9 "pdflatex"
-  "bachelors_thesis.out" 1783887122.64725 4945 712979c7b0b88c0dae9013553673d1da "pdflatex"
-  "bachelors_thesis.tex" 1783887121.25389 59199 c40f6047d65d42d57298194bdbb49633 ""
-  "bachelors_thesis.toc" 1783887122.64855 2419 5f462d83bf170b7d9ae23d4df6356a26 "pdflatex"
+  "bachelors_thesis.aux" 1783935402.88699 10223 68047627a786554b35981eb704e6be94 "pdflatex"
+  "bachelors_thesis.lof" 1783935402.88899 1781 4c8b6a6e44cbbc8f09e09659f01ed3d1 "pdflatex"
+  "bachelors_thesis.lot" 1783935402.88899 170 5172fc40d96ddf0ade05c2687a3253b9 "pdflatex"
+  "bachelors_thesis.out" 1783935402.88899 4945 712979c7b0b88c0dae9013553673d1da "pdflatex"
+  "bachelors_thesis.tex" 1783935397.78355 59204 72230947e3ed4360aaa46401d36dd5b6 ""
+  "bachelors_thesis.toc" 1783935402.88899 2419 5f462d83bf170b7d9ae23d4df6356a26 "pdflatex"
   "figures/PRBS.pdf" 1783100130.43193 9989 4691944d492ca1dd95095dab7dcd64b9 ""
   "figures/assignment.pdf" 1780324360.36514 701448 4d0db7398fa6b3b88bd37be9cf6f0164 ""
   "figures/control_diagram.tex" 1783701194.71649 716 4574f7ad32563e6300e470be23f75a03 ""
