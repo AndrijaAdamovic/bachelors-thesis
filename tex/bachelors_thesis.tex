@@ -1079,7 +1079,7 @@ we use real-time data it is not that simple. Now we will formulate regularized D
     \label{eq:deepc-reg}
 \end{equation}
 
-The equality constraint in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
+The hard equality constraint in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
 to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
 is infeasible i.e. that data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by previous robust optimization problems, more detail in [ref]. 
 In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
