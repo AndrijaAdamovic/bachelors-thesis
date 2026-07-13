@@ -1084,16 +1084,12 @@ to ensure the feasibility of the constraint. We penalize the 2-norm squared of t
 is infeasible i.e. that data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by previous robust optimization problems, more detail in [ref]. 
 In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
 
-\vspace{1em}
+\subsection{Noisy measurements LTI example}
 
 We test the regularized DeePC on \ref{fig:double-spring-mass-damper}. Since this example requires a non-zero input for a non-zero steady state we replace $\norm{\bar{u}_j}^{2}_{R}$ with
-$\norm{\bar{u}_j - u_s}^{2}_{R}$ in \eqref{eq:deepc-reg}, where $u_s \in \mathbb{R}^m$ is the steady state input. We introduce Gaussian measurement noise to the system model like this:
-\begin{equation}
-    y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2)
-    \label{eq:noise}
-\end{equation}
-
-For this example we took $\sigma = 0.01m$. Secondly, we calculate the steady state input from the model by solving for $u_s$:
+$\norm{\bar{u}_j - u_s}^{2}_{R}$ in \eqref{eq:deepc-reg}, where $u_s \in \mathbb{R}^m$ is the steady state input. 
+This steady state input is, generally, not necessary for DeePC and it can be calculated from data. 
+We calculate the steady state input from the model by solving for $u_s$:
 \begin{equation}
 \begin{aligned}
     (I-A_d)x_s - B_du_s = 0 \\
@@ -1103,8 +1099,14 @@ For this example we took $\sigma = 0.01m$. Secondly, we calculate the steady sta
 \end{equation}
 
 Where $y_s$ is the steady state output, for our example where $y_s = 1\ m$ solving \eqref{eq:steady} yields $u_s \approx 71.94\ N$.
-This steady state input is, generally, not necessary for DeePC and it can be calculated from data. Now we run regularized DeePC to track
-the steady state.
+We introduce Gaussian measurement noise to the system model like this:
+\begin{equation}
+    y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2)
+    \label{eq:noise}
+\end{equation}
+
+For this example we took $\sigma = 0.01m$.
+Now we run regularized DeePC algorithm to track the steady state.
 
 \newpage
 
@@ -1117,6 +1119,8 @@ the steady state.
 
 Tuning the parameters of \eqref{eq:deepc-reg} gave us a really good result for regularized DeePC and also we can see that DeePC without regularizations
 performs poorly with the same parameters and data.
+
+\subsection{Nonlinear system example}
 
 \newpage
 

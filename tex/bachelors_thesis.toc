@@ -27,6 +27,8 @@
 \contentsline {section}{\numberline {5.2}Model predictive control}{19}{section.5.2}%
 \contentsline {section}{\numberline {5.3}DeePC for LTI systems}{20}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Regularized DeePC}{23}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Noisy measurements LTI example}{23}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Nonlinear system example}{24}{subsection.5.4.2}%
 \contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Additional Material}{26}{appendix.A}%
 \contentsline {chapter}{Bibliography}{27}{appendix*.21}%

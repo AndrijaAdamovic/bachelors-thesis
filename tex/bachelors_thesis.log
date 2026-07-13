@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  13 JUL 2026 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  13 JUL 2026 18:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -847,12 +847,12 @@ Package hyperref Info: Link coloring ON on input line 126.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [1] [1
 
 ]
-<figures/assignment.pdf, id=144, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=152, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
 Package pdftex.def Info: figures/assignment.pdf  used on input line 203.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
-<figures/assignment.pdf, id=146, page=1, 596.52861pt x 843.66193pt>
+<figures/assignment.pdf, id=154, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
 Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 203.
@@ -972,7 +972,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) [10
 
 ]
-<figures/PRBS.pdf, id=406, 913.4125pt x 496.85625pt>
+<figures/PRBS.pdf, id=418, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
 Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
@@ -980,12 +980,12 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 669.
  [11
 
  <./figures/PRBS.pdf>]
-<figures/step.pdf, id=424, 908.39375pt x 510.90875pt>
+<figures/step.pdf, id=436, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
 Package pdftex.def Info: figures/step.pdf  used on input line 686.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
-<figures/prbs_out.pdf, id=425, 922.44624pt x 510.90875pt>
+<figures/prbs_out.pdf, id=437, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
 Package pdftex.def Info: figures/prbs_out.pdf  used on input line 693.
@@ -1001,7 +1001,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<figures/dd_sim_linear.pdf, id=485, 804.00375pt x 424.58624pt>
+<figures/dd_sim_linear.pdf, id=497, 804.00375pt x 424.58624pt>
 File: figures/dd_sim_linear.pdf Graphic file (type pdf)
 <use figures/dd_sim_linear.pdf>
 Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 772.
@@ -1009,13 +1009,13 @@ Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 772.
  [14
 
  <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [15]
-<figures/pend_1.pdf, id=511, 797.98125pt x 424.58624pt>
+<figures/pend_1.pdf, id=523, 797.98125pt x 424.58624pt>
 File: figures/pend_1.pdf Graphic file (type pdf)
 <use figures/pend_1.pdf>
 Package pdftex.def Info: figures/pend_1.pdf  used on input line 827.
 (pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
  [16 <./figures/pend_1.pdf>]
-<figures/pend_sim_comp.pdf, id=530, 797.98125pt x 419.5675pt>
+<figures/pend_sim_comp.pdf, id=542, 797.98125pt x 419.5675pt>
 File: figures/pend_sim_comp.pdf Graphic file (type pdf)
 <use figures/pend_sim_comp.pdf>
 Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 852.
@@ -1031,27 +1031,27 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 940.
  [19] [20]
-<figures/deepc_step_y.pdf, id=573, 794.97pt x 424.58624pt>
+<figures/deepc_step_y.pdf, id=585, 794.97pt x 424.58624pt>
 File: figures/deepc_step_y.pdf Graphic file (type pdf)
 <use figures/deepc_step_y.pdf>
 Package pdftex.def Info: figures/deepc_step_y.pdf  used on input line 1028.
 (pdftex.def)             Requested size: 455.24411pt x 243.15044pt.
  [21 <./figures/deepc_step_y.pdf>]
-<figures/deepc_step_u.pdf, id=591, 804.00375pt x 419.5675pt>
+<figures/deepc_step_u.pdf, id=603, 804.00375pt x 419.5675pt>
 File: figures/deepc_step_u.pdf Graphic file (type pdf)
 <use figures/deepc_step_u.pdf>
 Package pdftex.def Info: figures/deepc_step_u.pdf  used on input line 1040.
 (pdftex.def)             Requested size: 455.24411pt x 237.56824pt.
-<figures/deepc_step_ylim.pdf, id=592, 813.0375pt x 419.5675pt>
+<figures/deepc_step_ylim.pdf, id=604, 813.0375pt x 419.5675pt>
 File: figures/deepc_step_ylim.pdf Graphic file (type pdf)
 <use figures/deepc_step_ylim.pdf>
 Package pdftex.def Info: figures/deepc_step_ylim.pdf  used on input line 1049.
 (pdftex.def)             Requested size: 455.24411pt x 234.92418pt.
  [22 <./figures/deepc_step_u.pdf> <./figures/deepc_step_ylim.pdf>] [23]
-<figures/deepc_step_robust.pdf, id=631, 808.01875pt x 424.58624pt>
+<figures/deepc_step_robust.pdf, id=643, 808.01875pt x 424.58624pt>
 File: figures/deepc_step_robust.pdf Graphic file (type pdf)
 <use figures/deepc_step_robust.pdf>
-Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1113.
+Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1115.
 (pdftex.def)             Requested size: 455.24411pt x 239.2179pt.
  [24 <./figures/deepc_step_robust.pdf>]
 Chapter 6.
@@ -1069,21 +1069,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AB7997A8BD962ACB78E28E5F5A15AA5E;4945.
+(rerunfilecheck)             Checksum: FA7A5878B8C80A241BA66AE294289CFA;5354.
  ) 
 Here is how much of TeX's memory you used:
- 28047 strings out of 467533
- 525070 string characters out of 5419495
- 929786 words of memory out of 5000000
- 56311 multiletter control sequences out of 15000+600000
+ 28051 strings out of 467533
+ 525138 string characters out of 5419495
+ 929812 words of memory out of 5000000
+ 56313 multiletter control sequences out of 15000+600000
  721914 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (39 pages, 1372562 bytes).
+Output written on bachelors_thesis.pdf (39 pages, 1372430 bytes).
 PDF statistics:
- 788 PDF objects out of 1000 (max. 8388607)
- 647 compressed objects within 7 object streams
- 123 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 800 PDF objects out of 1000 (max. 8388607)
+ 659 compressed objects within 7 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 
