@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  13 JUL 2026 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  13 JUL 2026 18:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1048,11 +1048,11 @@ File: figures/deepc_step_ylim.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/deepc_step_ylim.pdf  used on input line 1049.
 (pdftex.def)             Requested size: 455.24411pt x 234.92418pt.
  [22 <./figures/deepc_step_u.pdf> <./figures/deepc_step_ylim.pdf>] [23]
-<figures/deepc_step_robust.pdf, id=631, 804.00375pt x 424.58624pt>
+<figures/deepc_step_robust.pdf, id=631, 808.01875pt x 424.58624pt>
 File: figures/deepc_step_robust.pdf Graphic file (type pdf)
 <use figures/deepc_step_robust.pdf>
 Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1113.
-(pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
+(pdftex.def)             Requested size: 455.24411pt x 239.2179pt.
  [24 <./figures/deepc_step_robust.pdf>]
 Chapter 6.
 [25
@@ -1080,7 +1080,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (39 pages, 1343936 bytes).
+Output written on bachelors_thesis.pdf (39 pages, 1372562 bytes).
 PDF statistics:
  788 PDF objects out of 1000 (max. 8388607)
  647 compressed objects within 7 object streams
