@@ -476,6 +476,11 @@ INPUT ./figures/deepc_step_ylim.pdf
 INPUT ./figures/deepc_step_ylim.pdf
 INPUT ./figures/deepc_step_ylim.pdf
 INPUT ./figures/deepc_step_ylim.pdf
+INPUT ./figures/deepc_step_robust.pdf
+INPUT ./figures/deepc_step_robust.pdf
+INPUT ./figures/deepc_step_robust.pdf
+INPUT ./figures/deepc_step_robust.pdf
+INPUT ./figures/deepc_step_robust.pdf
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out

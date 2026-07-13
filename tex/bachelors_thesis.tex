@@ -1083,6 +1083,41 @@ The hard equality constraint in the original problem can cause problems when noi
 to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
 is infeasible i.e. that data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by previous robust optimization problems, more detail in [ref]. 
 In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
+
+\vspace{1em}
+
+We test the regularized DeePC on \ref{fig:double-spring-mass-damper}. Since this example requires a non-zero input for a non-zero steady state we replace $\norm{\bar{u}_j}^{2}_{R}$ with
+$\norm{\bar{u}_j - u_s}^{2}_{R}$ in \eqref{eq:deepc-reg}, where $u_s \in \mathbb{R}^m$ is the steady state input. We introduce Gaussian measurement noise to the system model like this:
+\begin{equation}
+    y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2)
+    \label{eq:noise}
+\end{equation}
+
+For this example we took $\sigma = 0.01m$. Secondly, we calculate the steady state input from the model by solving for $u_s$:
+\begin{equation}
+\begin{aligned}
+    (I-A_d)x_s - B_du_s = 0 \\
+    Cx_s + Du_s = y_s
+\end{aligned}
+\label{eq:steady}
+\end{equation}
+
+Where $y_s$ is the steady state output, for our example where $y_s = 1\ m$ solving \eqref{eq:steady} yields $u_s \approx 71.94\ N$.
+This steady state input is, generally, not necessary for DeePC and it can be calculated from data. Now we run regularized DeePC to track
+the steady state.
+
+\newpage
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/deepc_step_robust.pdf}
+    \caption{Regularized DeePC vs. DeePC}
+    \label{fig:deepc-step-reg}
+\end{figure}
+
+\newpage
+
+
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 

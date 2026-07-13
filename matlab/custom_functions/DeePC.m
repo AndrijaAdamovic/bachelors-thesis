@@ -1,10 +1,12 @@
 % Code is taken from https://github.com/iamKaiZhang/DeePC/ and modified to
 % our needs
 
+%This is a primitive and unfinished DeePC implemetation
+
 classdef DeePC < handle
     properties
         Up, Uf, Yp, Yf,
-        y_f,
+        y_f, u_f,
         Q, R
         ny, nu, ng,
         L_ini, L_ref
@@ -13,13 +15,15 @@ classdef DeePC < handle
     end
 
     methods
-        function obj = DeePC(Up, Uf, Yp, Yf, y_f, Q, R, u_max, y_max)
+        function obj = DeePC(Up, Uf, Yp, Yf, y_f, u_f, Q, R, u_max, y_max)
             obj.Up = Up;
             obj.Uf = Uf;
             obj.Yp = Yp;
             obj.Yf = Yf;
 
             obj.y_f = y_f;
+            obj.u_f = u_f;
+
             obj.Q = Q;
             obj.R = R;
 
@@ -55,10 +59,12 @@ classdef DeePC < handle
             for i = 1:obj.L_ref
                 objective = objective ...
                     + (y_var(:, i)-obj.y_f)'*obj.Q*(y_var(:, i)-obj.y_f) ...
-                    + (u_var(:, i))'*obj.R*(u_var(:, i));
+                    + (u_var(:, i) - obj.u_f)'*obj.R*(u_var(:, i) - obj.u_f);
                 constraints = [constraints,...
-                    u_var(:, i) <= obj.u_max * ones(obj.nu, 1), ...
-                    y_var(:, i) <= obj.y_max * ones(obj.ny, 1)
+                     u_var(:, i) <= obj.u_max * ones(obj.nu, 1), ...
+                     u_var(:, i) >= -obj.u_max * ones(obj.nu, 1),...                   
+                     y_var(:, i) <= obj.y_max * ones(obj.ny, 1), ...
+                     y_var(:, i) >= -obj.y_max * ones(obj.ny, 1)
                 ];
             end
 
