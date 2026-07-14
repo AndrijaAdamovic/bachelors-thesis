@@ -481,6 +481,11 @@ INPUT ./figures/deepc_step_robust.pdf
 INPUT ./figures/deepc_step_robust.pdf
 INPUT ./figures/deepc_step_robust.pdf
 INPUT ./figures/deepc_step_robust.pdf
+INPUT ./figures/deepc_step_nonlinear.pdf
+INPUT ./figures/deepc_step_nonlinear.pdf
+INPUT ./figures/deepc_step_nonlinear.pdf
+INPUT ./figures/deepc_step_nonlinear.pdf
+INPUT ./figures/deepc_step_nonlinear.pdf
 INPUT bachelors_thesis.aux
 INPUT ./bachelors_thesis.out
 INPUT ./bachelors_thesis.out

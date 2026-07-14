@@ -49,7 +49,7 @@ Y_f = H_L_y(L_ini+1: L_ini + L_ref, :);
 Q = 1e3;
 R = 1e-3;
 
-lambda_y = 1e6;
+lambda_y = 1e7;
 
 lambdaGValues = logspace(-8, 1, 10);
 lambda_g = 50;
@@ -61,7 +61,7 @@ u_max = 100;
 y_max = 2;
 deepc = RegDeePC(U_p, U_f, Y_p, Y_f, y_f, u_f, Q, R, lambda_y, lambda_g, u_max, y_max);
 
-T_sim = 250;
+T_sim = 200;
 
 x = repmat([0; 0; 0; 0],1, L_ini+1);
 y = repmat(0, 1, L_ini);
@@ -89,7 +89,21 @@ end
 
 subplot(2, 1, 1);
 plot((1:length(y))*Ts, y, 'LineWidth',2.0, 'Color',[0 0 1], 'LineStyle','-');
-yline(1);
+xlim([L_ini*Ts T_sim*Ts]);
+ylim([0 2]);
+yline(1, 'LineWidth',1.0, 'Color',[0 0.5 0], 'LineStyle','--');
+ylabel("Mass 2 position [m]");
+grid on;
+ax = gca;
+ax.FontSize = 14;
 
 subplot(2, 1, 2);
 plot((1:length(y))*Ts, u, 'LineWidth',2.0, 'Color',[1 0 1], 'LineStyle','-');
+xlim([L_ini*Ts T_sim*Ts]);
+ylim([-120 120]);
+yline(0, 'LineWidth',1.0, 'Color',[0.5 0 0], 'LineStyle','--');
+ylabel("Input force [N]");
+xlabel("Time [s]");
+grid on;
+ax = gca;
+ax.FontSize = 14;

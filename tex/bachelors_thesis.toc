@@ -30,6 +30,6 @@
 \contentsline {section}{\numberline {4.4}Regularized DeePC}{23}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Noisy measurements LTI example}{23}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Nonlinear system example}{24}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusion}{25}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Additional Material}{26}{appendix.A}%
-\contentsline {chapter}{Bibliography}{27}{appendix*.21}%
+\contentsline {chapter}{\numberline {5}Conclusion}{26}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Additional Material}{27}{appendix.A}%
+\contentsline {chapter}{Bibliography}{28}{appendix*.22}%

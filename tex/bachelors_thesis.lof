@@ -16,5 +16,6 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Force input for mass 2 position control with DeePC}}{22}{figure.caption.18}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Position of mass 2 and force input with DeePC - y limit}}{22}{figure.caption.19}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Regularized DeePC vs. DeePC; Noisy measurement LTI system}}{24}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Regularized DeePC on nonlinear system}}{25}{figure.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

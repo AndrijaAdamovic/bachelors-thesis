@@ -809,6 +809,7 @@ Since this is in continous state space forumlation we need to derive a discrete 
 ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method as follows:
 \begin{equation}
     x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) ,
+    \label{eq:rk4}
 \end{equation}
 where, 
 \begin{align*}
@@ -816,7 +817,7 @@ where,
     k_2 &= f(x_k + \frac{T_s}{2}k_1, u_k), \\
     k_3 &= f(x_k + \frac{T_s}{2}k_2, u_k), \\
     k_4 &= f(x_k + T_sk_3, u_k).
-\end{align*}
+\end{align*}    
 
 Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state of the system ($y_k = x_k$) we supply a pseudo-random binary sequence input for 50 seconds to the system and record the output. We configured the amplitude of the PRBS such that angle $\theta$ is always $\leq \frac{\pi}{18}$ (10 degrees).
 
@@ -1129,7 +1130,44 @@ performs poorly with the same parameters and data.
 
 \subsection{Nonlinear system example}
 
+Since DeePC regularizations improve performance when noise is added, in this subsection we will test its performance on a mildly nonlinear system with measurement noise. We modify the double spring damper system \ref{fig:double-spring-mass-damper}
+such that the second spring has a nonlinear force-displacement relationship. Concretely, the force exerted by the nonlinear spring is given by:
+\begin{equation}
+    F_2(\delta l) = k_2\delta l + k_{23}(\delta l)^{3}
+    \label{eq:nonlinear-spring}
+\end{equation}  
+
+Where $\delta l$ is the displacement, and $k_{23} > 0$ the nonlinear spring constant, we chose $k_{23} = 40 \frac{N}{m^3}$, all other constants are unchanged from \ref{fig:double-spring-mass-damper}.Thus, the nonlinear dynamics can be written as:
+\begin{equation}
+    \begin{aligned}
+        \dot{x} &= Ax + Bu + E(x_2 - x_1)^3 = f(x, u), \\
+        y &= Cx + Du + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2).
+    \end{aligned}
+    \label{eq:nonlinear-spr-dyn}
+\end{equation}
+
+Where $x = (x_1, \dot{x_1}, x_2, \dot{x_2})^T$ is the state, $A$ and $B$ are identical as in \eqref{eq:dsmd-abcd}, \(C = [0\ 0\ 1\ 0], \\ D=0$, $E = \begin{bmatrix}
+    0 & \frac{k_{23}}{m_1} & 0 & -\frac{k_{23}}{m_2}
+\end{bmatrix}^T\).
+Since, this is in continuos state space format, we again discretize it using the Runge-Kutta 4 method \eqref{eq:rk4}. The nonlinearity is largely expressed for larger displacements and system
+is \textit{de facto} linear for small displacement which can be deduced from \eqref{eq:nonlinear-spring}, i.e., $(\delta l)^3 \approx 0$ for small enough $\delta l$. Choosing $k_{23}$ we can tune how 
+much nonlinearity there will be. It is possible for $k_{23} < 0$, then the spring becomes less stiff for larger displacements. Next, we commence the same procedure for designing a DeePC controller
+which can. The steady state input for $y=1 \ m$ can be calculated by solving \eqref{eq:nonlinear-spr-dyn}, we get $u_s \approx 72.96N$.
+
 \newpage
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/deepc_step_nonlinear.pdf}
+    \caption{Regularized DeePC on nonlinear system}
+    \label{fig:deepc-step-nonlinear}
+\end{figure}
+
+Figure \ref{fig:deepc-step-nonlinear} is showing that regularized DeePC can track the reference even when the system is nonlinear with noisy measurements. The result is not as good as for LTI systems, but when 
+its considered that it is completely data-based we can say that the result is good. While doing the simulations we have seen that noise has
+a more noticable effect when the underlying system is nonlinear. For improved behaviour, [] suggest significant changes to the DeePC algorithm, also Koopman operator approach is being researched 
+for potential improvments for nonlinear system control. 
+
 
 
 % \chapter{Conclusion}
