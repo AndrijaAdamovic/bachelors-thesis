@@ -41,7 +41,7 @@ u_max = 100;
 y_max = 1;
 deepc = DeePC(U_p, U_f, Y_p, Y_f, y_f,0, Q, R, u_max, y_max);
 
-T_sim = 42;
+T_sim = 100;
 
 % Initial traj
 x = repmat([0; 0; 0; 0],1, L_ini+1);
