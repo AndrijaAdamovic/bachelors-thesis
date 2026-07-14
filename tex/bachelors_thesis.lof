@@ -1,21 +1,20 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Double spring--mass--damper system with force input acting on second mass.}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Low-pass filtered PRBS input signal}}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of original and reconstructed trajectories of the system}}{12}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Double spring--mass--damper system with force input acting on second mass.}}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Low-pass filtered PRBS input signal}}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Comparison of original and reconstructed trajectories of the system}}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Data-based vs. model-based future trajectory simulation}}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Torque driven simple pendulum}}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pendulum trajectory simulation - data-based vs. model}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pendulum trajectory simulation - large angles; - data-based vs. model vs. linearized model}}{17}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Data-based vs. model-based future trajectory simulation}}{14}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Torque driven simple pendulum}}{15}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Pendulum trajectory simulation - data-based vs. model}}{16}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pendulum trajectory simulation - large angles; - data-based vs. model vs. linearized model}}{17}{figure.caption.14}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Different control design approaches from data}}{18}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces General predictive control illustration}}{18}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Mass 2 position controlled with DeePC}}{21}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Force input for mass 2 position control with DeePC}}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Position of mass 2 and force input with DeePC - y limit}}{22}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Regularized DeePC vs. DeePC; Noisy measurement LTI system}}{24}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Different control design approaches from data}}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces General predictive control illustration}}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mass 2 position controlled with DeePC}}{21}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Force input for mass 2 position control with DeePC}}{22}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position of mass 2 and force input with DeePC - y limit}}{22}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Regularized DeePC vs. DeePC; Noisy measurement LTI system}}{24}{figure.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

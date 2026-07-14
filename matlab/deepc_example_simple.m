@@ -33,7 +33,7 @@ Y_p = H_L_y(1:L_ini, :);
 Y_f = H_L_y(L_ini+1: L_ini + L_ref, :);
 
 Q = 1e3;
-R = 1e-3;
+R = 1e-2;
 
 y_f = 1; %Step
 tol = 1e-6;
@@ -41,7 +41,7 @@ u_max = 100;
 y_max = 1;
 deepc = DeePC(U_p, U_f, Y_p, Y_f, y_f,0, Q, R, u_max, y_max);
 
-T_sim = 35;
+T_sim = 42;
 
 % Initial traj
 x = repmat([0; 0; 0; 0],1, L_ini+1);

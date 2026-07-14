@@ -1,8 +1,10 @@
 clear; clc; addpath(fullfile(fileparts(mfilename("fullpath")), "custom_functions"));
 
-rng(1);
-
 load("double_smd_params.mat");
+
+% Constant rng seed makes the recorded output non-changing (because PRBS is
+% constant) - easier for tuning the controller
+% rng(1);
 
 C = [0 0 1 0];  %Only position of mass 2
 D = 0;
@@ -27,6 +29,9 @@ fprintf("Persistently exciting of order N + L: %d \n", shape_HNL(1) == rank(H_NL
 y_c = lsim(sys_d, u, t);
 
 sigma = 0.01;
+
+%Make measurements different on each run of the script
+rng("shuffle");
 
 y_m = y_c + sigma * randn(size(y_c));
 
@@ -53,7 +58,7 @@ u_max = 100;
 y_max = 2;
 deepc = RegDeePC(U_p, U_f, Y_p, Y_f, y_f, u_f, Q, R, lambda_y, lambda_g, u_max, y_max);
 deepc_l = DeePC(U_p, U_f, Y_p, Y_f, y_f,u_f, Q, R, u_max, y_max);
-T_sim = 1000;
+T_sim = 250;
 
 % Initial traj
 x = repmat([0; 0; 0; 0],1, L_ini+1);

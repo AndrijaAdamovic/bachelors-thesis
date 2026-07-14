@@ -270,55 +270,55 @@ Describe the background and motivation for the thesis.
 \chapter{The Fundamental Lemma}
 
 \section{Theoretical Background}
-The goal of this section is to provide introduction to mathematical concepts needed for understanding
-the rest of the thesis. We will lay out some famous results from linear control systems theory.
+The goal of this section is to provide an introduction to mathematical concepts needed for understanding
+the rest of the thesis. We will also present some standard results from linear control systems theory.
 \subsection{LTI Dynamical Systems}
 Although Willems' Fundamental Lemma stems from the behavioural approach to sytems theory, in this thesis it is formulated using the 
-classical state-space LTI system formulation. This formulation is simpler, yet sufficient for the further chapters of the thesis. 
+classical state-space LTI system formulation. This formulation is simpler, yet sufficient for the remaining part of the thesis. 
 
 \begin{definition} 
-    A discrete-time linear time-invariant (LTI) system is a dynamical system whose dynamics are described by:
+    A discrete-time linear time-invariant (LTI) system is a dynamical system which admits a representation in the following state space form:
     \begin{subequations}
         \begin{align}
-            x(t+1) &= Ax(t) + Bu(t) \\
-            y(t) &= Cx(t) + Du(t)
+            x(t+1) &= Ax(t) + Bu(t), \\
+            y(t) &= Cx(t) + Du(t),
         \end{align}
         \label{eq:lti}
     \end{subequations}
-    Where \(t \in \mathbb{Z}_{\ge 0}\) is the time axis, \(x(t) \in \mathbb{R}^{n}\) is the state, \(u(t) \in \mathbb{R}^{m}\) is the input
+    where \(t \in \mathbb{Z}_{\ge 0}\) is the time, \(x(t) \in \mathbb{R}^{n}\) is the state, \(u(t) \in \mathbb{R}^{m}\) is the input
     and \(y(t) \in \mathbb{R}^{p}\) is the output of the system. \\
     The true state space dimension is $n$ and system matrices \(A \in M_n(\mathbb{R})\), \(B \in M_{n \times m}(\mathbb{R})\), 
     \(C \in M_{p \times n}(\mathbb{R})\), \(D \in M_{p \times m}(\mathbb{R})\).
 \end{definition}
 
-In our data-based approach, those matrices (i.e. the system model) are  generally unknown. However, an upper bound on state space dimension is
-given $N \geq n$. The concept of a system trajectory is defined now.
+In the data-based approach, which is considered in this thesis, the matrices defining the state-space model (i.e. the matrices $A, B, C, D$) are  generally unknown. However, 
+we will often assume that an upper bound on state space dimension is given, i.e., we know some $N \in \mathbb{N}$ such that $N \geq n$. The concept of a system trajectory is defined next.
 
 \begin{definition}
     A sequence of ordered triples \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) is called an input-state-output trajectory
     if 
 
     \[ \begin{bmatrix} x(t+1) \\ y(t) \end{bmatrix} = \begin{bmatrix} A & B \\ C & D  \end{bmatrix} 
-    \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}\]
+    \begin{bmatrix} x(t) \\ u(t)\end{bmatrix}, \quad \forall t \in \mathbb{Z}_{\geq 0}\]
 
 \end{definition}
 
-We can be deduce that, from the linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
+It can be deduced that, from linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
 trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
-That space is called the \textit{behaviour} of the system.
+That space is called the \textit{behaviour} [todo ref] of the system.
  
-Additionally, from time invariance \eqref{eq:lti} it can be deduced that:
+Additionally, from time invariance \eqref{eq:lti} it can be deduced that if \(\left(u(t), x(t), y(t)\right)_{t=0}^{\infty}\) is a trajectory, then:
 
 \[\left( u(t + \tau), x(t + \tau), y(t + \tau) \right)_{t=0}^{\infty}\]
 
-is an input-state-output trajectory for all \(\tau \in \mathbb{N}\)
+is also an input-state-output trajectory for all \(\tau \in \mathbb{N}\).
 \begin{definition}
     A sequence of ordered pairs \(\left( u(t), y(t) \right)_{t=0}^{\infty}\) is called an input-output trajectory if 
 there exists a sequence of states \(x: \mathbb{Z}_{\ge 0} \to \mathbb{R}^{n}\) such that \(\left( u(t), x(t), y(t) \right)_{t=0}^{\infty}\) 
 is an input-state-output trajectory.
 \end{definition}
 
-In practice we are limited by finite computer memory so it is not possible work with infinite sequences of data like the trajectories defined above, so we
+In practice we are limited to work with finite sequences of data, so we
 need to take a snippet of the trajectory relevant to us. Motivated by that we state the next definition.
 
 \clearpage
@@ -328,55 +328,55 @@ need to take a snippet of the trajectory relevant to us. Motivated by that we st
     input-output trajectories are defined in the same way.
 \end{definition}
 
-\subsection{The Concepts of Contollability and Observability}
+\subsection{Contollability and Observability}
 
-In this section the concepts of controllability and observability will be defined. Since, we defined the LTI system \eqref{eq:lti} 
-classically the same will follow for the next definitions. However, although the classical and behavioral notions of controllability 
-and observability are closely related, they are not identified unconditionally. Their equivalence depends on how the behavior is represented. 
+In this section the concepts of controllability and observability are defined. Continuing in line with the state-space representation\eqref{eq:lti} from the previous section,
+we define controllability and observability in the same framework. However, although the classical and behavioral notions of controllability 
+and observability are closely related, they are not unconditionally equivalent. Their equivalence depends on how the behavior is represented. 
 In particular, when considering input-output behavior, equivalence with the classical state-space definitions typically requires a minimal realization; 
-for the full input-state-output behavior, the correspondence is more direct. We will not bother with those comparisons between approaches, more on that 
+for the full input-state-output behavior, the correspondence is more direct. We will omit those comparisons between approaches, while more on that 
 topic can be found at (TODO: link za clanak/knjigu).
 
 \begin{definition}
     A discrete LTI system \eqref{eq:lti} is called controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
     a finite-length sequence of inputs 
-    \[u(0), u(1), ..., u(N-1)\]
-    such that the system reaches \(x(N) = x_f\). Otherwise, the system is said to be uncontrollable.
+    \[u(0), u(1), ..., u(T-1)\]
+    such that the system reaches \(x(T) = x_f\). Otherwise, the system is said to be uncontrollable.
 \end{definition}
 
-In lays terms, it is telling that any state of the system can be reached in finite time by applying finitely many inputs. 
+In lays terms, the definition above states that any state of the system can be reached from any other initial state in a finite time $T$ by applying finitely many inputs. 
 
-We will now state the famous result for testing system controllability stated and proven by Rudolf. E. Kalman. The pair $(A, B)$ is the pair of matrices from \eqref{eq:lti} and n is
+Next state the famous result for testing system controllability stated and proven by Rudolf. E. Kalman. Let the pair $(A, B)$ be the pair of matrices from \eqref{eq:lti} and let $n$ denote 
 the true state space dimension of the system.
 
 \begin{theorem}(Kalman controllability theorem)
-    The pair $(A, B)$ is controllable if and only if the controllability block matrix
+    The pair $(A, B)$ is controllable if and only if the controllability matrix
     \[ \mathcal{C} = \begin{bmatrix} B & AB & A^{2}B & \cdots & A^{n-1}B\end{bmatrix}\]
-    is of full rank.
+    is of full column rank.
     \label{thm:ctrb}
 \end{theorem}
 
-Now the concept of observability is defined.
+The the concept of observability is defined next.
 
 \begin{definition}
-    A discrete LTI system \eqref{eq:lti} is called observable at $t = 0$ if the initial state x(0) can be uniquely reconstructed from a known 
-    restricted input-output trajectory. Otherwise, the system is said to be unobservable.
+    A discrete LTI system \eqref{eq:lti} is called observable at $t = 0$ if there exists a finite time $T$ so that an arbitrary initial state x(0) can be uniquely reconstructed from a known 
+    restricted input-output trajectory \(\left(u(t), x(t), y(t) \right)_{t=0}^{T-1}\). Otherwise, the system is said to be unobservable.
 \end{definition}
 
 Using time-invariance of \eqref{eq:lti} it can be shown that if the system is observable at $t = 0$ then for every  \(t \in \mathbb{Z}_{\ge 0}\) the state $x(t)$ is reconstructible.
 This result is important to control theory when it comes to state estimation (for example Kalman filter) because it gives a necessary condition for exact state estimation.
 
-Now the test for determining observability will be stated.
+The following theorem presents a constructive test for observability.
 
 \begin{theorem}(Kalman observability theorem)
-    The pair $(C, A)$ is observable if and only if the observability block matrix
+    The pair $(C, A)$ is observable if and only if the observability matrix
     \[ \mathcal{O} = \begin{bmatrix} C \\ CA \\ CA^{2} \\ \vdots \\ CA^{n-1}\end{bmatrix}\]
-    is of full rank.
+    is of full row rank.
     \label{thm:obsv}
 \end{theorem}
 
 The Kalman criteria for controllability/observability were stated but, there are more different equivalent
-statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests.
+statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests [todo ref].
 
 From Theorems~\ref{thm:ctrb} and~\ref{thm:obsv}, a duality between observability and controllability matrices can be seen and
 it is not hard to show that using matrix operations we have:
@@ -387,17 +387,17 @@ it is not hard to show that using matrix operations we have:
 \end{align*}
 
 \subsection{Persistency of Excitation}
-For the Willems' Fundamental Lemma to hold we need a so-called persistently exciting input. By that
-it means a rich and diverse enough input such that all modes of the system are expressed in the output.
+For the Willems' Fundamental Lemma to hold we need the so-called persistently exciting input. Loosely speaking, Persistency exciting input is
+a rich and diverse enough input such that all modes of the system are expressed in the output.
 
 \subsection*{Hankel Matrices}
-For a sequence of vectors from time $t = i$ to $t = j$ we use the following vector notation:
+For a sequence of vectors $(s(t)_{t=i}^{t=j})$ from time $t = i$ to $t = j$, where $i < j$, we use the following abbreviation:
 
-\[s_{[i, j]} = \begin{bmatrix} s(i) \\ s(i+1) \\ \vdots \\ s(j) \end{bmatrix}\]
+\[s_{[i, j]} := \begin{bmatrix} s(i) \\ s(i+1) \\ \vdots \\ s(j) \end{bmatrix}.\]
 
-Where instead of vector $s$ we will use inputs($u$), states($x$) and outputs($y$).
+In this remainder, this notation will be used to appropriately vectorize trajectories of inputs($u$), states($x$) and outputs($y$).
 
-Hankel matrix is a matrix whose entries are constant on the anti-diagonals, contrast to
+Hankel matrix is a matrix whose entries are constant on the anti-diagonals, what is contrast to
 Toeplitz matrix whose entries are constant on the diagonals. Informally, Hankel matrix is
 a mirror image of a Toeplitz matrix.
 
@@ -412,7 +412,7 @@ a mirror image of a Toeplitz matrix.
     u(1) & u(2) & \cdots & u(T-L+1)\\
     \vdots & \vdots &  & \vdots \\
     u(L-1) & u(L) & \cdots & u(T-1)
-    \end{bmatrix}\]
+    \end{bmatrix},\]
 
     \[H_{L}(y_{[0, T-1]}) = 
     \begin{bmatrix}
@@ -420,66 +420,70 @@ a mirror image of a Toeplitz matrix.
     y(1) & y(2) & \cdots & y(T-L+1)\\
     \vdots & \vdots &  & \vdots \\
     y(L-1) & y(L) & \cdots & y(T-1)
-    \end{bmatrix}\]
+    \end{bmatrix}.\]
 
     \label{def:hankel}
 \end{definition}
 
-\clearpage
+In the remainder, we will ofter stack input and output Hankel matrices to obtain a single block Hankel matrix, as follows:
+\begin{equation}
+    \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} \in M_{(m+p)L \times (T-L+1)}(\mathbb{R}),
+    \label{eq:hankel}
+\end{equation}
 
-Generally, we stack input and output Hankel matrices to obtain a single block Hankel matrix used for computation:
-\[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} \in M_{(m+p)L \times (T-L+1)}(\mathbb{R}) \]
-
-It is now obvious that every column of the matrices from  \eqref{def:hankel} is a restricted input or output trajectory, depending on 
-which matrix is chosen.
-
-Now a precise definition of persistently exciting input is given.
+which will be used in various computational tasks.
+It is now obvious that every column of the matrices from \eqref{eq:hankel} is a restricted input-output trajectory.
+Next, definition of persistently exciting input is presented.
 
 \begin{definition}
-    Given an sequence of inputs $u_{[0, T-1]}$ and \(k \in \{1, ..., T\}\). We say that
-    the given sequence of inputs is persistently exciting of order k if the Hankel matrix 
+    Given an sequence of inputs $u_{[0, T-1]}$ and \(k \in \{1, ..., T\}\), we say that
+    the sequence of inputs is persistently exciting of order k if the Hankel matrix 
     $H_{k}(u_{[0, T-1]})$ is of full row rank.
 \end{definition}
 
 We have layed out all the necessary definitions and theorems needed for the statement of the main topic of this 
-thesis, the Lemma.
+thesis, the Willems' Fundamental Lemma.
 
-\section{The Lemma}
+\section{The Willems' Fundamental Lemma}
 
-The main result of the Lemma is that every restricted input-output trajectory of length $L$ of the system can be obtained by linear combination
-of finitely many trajectories which span the whole trajectory space i.e. the behaviour.
+The main result of the Lemma is that every restricted input-output trajectory of length $L$ of the system can be obtained as a linear combination
+of finitely many trajectories which span the whole trajectory space, i.e., the behaviour.
 
-\begin{theorem} (Willems' Fundamental Lemma) Given a LTI system \eqref{eq:lti}, assume the pair $(A, B)$ is controllable and let \((u_{[0, T-1]}, y_{[0, T-1]}), \ T \in \mathbb{N}\)
-be it's restricted input-output trajectory. Let \( L \in \{1, ..., T\}\), if the input $u_{[0, T-1]}$ is persistently exciting of order $N + L$ then:
+\begin{theorem} (Willems' Fundamental Lemma) Given an LTI system \eqref{eq:lti}, assume the pair $(A, B)$ is controllable and let \((u_{[0, T-1]}, y_{[0, T-1]}), \ T \in \mathbb{N}\)
+be it's restricted input-output trajectory. Let \( L \in \{1, ..., T\}\). If the input $u_{[0, T-1]}$ is persistently exciting of order $N + L$ then
 \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) is a restricted input-output trajectory of \eqref{eq:lti} if and only if
 \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
 for some $g \in \mathbb{R}^{T-L+1}.$
+
+\label{thm:lemma}
 \end{theorem}
 
-\begin{proof}
-    Solving the difference equations of \eqref{eq:lti} we obtain the following result:
+[TODO tekst prije dokaza]
+
+\begin{proof}[Proof of Theorem \ref{thm:lemma}]
+    From recursive application of the difference equations \eqref{eq:lti} we obtain the following expression:
     \begin{equation}
-        y(t) = CA^{t}x(0) + \left(\sum_{k=0}^{t-1}CA^{t - k - 1}Bu(k)\right) + Du(t)
+        y(t) = CA^{t}x(0) + \left(\sum_{k=0}^{t-1}CA^{t - k - 1}Bu(k)\right) + Du(t),
     \end{equation}
     where $x(0) \in \mathbb{R}^n$ is the initial state. Generally, this could be adapted to any initial state $x_{ini} = x(t_{ini})$ using the time-invariance of the system. Now for the input-output
     trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we can write the result from above in matrix notation like this:
-    \[ 
-    \begin{bmatrix} \bar{y}(0) \\ \bar{y}(1) \\ \bar{y}(2) \\ \vdots \\ \bar{y}(L-1)\end{bmatrix} = 
-    \underbrace{\begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{L-1} \end{bmatrix}}_\text{$\Omega_L$}x_{ini} +
-    \underbrace{\begin{bmatrix} D \\ CB & D \\ CAB & CB & D \\ \vdots & \ddots & \ddots & \ddots \\ CA^{L-2}B & \dots & \dots & \dots & D\end{bmatrix}}_\text{$\Theta_L$}
-    \begin{bmatrix} \bar{u}(0) \\ \bar{u}(1) \\ \bar{u}(2) \\ \vdots \\ \bar{u}(L-1)\end{bmatrix}
-    \]
-    \clearpage
-    Matrix  $\Omega_L$ is the classical observability matrix and  $\Theta_L$ is the block Toeplitz matrix of, so called, Markov parameters. Now we can reformulate the last expression
-    like this:
+    \begin{equation}
+        \begin{bmatrix} \bar{y}(0) \\ \bar{y}(1) \\ \bar{y}(2) \\ \vdots \\ \bar{y}(L-1)\end{bmatrix} = 
+        \underbrace{\begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{L-1} \end{bmatrix}}_\text{$\Omega_L$}x(0) +
+        \underbrace{\begin{bmatrix} D \\ CB & D \\ CAB & CB & D \\ \vdots & \ddots & \ddots & \ddots \\ CA^{L-2}B & \dots & \dots & \dots & D\end{bmatrix}}_\text{$\Theta_L$}
+        \begin{bmatrix} \bar{u}(0) \\ \bar{u}(1) \\ \bar{u}(2) \\ \vdots \\ \bar{u}(L-1)\end{bmatrix}.
+        \label{eq:omegatheta}
+    \end{equation}
+    Matrix  $\Omega_L$ is the classical observability matrix and  $\Theta_L$ is the block Toeplitz matrix of, so called, Markov parameters. We can write the expression
+    \eqref{eq:omegatheta} in a more compact form as follows:
 
     \begin{equation}
-        \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]}\end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix}x_{ini} \\ \bar{u}_{[0, L-1]} \end{bmatrix}
+        \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]}\end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix}x_{ini} \\ \bar{u}_{[0, L-1]} \end{bmatrix}.
         \label{eq:io}
     \end{equation}
 
     Since on the left side is a general input-output trajectory of length $L$ (assuming time-invariance), we conclude that the space of all such trajectories is spanned by the columns of the 
-    \(M := \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \) i.e. that space is the image of that matrix. By setting the RHS of \eqref{eq:io} equal to 0 and applying 
+    \(M := \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \). By setting the RHS of \eqref{eq:io} equal to 0 and applying 
     the rank-nullity theorem (R-N) we get:
     \[        \bar{u}_{[0, L-1]} = 0, \ \Omega_L x_{ini} = 0; \]
     \begin{align*}
@@ -498,8 +502,8 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
     Where \(X_{[0, T-L]} := [x(0) \ x(1) \ ... \ x(T-L)]\).
     By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank, if it were full row rank than the rank of Hankel matrix on the left would be
-    equal to the rank of $J_L$ and thus the image spaces would be equal. That implies that the left kernel of $J_L$ is non-trivial, in other words,
-    there exists a non-zero vector \(v = (a^T, b_{0}^T, b_{1}^T, ... , b_{L-1}^T), \ a\in\mathbb{R}^n, \ b_{i} \ \in\mathbb{R}^{mL}\) such that \(vJ_L = 0\). Expanding we get:
+    equal to the rank of $J_L$ and thus the image spaces would be equal. That implies that the left kernel of $M$ is non-trivial, in other words,
+    there exists a non-zero vector \(v = (a^T, b_{0}^T, b_{1}^T, ... , b_{L-1}^T), \ a\in\mathbb{R}^n, \ b_{i} \ \in\mathbb{R}^{m}\) such that \(vJ_L = 0\). Expanding we get:
     \begin{equation}a^{T}x(t) + \sum_{k=0}^{L-1}b_{k}^Tu(t+k) = 0, \ \ \forall t \in \{0, 1, ..., T-L\} \label{eq:p0}\end{equation} Shifting the above equation by an arbitray $j\in\mathbb{N}$ and solving the difference equations of \eqref{eq:lti} for the shifted state
     (similar to \eqref{eq:io}) we obtain:
     \begin{equation}
@@ -543,8 +547,6 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
 \end{proof}
 
-\clearpage
-
 Technically, the proof above is just the ($\implies$) direction, however, since each column of the stacked Hankel matrix is an restricted input-output trajectory the 
 ($\impliedby$) direction follows directly from that. Stability of the system is not needed because the Lemma uses finite-horizon trajectories and thus doesn't require boundedness of state as $t \to \infty$, also the observability
 is not needed as it can be seen in the formulation and proof. In the proof we have also showed that the matrix:
@@ -564,18 +566,18 @@ input output trajectory of length $L$, i.e. for time window of $[i, i + L -1] \ 
     \label{eq:fl-i}
 \end{equation}
 
-Now we will define the lag $\ell$ of the system. Smallest positive integer $k$ s.t. rank \(\Omega_k = \) rank \(\Omega_{k+1}\), where $\Omega_k$ is the observability matrix from 
+Now we will define the lag \label{lag} $\ell$ of the system. Smallest positive integer $k$ s.t. rank \(\Omega_k = \) rank \(\Omega_{k+1}\), where $\Omega_k$ is the observability matrix from 
 \eqref{eq:io}, is called the lag of the system, in other words, the smallest $k$ after which the rank of the observability matrix does not change. Clearly, by C-H theorem, $\ell \leq n$. For an observable system that is the minimal trajectory length such that the initial state
 $x_{ini}$ can be reconstructed.
 
 
-\chapter{Lemma - Numerical Examples}
+\section{Lemma - Numerical Examples}
 
-In this chapter we will demonstrate the Fundamental Lemma on concrete linear systems. We will use the system model to gather the necessary data
+In this chapter we will demonstrate the Fundamental Lemma on several numerical examples. We will use the system model to gather the necessary data
 for the Hankel matrices and then use them to verify for a random trajectory that it lies in the image of the Hankel matrix. For this we use MATLAB because it is
 easier to work with its Control System Toolbox for system simulation. TODO:text
 
-\section{Simple SISO System}
+\subsection{Simple SISO System}
 
 Consider a discrete time LTI system \eqref{eq:lti} with state space matrices:
 \begin{alignat}{2}
@@ -585,10 +587,10 @@ Consider a discrete time LTI system \eqref{eq:lti} with state space matrices:
 
 
 Clearly \(n=3, m=p=1\) and the eigenvalues of A are \{0.5834, 0.4657, 0.1509\} which all have their absolute value less then 1 which means the system is stable. Also 
-the controllability and observability matrix have a non-zero determinant to the system is both controllable and observable, which means, it is suitable for the Fundamental Lemma. For 
-this example the length of initial trajectory and length of trajectories for reconstruction are chosen as $T = 50, L = 22$ it can be checked that for $N=n$ the \eqref{eq:length} is satisfied.
-For the input for this example we are using a randomly generated input using MATLAB's \textit{rand} function. Since the input is random there is a high chance for persistency of excitation before
-testing the lemma we check the rank of the $H_{N+L}(u_{[0, T-1]})$. We input the noisy input to the system and record the output data, we then create the Hankel matrix $\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}$.
+the controllability and the observability matrix, which are in this case square matrices, have a non-zero determinant. The system is therefore both controllable and observable. 
+The length of initial trajectory and length of trajectories for reconstruction are chosen respectively as $T = 50$ and $L = 22$. It can be verified that for $N=n$ the condition \eqref{eq:length} is satisfied.
+For the input for this example we are using a randomly generated sequence obtained by using MATLAB's \textit{rand} function. Since the input is random there is a high chance for persistency of excitation. Before
+testing the lemma we check the rank of the $H_{N+L}(u_{[0, T-1]})$. We input the random input sequence to the system and record the output data, we then create the Hankel matrix $\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}$.
 Now we generate a new random input-output trajectory of the system \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\). We now use the Hankel matrix and the new data to find the vector $g$. We impose that
 as a least-squares problem since the Hankel matrix is generally not square and the system of equations is underdetermined (fewer rows than columns). The objective for a minimization problem is the following:
 \begin{equation}
@@ -609,7 +611,7 @@ get result in MATLAB:
 The norm is not exactly 0 but it is really close, the small error arises from truncation of real numbers due to floating point arithmetic, so we can assume the result is valid. Our reconstructed trajectory is found in the image
 of the Hankel matrix created from recorded data.
 
-\section{Mechanical MIMO System}
+\subsection{Mechanical MIMO System}
 \label{sec:mimo}
 
 In this example we will demonstrate the Lemma on a concrete mechanical system. We will show, like in the last example, that we can reconstruct a trajectory from previously recorded data.
@@ -622,13 +624,13 @@ In this example we will demonstrate the Lemma on a concrete mechanical system. W
 \end{figure}
 
 The states of the system are positions and velocities of each mass, the input is a force on the second mass. We chose the output to be a vector of positions of both mass thus this is a MIMO system. Using mechanical equilibrium equations we can get a system of coupled linear differential equations
-which can be represented as a continuous state space LTI system like this:
+which can be represented as a continuous state space LTI system:
 \begin{align*}
-    \dot{x}(t) &= Ax(t) + Bu(t) \\
-    y(t) &= Cx(t) + Du(t)
+    \dot{x}(t) &= Ax(t) + Bu(t), \\
+    y(t) &= Cx(t) + Du(t),
 \end{align*}
 
-Where (for this concrete example: $m_1 = 1.0kg,\ m_2 = 0.8kg,\ k_1=120Nm^{-1},\ k_2=180Nm^{-1},\ c_1=1.5Nsm^{-1},\ c_2=2.0Nsm^{-1}$):
+where
 
 \begin{alignat}{2}
     \label{eq:dsmd-abcd}
@@ -639,7 +641,8 @@ Where (for this concrete example: $m_1 = 1.0kg,\ m_2 = 0.8kg,\ k_1=120Nm^{-1},\ 
     C &= \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix}  & D &= \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 \end{alignat}
 
-This is a continuos state-space model but we need a discrete model so we need to discretize this. There are many ways of discretizing the continuous model, we will derive the discrete version matrices
+For this example the parameters are: $m_1 = 1.0kg,\ m_2 = 0.8kg,\ k_1=120Nm^{-1},\ k_2=180Nm^{-1},\ c_1=1.5Nsm^{-1},\ c_2=2.0Nsm^{-1}$.
+The above presented is a continuos state-space model, but we need a discrete model so we need to discretize it. There are many ways of discretizing the continuous model, we will derive the discrete version matrices
 $A_d, B_d, C_d, D_d$ using zero order hold (ZOH). Assume sampling period $T_s$, we chose $T_s = 10^{-2}s$. Now we will begin from the solution of the general continuous state space system:
 
 \[x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau\]
@@ -695,49 +698,50 @@ function and second will be a new PRBS signal. We simulate the output trajectori
         \label{fig:prbs-out}
     \end{subfigure}
     \caption{Comparison of original and reconstructed trajectories of the system}
+    \label{fig:prbs-step}
 \end{figure}
 
-It can be seen that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} seeing that for both trajectories we have the norm $\leq 10^{-10}$.
+It can be seen from Figure \ref{fig:prbs-step} that trajectories line-up, this is confirmed numerically with \eqref{eq:norm} seeing that for both trajectories we have the norm $\leq 10^{-10}$.
 Thus, the Lemma holds for this example.
 
 \clearpage
 
 \chapter{Data driven simulation of LTI systems}
 \label{chp:dd-sim}
-In the last chapter we used the FL to demonstrate that any length $L$ trajectory of a linear system can be found
-in the image of a Hankel matrix that is built using a previous trajectory with a PE input. This is really interesting, however,
-there are no direct use cases when it comes to control. In this chapter we will build up on the FL and use it to
+In the last section we used the Fundamental lemma to demonstrate that any sufficiently long trajectory of length $L$  can be found
+in the image of a Hankel matrix that is built using a previous trajectory with persistently exciting input. This is really interesting, however,
+there are no direct use cases when it comes to control. In this section we will build up on the Fundamental lemma and use it to
 simulate a future of a given trajectory using the same Hankel matrix.
 
 \section{Problem statement and solution}
-Take the system \eqref{eq:lti} and assume (A, B) is controllable. Let $L_{ini} \in \mathbb{Z}_{\geq 0}$ be the past length of the trajectory we want to simulate and $L_{ref} \in \mathbb{Z}_{\geq 0}$ 
-be the length of the future part. Let $L:=L_{ini} + L_{ref}$. Assume the following are given:
+Consider the system \eqref{eq:lti} and assume the pair (A, B) is controllable. Let $L_{ini} \in \mathbb{Z}_{\geq 0}$ be the length of past trajectory and suppose we want to simulate the
+future trajectory of length and $L_{ref} \in \mathbb{Z}_{\geq 0}$. Let $L:=L_{ini} + L_{ref}$. Assume the following is known:
 \begin{itemize}
-    \item Upper bound on state dimension $N \geq n$ 
-    \item Restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $T$ satisfies \eqref{eq:length}
-    \item An initial restricted input-output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\)
-    \item Reference input \(\bar{u}_{[L_{ini}, L-1]}\)
+    \item upper bound $N$ on the state dimension, i.e., $N \geq n$, 
+    \item restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $T$ satisfies \eqref{eq:length},
+    \item an initial restricted input-output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\),
+    \item reference input \(\bar{u}_{[L_{ini}, L-1]}\).
 \end{itemize}
 
-We want to find the output \(\bar{y}_{[L_{ini}, L-1]}\) such that \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) is a restricted input-output trajectory of \eqref{eq:lti}. So based
-on recorded data, previous history of a trajectory and future input we want to find the future output part of that trajectory. We can split the Hankel matrices of recorded data like this:
+We want to calculate the output \(\bar{y}_{[L_{ini}, L-1]}\) such that \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) is a restricted input-output trajectory of \eqref{eq:lti}. To summarize, based
+on the recorded data, the previous history of a trajectory and future input we want to find the future output part of that trajectory. We can split the Hankel matrices of recorded data like this:
 \begin{equation}
-    \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix} = \begin{bmatrix}U_p \\ U_f \\ Y_p \\ Y_f\end{bmatrix}
+    \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix} = \begin{bmatrix}U_p \\ U_f \\ Y_p \\ Y_f\end{bmatrix},
     \label{eq:uy-pf}
 \end{equation}
 
-Where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $pL_{ini}$ and $pL_{ref}$ rows, respectively. Now we will formulate a solution of the problem like in  
-[TODO: ref DBCBook].
+where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $pL_{ini}$ and $pL_{ref}$ rows, respectively. Next we present a solution of the above described problem,  
+as it is done in [TODO: ref DBCBook].
 
 \begin{theorem}
-    Consider a system \eqref{eq:lti} with (A, B) controllable and PE input $u_{[0, T-1]}$ of order $N+L$, assume restricted input output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\)
-    and reference input \(\bar{u}_{[L_{ini}, L-1]}\). Then the following statements hold:
+    Consider a system \eqref{eq:lti} with (A, B) controllable and persistently exciting input $u_{[0, T-1]}$ of order $N+L$. Suppose restricted input output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\)
+    and reference input \(\bar{u}_{[L_{ini}, L-1]}\) are known. Then the following statements hold:
     \begin{enumerate}
         \item[(i)] There exists $g\in\mathbb{R}^{T-L+1}$ such that: \[\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g = 
                 \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}\]
         \item[(ii)] If $g$ is a solution to (i) then define the output \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\). Such defined output
                     makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) a restricted input-output trajectory of \eqref{eq:lti}
-        \item[(iii)] If $L_{ini} \geq \ell$ than such output in (ii) is the only one that makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\)
+        \item[(iii)] If $L_{ini} \geq \ell$ (the lag of the system \ref{lag}) than such output in (ii) is the only one that makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\)
                     a restricted input-output trajectory, i.e. it is unique.
     \end{enumerate}
     \label{thm:sim}
@@ -748,13 +752,13 @@ Where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $p
 \section{Simulating LTI system from data}
 \label{sec:lti-sim}
 
-This theorem gives us the method on how to simulate the future trajectory of the system. We will test this result on examples. Firstly, we will test try to simulate future output trajectory
-for the LTI MIMO example from the previous chapter (\ref{fig:double-spring-mass-damper}). We simulated the system with a PRBS input for 50 seconds ($T_s = 0.01s \ T = 5000$) and recorded the trajectory 
-\((u_{[0, T-1]}, y_{[0, T-1]})\). We chose the following lengths of past and future part of to be simulated trajectory:
+Theorem \ref{thm:sim} in fact presents the method of how to simulate the future trajectory of the system, based on the past data. We will test this result on numerical examples. Firstly, we will future output trajectory
+for the LTI MIMO example from the previous chapter (\ref{fig:double-spring-mass-damper}). We simulate the system with a PRBS input for 50 seconds ($T_s = 0.01s \ T = 5000$) and recorded the trajectory 
+\((u_{[0, T-1]}, y_{[0, T-1]})\). We chose the following lengths of past and future (simulated) part of the trajectory:
 \[L_{ini} = 500, \ L_{ref} = 1000, \ L = L_{ini} + L_{ref} = 1500\]
 
-We populated the $H_{L}(u_{[0, T-1]})$ and $H_{L}(y_{[0, T-1]})$ and split them into $(U_p, Y_p, U_f, Y_f)$ parts. Result from (\ref{thm:sim}, (i)) tells us $g$ exists, we determine it using the modified
-least-squares problem from the last chapter \eqref{eq:gmin}:
+We populated the $H_{L}(u_{[0, T-1]})$ and $H_{L}(y_{[0, T-1]})$ and split them into $(U_p, Y_p, U_f, Y_f)$ parts. Result from (\ref{thm:sim}, (i)) tells us $g$ exists and we calculate it using the modified
+least-squares problem from the previous section \eqref{eq:gmin}:
 \begin{equation}
     \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}}_{2}^{2}
     \label{eq:sim-gmin}
@@ -762,10 +766,10 @@ least-squares problem from the last chapter \eqref{eq:gmin}:
 
 Solving with MATLAB's \textit{lsqminnorm} we obtain the vector $g$. Using $g$ we calculate the future output trajectory \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\). By theorem (\ref{thm:sim}) this
 output part is unique since $L_{ini} \geq \ell = 2 $ (for the parameters given in \eqref{eq:dsmd-abcd}), generally, the lag is unknown, but if we take large enough $L_{ini}$ we can be sure that it is larger.
-Now we will compare the data based future output trajectories with one calculated using the system model - the first $L_{ini}$ points using the model. For the input signal we used a multi-sine input like this:
+Next, we compare the data based future output trajectories with one calculated using the system model - the first $L_{ini}$ points using the model. For the input signal we used a multi-sine input like this:
 \[u(k) = 10\sin(2\pi kT_s) + \frac{1}{3}\sin(2\pi 3 kT_s), \ k \in \{0, 1, \dots, L-1\}\]
 
-The simulation output is:
+The simulation output presented in Figure \ref{fig:dd-lin}:
 
 \begin{figure}[htbp]
     \centering
@@ -780,7 +784,7 @@ We can see that the data-based simulated trajectories perfectly match the model-
 \[\norm{\bar{y}_{[L_{ini}, L-1]} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \leq 10^{-10}\]
 
 \section{Simulating a nonlinear system around equilibrium}
-In the last section we showed that it is possible to simulate a LTI system directly from recorded data without the model. For nonlinear systems, a classical approach is to linearize the 
+In the last section we showed that it is possible to simulate a LTI system directly from recorded data, without a model. For nonlinear systems, a classical approach is to linearize the 
 dynamics around a stationary point around which the linearized model is mostly valid. We want to gather the data around the stationary (equilibrium) point of the system and apply the data-based
 simulation of the future trajectory. For this example we will take a classical torque driven pendulum: 
 
@@ -791,34 +795,34 @@ simulation of the future trajectory. For this example we will take a classical t
     \label{fig:pendulum}
 \end{figure}
 
-Parameters for our pendulum are:
-\[m = 0.2\ kg, \ l = 0.5 \ m, \ b = 0.05\ Nms, \ g = 9.81 \ \frac{m}{s^2}\]
+Parameters for the pendulum used in simulations are:
+\[m = 0.2\ kg, \ l = 0.5 \ m, \ b = 0.05\ Nms, \ g = 9.81 \ \frac{m}{s^2}.\]
 
-Assuming damping is proportional to angular velocity with proportionality constant $b$, we write the state space dynamics which can be derived with various approaches from classical mechanics, state vector is \(x = (\theta, \ \dot{\theta})^T\):
+Assuming damping is proportional to angular velocity with proportionality constant $b$, we write the state space dynamics with the state vector \(x = (\theta, \ \dot{\theta})^T\) as follows:
 
 \begin{equation}
-    \dot{x} = \dfrac{d}{dt} \begin{bmatrix} \theta \\ \dot{\theta}\end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ \dfrac{-b}{ml^2}\dot{\theta} - \dfrac{g}{l}\sin(\theta) + \dfrac{u}{ml^2}\end{bmatrix} = f(x, u)
+    \dot{x} = \dfrac{d}{dt} \begin{bmatrix} \theta \\ \dot{\theta}\end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ \dfrac{-b}{ml^2}\dot{\theta} - \dfrac{g}{l}\sin(\theta) + \dfrac{u}{ml^2}\end{bmatrix} = f(x, u).
     \label{eq:pend-dyn}
 \end{equation}
 
 Since this is in continous state space forumlation we need to derive a discrete time version of it. Using sampling period \(T_s = 0.01s\) and assuming
-ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method like this:
+ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method as follows:
 \begin{equation}
-    x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) 
+    x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) ,
 \end{equation}
-Where, 
+where, 
 \begin{align*}
-    k_1 &= f(x_k, u_k) \\
-    k_2 &= f(x_k + \frac{T_s}{2}k_1, u_k) \\
-    k_3 &= f(x_k + \frac{T_s}{2}k_2, u_k) \\
-    k_4 &= f(x_k + T_sk_3, u_k)
+    k_1 &= f(x_k, u_k), \\
+    k_2 &= f(x_k + \frac{T_s}{2}k_1, u_k), \\
+    k_3 &= f(x_k + \frac{T_s}{2}k_2, u_k), \\
+    k_4 &= f(x_k + T_sk_3, u_k).
 \end{align*}
 
-Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state of the system ($y_k = x_k$) we supply a PRBS input for 50 seconds to the system and record the output. We configured the amplitude of the PRBS such that angle $\theta$ is always $\leq \frac{\pi}{18}$ (10 degrees).
+Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state of the system ($y_k = x_k$) we supply a pseudo-random binary sequence input for 50 seconds to the system and record the output. We configured the amplitude of the PRBS such that angle $\theta$ is always $\leq \frac{\pi}{18}$ (10 degrees).
 
 \newpage
 
-Since $\theta$ is small enough and the model is approximately linear around 0 we will try to simulte the future trajectory of the system using the FL.
+Since $\theta$ is small enough and the model is approximately linear around 0 we will try to simulte the future trajectory of the system using the Fundamental lemma.
 We chose the following trajectory lengths \(L_{ini} = 50, \ L_{ref} = 600 \implies L = 650\), we assumed $N=4$. Since a PRBS input is PE of order $N + L$  we can repeat the procedure in \ref{sec:lti-sim}.
 We give a zero input and set the initial state to $\left(\dfrac{\pi}{10}, 0\right)^T$ for the simulating trajectory - autonomous system.
 
@@ -843,7 +847,7 @@ the following results (for a specific simulation):
     \label{eq:lin-model-err}
 \end{align}
 
-We can see that the error for the data-based simulation is quite smaller, which can be seen on the following plot:
+We can see that the error for the data-based simulation is quite smaller, which can be seen on the Figure \ref{fig:pend-2}:
 
 \newpage
 
@@ -866,7 +870,7 @@ each one, the linearized model error \eqref{eq:lin-model-err} is constant becaus
     \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{min} &= 0.238929 
 \end{align*}
 
-This proves that with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" PE input we can get worse results. 
+This illustrated that in some cases with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" PE input we can get worse results. 
 
 \vspace{1em}
 
@@ -879,18 +883,21 @@ hints at the following chapter which uses this approach to implement predictive 
 
 \section{Introduction}
 
-Classical control theory almost always uses a model of the system to synthesise a controller. Usually that model is obtain by system identification from recorded data, but when the model
+Classical control theory almost always uses a model of the system to synthesise a controller. Usually that model is obtained by system identification from recorded data, but when the model
 is too complex to be easily identified or approximated from first principles people started developing control methods based solely on data.
-During the last decade data availability and processing power have been growing sharply thus data-driven control methods have started do develop intensively, there has been a lot of progress in the machine learning approach. In this chapter we will build up on
-results from previous chapters to create a controller that uses only input/output data, bypassing a model. A needed prerequisite for our data-based controller is model predictive control (MPC),
+During the last decade, data availability and processing power have been growing rapidly thus data-driven control methods have started do develop intensively. There has also been a lot of progress in the machine learning theory. In this chapter we will build up on
+results from the previous sections to create a controller that uses only input/output data, completely bypassing a model. A needed prerequisite for our data-based controller is model predictive control (MPC),
 an optimal control algorithm which finds optimal input to the system on a finite and recending horizon whose data is constrained with the model and other (physical) limitations.
-The DeePC algorithm, essentially, does the same thing as MPC - same optimization problem, just instead of the model it uses previously recorded data for the prediction part. This 
+The DeePC algorithm, essentially, does the same thing as MPC - same optimization problem - just instead of the model it uses previously recorded data for the prediction part. This 
 algorithm relies on the Fundamental Lemma since it's result states that it is possible to predict future trajectory of a linear system given input data and recorded data. First formulation (and naming)
-of DeePC was given by [TODO: insert reference dorfler deepc]. A good overview on data-based control that stems from the behavioural framework and the FL can be found at [TODO: special issue control systems mag ieee] and [annual reviews in control 100914]
+of DeePC was given by [TODO: insert reference dorfler deepc]. A good overview on data-based control that stems from the behavioural framework and the FL can be found at [TODO: special issue control systems mag ieee] and [annual reviews in control 100914].
+Illustration of data-based and model-based control design paradigms can be seen in Figure \ref{fig:data-based-vs-model}, also illustration of predictive control can be seen in Figure \ref{fig:pred-control}
 
 \begin{figure}[htbp]
     \centering
-    \input{figures/control_diagram.tex}
+    \resizebox{0.65\textwidth}{!}{
+        \input{figures/control_diagram.tex}
+    }
     \caption{Different control design approaches from data}
     \label{fig:data-based-vs-model}
 \end{figure}
@@ -898,7 +905,7 @@ of DeePC was given by [TODO: insert reference dorfler deepc]. A good overview on
 \begin{figure}[htbp]
     \centering
 s
-    \resizebox{0.7\textwidth}{!}{
+    \resizebox{0.65\textwidth}{!}{
     \input{figures/predictive_control.tex}
     }
     \caption{General predictive control illustration}
@@ -911,11 +918,11 @@ s
 As mentioned before, MPC is a control algorithm which uses optimization with system model and limitations as constraints to find optimal control input over a finite, receding horizon.
 At each time step future trajectory of the system is predicted using the model and optimal sequence of control input is computed taking constraints on inputs and states of the system. Typically, only the first
 input of the optimal input sequence is applied after which the procedure is repeated with new measurements. We can say that, other than MPC, we do not have another control solution for multivariable systems with constraints 
-on inputs and outputs with stability guarantees. In this section we will formulate classical MPC for LTI systems which is needed for later understanding of DeePC.
+on inputs and outputs with stability guarantees. In this section we will formulate classical MPC for LTI systems which is needed in the subsequent section for formulation and understanding of DeePC.
 
 \vspace{1em}
 
-Given a LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization problem at time step $t$ can be written as:
+Given an LTI system \eqref{eq:lti}, the classical finite-horizon MPC optimization problem at time step $t$ can be written as:
 
 \begin{equation}
     \begin{aligned}
@@ -931,7 +938,7 @@ Given a LTI system \eqref{eq:lti} the classical finite-horizon MPC optimization 
 
 
 Where: \(\norm{z}^{2}_P := z^{T}Pz\), for a symmetric positive semidefinite matrix P (notation $P \succeq 0$). Matrix \(Q\in M_{p\times p}(\mathbb{R}), \ Q \succeq 0\) is the 
-output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succeq 0\) is the input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
+output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succ 0\) is the positive definite input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
 output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track, $N\in\mathbb{Z}_{>0}$ is the prediction horizon length. We use estimated state $\hat{x}$ instead of the true state because, generally,
 the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. This MPC optimization problem is usually a convex quadratic program (QP).
 Now we will lay out the MPC algorithm for reference tracking.
@@ -954,42 +961,41 @@ This formulation of MPC assumes stationary state inputs are 0, also terminal cos
 It can be shown, under typical assumptions, that MPC algorithm is recursively feasable and stabilizing. This algorithm can produce excellent results
 if the system model is precise and if it is possible to estimate the initial state $\hat{x}(t)$.
 
-\newpage
 
 \section{DeePC for LTI systems}
 In this section we will formulate predictive control based on data. We will use the same simulation method for prediction from Chapter \ref{chp:dd-sim}.
 The following are required for the DeePC algorithm:
 \begin{itemize}
-    \item[(i)] An upper bound on state dimension $N$
-    \item[(ii)] Past/future trajectory lengths $L_{ini}$ and $L_{ref}$, with $L_{ini} \geq \ell$; $L:=L_{ini}+L_{ref}$  
-    \item[(iii)] Recorded restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $u_{[0, T-1]}$ is PE of order N+L and $T \geq (m+1)(N+L) - 1$, $m$ is the number of inputs
-    \item[(iv)] Initial (past) trajectory \((\bar{u}_{ini}, \bar{y}_{ini}) = (\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\) 
-    \item[(v)] Reference trajectory $(r_0, r_1, ...) \in (\mathbb{R}^p)^{\mathbb{Z}_{\geq 0}}$ 
-    \item[(vi)] Input and output cost matrices $Q \succeq 0,\ R \succeq 0$
-    \item[(vii)] Constraits sets $\mathcal{U}, \ \mathcal{Y}$ 
+    \item[(i)] an upper bound on state dimension $N$,
+    \item[(ii)] past/future trajectory lengths $L_{ini}$ and $L_{ref}$, with $L_{ini} \geq \ell$; $L:=L_{ini}+L_{ref}$,  
+    \item[(iii)] recorded restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $u_{[0, T-1]}$ is PE of order N+L and $T \geq (m+1)(N+L) - 1$, $m$ is the number of inputs,
+    \item[(iv)] initial (past) trajectory \((\bar{u}_{ini}, \bar{y}_{ini}) = (\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\), 
+    \item[(v)] reference trajectory $(r_0, r_1, ...) \in (\mathbb{R}^p)^{\mathbb{Z}_{\geq 0}}$, 
+    \item[(vi)] input and output cost matrices $Q \succeq 0,\ R \succeq 0$,
+    \item[(vii)] constraits sets $\mathcal{U}, \ \mathcal{Y}$, 
 \end{itemize}
 
-Requirement (ii) assuemes initial trajectory length longer than the lag of the system which is unknown, in practice we take long enough initial trajectory. That condition 
-is essentially equivalent to having long past input-output data for initial state estimation in MPC. Now we define matrices
+Requirement (ii) assuemes initial trajectory length longer than the lag of the system which is typicaly unknown. In practice we can simply take long enough initial trajectory for which 
+we can be certain that it is longer than the lag. That condition is essentially equivalent to having long past input-output data for initial state estimation in MPC. Now we define matrices
 $U_p, U_f, Y_p, Y_f$ like in \eqref{eq:uy-pf}. Conditions above allow for application of Theorem \ref{thm:sim}. We now formulate the DeePC optimization problem at time step $t$:
 
 \begin{equation}
     \begin{aligned}
         \min_{g,y,u} \quad  &\sum_{j=0}^{L_{ref}-1} \left(\norm{\bar{y}_j - r_{t+j}}^{2}_{Q} + \norm{\bar{u}_j}^{2}_{R}\right) \\
         \text{subject to:} \quad & \begin{bmatrix} U_p \\ Y_P \\ U_f \\ Y_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{ini} \\ \bar{y}_{ini} \\ \bar{u} \\ \bar{y}\end{bmatrix}\\ 
-        &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1; \\
-        &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1; \\
+        &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1, \\
+        &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1, \\
     \end{aligned}
     \label{eq:deepc}
 \end{equation}
 
-Where:
+where:
 \begin{align*}
-    \bar{u} &= col(\bar{u}_0, \dots, \bar{u}_{L_{ref} - 1}) \\
-    \bar{y} &= col(\bar{y}_0, \dots, \bar{y}_{L_{ref} - 1}) 
+    \bar{u} &= col(\bar{u}_0, \dots, \bar{u}_{L_{ref} - 1}), \\
+    \bar{y} &= col(\bar{y}_0, \dots, \bar{y}_{L_{ref} - 1}). 
 \end{align*}
 
-We deviate from previos nomenclature in favor of easier formulation. Initial trajectory $(u_{ini}, y_{ini})$ will be updated with new meausred data such that it keeps the same length thus the oldest
+We deviate from previos nomenclature in favor of easier formulation. Initial trajectory $(u_{ini}, y_{ini})$ will be updated with new meausred data such that it keeps the same length, thus the oldest
 data pair will be removed.
 
 \vspace{1em}
@@ -1018,9 +1024,10 @@ they will give the identical output.
 
 \vspace{1em}
 
+\subsection{Exact LTI system example}
 Now, will we try to control the double spring mass damper system \ref{fig:double-spring-mass-damper} with DeePC. We will try to control
 the position of mass 2 so we changed  the output equation (\(C = \begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix}, \ D = 0\)) to only give position of mass 2 to reduce computational cost.
-We put an input constraint \(-100 \leq u(t) \leq 100\). We chose the following parameters $T = 100, \ L_{ini} = 5, \ L_{ref} = 25, \ Q = 10000, \ R = 0.001$ - changing them we can
+We put an input constraint \(-100 \leq u(t) \leq 100\). We chose the following starting parameters $T = 100, \ L_{ini} = 5, \ L_{ref} = 25, \ Q = 10000, \ R = 0.001$ - changing them we can
 tune the behaviour of our controller. Initial trajectory is set to 0.
 
 \begin{figure}[htbp]
@@ -1030,8 +1037,8 @@ tune the behaviour of our controller. Initial trajectory is set to 0.
     \label{fig:deepc-step-y}
 \end{figure}
 
-We can see that we were able to reach tracking of the given trajectory, however, it could be tuned for a better result, but as a proof of concept it is sufficient. Now lets display
-the limited force input.
+From Figure \ref{fig:deepc-step-y}, we can see that we were able to reach tracking of the given trajectory, however, it could be tuned for a better result, but as a proof of concept it is sufficient. Next,
+in Figure \ref{fig:deepc-step-u}, we display the limited force input.
 
 \newpage
 
@@ -1046,12 +1053,12 @@ We can see that the limit on the input is working. Now lets try limiting the pos
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{figures/deepc_step_ylim.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/deepc_step_ylim.pdf}
     \caption{Position of mass 2 and force input with DeePC - y limit}
     \label{fig:deepc-step-ylim}
 \end{figure}
 
-Tuning the paramters gave us this result, which can be considered relatively good, we got a short settling time with no overshoot. For these simulations we used MATLAB with YALMIP
+Tuning the paramters gave us this result (Figure \ref{fig:deepc-step-ylim}), which can be considered relatively good, we got a short settling time with no overshoot. For these simulations we used MATLAB with YALMIP
 toolbox and MOSEK solver.
 
 \vspace{1em}
@@ -1065,7 +1072,7 @@ DeePC performs poorly - it is not robust. To improve on robustness we implement 
 \section{Regularized DeePC}
 The paper [todo: deepc] introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their result and simulate it.
 The Fundamental lemma is an result which completely falls apart when we introduce measurement noise (or nonlinearity) to our system since there is a high probability that the image of Hankel matrix of input-output
-data spans the whole space instead of the aforementioned subspace (the behaviour). There is an approach where we can maybe remove the noise from recorded data with SVD or similar techniques, that is good for recorded data but for DeePC where
+data spans the whole space instead of the subspace which is identified with the behaviour of the system. There is an approach where we can maybe remove the noise from recorded data with SVD or similar techniques, that is good for recorded data but for DeePC where
 we use real-time data it is not that simple. Now we will formulate regularized DeePC optimization problem:
 
 \begin{equation}
