@@ -30,5 +30,5 @@
 \contentsline {subsection}{\numberline {4.4.1}Noisy measurements LTI example}{24}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Nonlinear system example}{25}{subsection.4.4.2}%
 \contentsline {chapter}{\numberline {5}Conclusion}{27}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Additional Material}{28}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Appendix}{28}{appendix.A}%
 \contentsline {chapter}{Bibliography}{29}{appendix.A}%

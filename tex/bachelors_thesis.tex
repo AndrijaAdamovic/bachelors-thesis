@@ -404,7 +404,7 @@ gained popularity since the rapid development of computers made data collection 
 famous is the development of machine learning, i.e., artificial intelligence. In this thesis we present a valuable result from linear systems theory which has enabled a vast number of significant results in the
 data-based approach. That result is called Willems' Fundamental Lemma which was first introduced by Willems et al. \cite{willems2005note}, informally, it states that if a linear system is inputed
 a diverse enough input then using the recorded input-output data it is possible to describe (parametrize) every possible combination of inputs and outputs. That is essentially the same role of a model
-but using only data. To illustrate how large of an impact the Fundamental Lemma had in the last few years we graphed the number of citations since its publication year until year 2025 in Figure \ref{fig:citations}. In the following sections we will state the famous results and explore its applications to various dynamical systems.
+but using only the data. To illustrate how large of an impact the Fundamental Lemma had in the last few years we graphed the number of citations since its publication year until year 2025 in Figure \ref{fig:citations}. In the following sections we will state the famous results and explore its applications to various dynamical systems.
 
 \begin{figure}[htbp]
     \centering
@@ -415,7 +415,14 @@ but using only data. To illustrate how large of an impact the Fundamental Lemma 
 
 
 \section{Literature Overview}
-
+The Fundamental Lemma is a result stemming from Jan C. Willems'\footnote{Jan C. Willems (1939-2013) was a Belgian systems and control theorist, best known for developing the behavioral approach to dynamical systems and for foundational contributions to dissipativity theory.} 
+behavioral systems theory \cite{polderman1998mathematicalsystems} which represents a system only with a space of its input and output trajectories, that approach was, firstly, unpopular because of its abstractness, but after a few
+years after the publication of the Lemma \cite{willems2005note} it became popular. A lot of that popularity can be attributed to \cite{coulson2019data}, which used the Lemma and results from the behavioural approaches
+to synthesise a predictive controller based entirely on data which could rival controllers from model-based approach. After that result the applications of data-based control using behavioural approach have seen
+a large increase (\ref{fig:citations}) which was nicely summarized in \cite{dorfler2023datadrivencontrol} and \cite{verheijen2023handbook}. The book \cite{dbcbook} gives a good overview of the main applications of the
+Lemma, we are largely using the formulations stated in it. The paper \cite{huang2024robustkernelizeddeepc} improves the data-based controller to better suit realistic and nonlinear
+systems. This is the current state of the art when it comes to data-based control, current reasearch is highly active so we can expect more results in the future, but the Fundamental Lemma still stands as the 
+one result that enabled that breakthrough.
 
 
 \chapter{The Fundamental Lemma}
@@ -456,7 +463,7 @@ we will often assume that an upper bound on state space dimension is given, i.e.
 
 It can be deduced that, from linearity of \eqref{eq:lti}, any linear combination of input-state-ouput 
 trajectories is itself an input-state-output trajectory i.e. the set of all such trajectories spans a vector space over $\mathbb{R}$.
-That space is called the \textit{behaviour} [todo ref] of the system.
+That space is called the \textit{behaviour} \cite{polderman1998mathematicalsystems} of the system.
  
 Additionally, from time invariance \eqref{eq:lti} it can be deduced that if \(\left(u(t), x(t), y(t)\right)_{t=0}^{\infty}\) is a trajectory, then:
 
@@ -486,7 +493,7 @@ we define controllability and observability in the same framework. However, alth
 and observability are closely related, they are not unconditionally equivalent. Their equivalence depends on how the behavior is represented. 
 In particular, when considering input-output behavior, equivalence with the classical state-space definitions typically requires a minimal realization; 
 for the full input-state-output behavior, the correspondence is more direct. We will omit those comparisons between approaches, while more on that 
-topic can be found at (TODO: link za clanak/knjigu).
+topic can be found at \cite{markovsky2023behavioral}.
 
 \begin{definition}
     A discrete LTI system \eqref{eq:lti} is called controllable if for any initial state $x(0)$ and any desired state $x_f$, there exists
@@ -497,7 +504,7 @@ topic can be found at (TODO: link za clanak/knjigu).
 
 In lays terms, the definition above states that any state of the system can be reached from any other initial state in a finite time $T$ by applying finitely many inputs. 
 
-Next state the famous result for testing system controllability stated and proven by Rudolf. E. Kalman. Let the pair $(A, B)$ be the pair of matrices from \eqref{eq:lti} and let $n$ denote 
+Next state the famous result for testing system controllability stated and proven by Rudolf. E. Kalman \cite{kalman1960newapproach}. Let the pair $(A, B)$ be the pair of matrices from \eqref{eq:lti} and let $n$ denote 
 the true state space dimension of the system.
 
 \begin{theorem}(Kalman controllability theorem)
@@ -527,7 +534,7 @@ The following theorem presents a constructive test for observability.
 \end{theorem}
 
 The Kalman criteria for controllability/observability were stated but, there are more different equivalent
-statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests [todo ref].
+statements of which the most used ones are the Popov-Belevitch-Hautus (PBH) tests \cite{trentelman2001control}.
 
 From Theorems~\ref{thm:ctrb} and~\ref{thm:obsv}, a duality between observability and controllability matrices can be seen and
 it is not hard to show that using matrix operations we have:
@@ -609,8 +616,8 @@ for some $g \in \mathbb{R}^{T-L+1}.$
 \label{thm:lemma}
 \end{theorem}
 
-Original statement and proof was given by Willems et. al [] which uses behavioural framework. For completeness of presentation, we also present a proof of the Fundamental Lemma. This proof idea follows
-the proof given in [ref DBCBook], with a difference that in our proof we prove equality of subspaces slightly differently than in the [].
+Original statement and proof was given by Willems et al.\cite{willems2005note}, which uses behavioural framework. For completeness of presentation, we also present a proof of the Fundamental Lemma. This proof idea follows
+the proof given in the \cite{dbcbook}, with a difference that in our proof we prove equality of subspaces slightly differently than in their's proof.
 \begin{proof}[Proof of Theorem \ref{thm:lemma}]
     From recursive application of the difference equations \eqref{eq:lti} we obtain the following expression:
     \begin{equation}
@@ -723,8 +730,8 @@ with the rank of left columns which is the rank of $\Omega_L$.
 \section{Lemma - Numerical Examples}
 
 In this chapter we will demonstrate the Fundamental Lemma on several numerical examples. We will use the system model to gather the necessary data
-for the Hankel matrices and then use them to verify for a random trajectory that it lies in the image of the Hankel matrix. For this we use MATLAB because it is
-easier to work with its Control System Toolbox for system simulation. TODO:text
+for the Hankel matrices and then use them to verify for a random trajectory that it lies in the image of the Hankel matrix. For this we use MATLAB \cite{matlab2025b} because it is
+easier to work with its Control System Toolbox for system simulation. 
 
 \subsection{Simple SISO System}
 
@@ -880,7 +887,7 @@ on the recorded data, the previous history of a trajectory and future input we w
 \end{equation}
 
 where $U_p$ and $U_f$ have $mL_{ini}$ and $mL_{ref}$ and $Y_p$ and $Y_f$ have $pL_{ini}$ and $pL_{ref}$ rows, respectively. Next we present a solution of the above described problem,  
-as it is done in [TODO: ref DBCBook].
+as it is done in \cite{dbcbook}.
 
 \begin{theorem}
     Consider a system \eqref{eq:lti} with (A, B) controllable and persistently exciting input $u_{[0, T-1]}$ of order $N+L$. Suppose restricted input output trajectory \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\)
@@ -955,7 +962,7 @@ Assuming damping is proportional to angular velocity with proportionality consta
 \end{equation}
 
 Since this is in continous state space forumlation we need to derive a discrete time version of it. Using sampling period \(T_s = 0.01s\) and assuming
-ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 method as follows:
+ZOH on the input $u(t)$ (see \ref{sec:mimo}) we discretize \eqref{eq:pend-dyn} using the Runge-Kutta 4 \cite{butcher2016numericalmethods} method as follows:
 \begin{equation}
     x_{k+1} = x_k + \frac{T_s}{6}(k_1 + 2k_2 + 2k_3 + k_4) ,
     \label{eq:rk4}
@@ -1036,16 +1043,16 @@ hints at the following chapter which uses this approach to implement predictive 
 Classical control theory almost always uses a model of the system to synthesise a controller. Usually that model is obtained by system identification from recorded data, but when the model
 is too complex to be easily identified or approximated from first principles people started developing control methods based solely on data.
 During the last decade, data availability and processing power have been growing rapidly thus data-driven control methods have started do develop intensively. There has also been a lot of progress in the machine learning theory. In this chapter we will build up on
-results from the previous sections to create a controller that uses only input/output data, completely bypassing a model. A needed prerequisite for our data-based controller is model predictive control (MPC),
+results from the previous sections to create a controller that uses only input/output data, completely bypassing a model. A needed prerequisite for our data-based controller is model predictive control (MPC) \cite{rawlings2017mpc},
 an optimal control algorithm which finds optimal input to the system on a finite and recending horizon whose data is constrained with the model and other (physical) limitations.
 The DeePC algorithm, essentially, does the same thing as MPC - same optimization problem - just instead of the model it uses previously recorded data for the prediction part. This 
 algorithm relies on the Fundamental Lemma since it's result states that it is possible to predict future trajectory of a linear system given input data and recorded data. First formulation (and naming)
-of DeePC was given by [TODO: insert reference dorfler deepc]. A good overview on data-based control that stems from the behavioural framework and the FL can be found at [TODO: special issue control systems mag ieee] and [annual reviews in control 100914].
+of DeePC was given by \cite{coulson2019data}. 
 Illustration of data-based and model-based control design paradigms can be seen in Figure \ref{fig:data-based-vs-model}, also illustration of predictive control can be seen in Figure \ref{fig:pred-control}
 
 \begin{figure}[htbp]
     \centering
-    \resizebox{0.65\textwidth}{!}{
+    \resizebox{0.7\textwidth}{!}{
         \input{figures/control_diagram.tex}
     }
     \caption{Different control design approaches from data}
@@ -1055,7 +1062,7 @@ Illustration of data-based and model-based control design paradigms can be seen 
 \begin{figure}[htbp]
     \centering
 s
-    \resizebox{0.65\textwidth}{!}{
+    \resizebox{0.7\textwidth}{!}{
     \input{figures/predictive_control.tex}
     }
     \caption{General predictive control illustration}
@@ -1090,7 +1097,7 @@ Given an LTI system \eqref{eq:lti}, the classical finite-horizon MPC optimizatio
 Where: \(\norm{z}^{2}_P := z^{T}Pz\), for a symmetric positive semidefinite matrix P (notation $P \succeq 0$). Matrix \(Q\in M_{p\times p}(\mathbb{R}), \ Q \succeq 0\) is the 
 output cost matrix and \(R\in M_{m\times m}(\mathbb{R}), \ R \succ 0\) is the positive definite input cost matrix. Sets \(\mathcal{U} \subseteq \mathbb{R}^m, \mathcal{Y} \subseteq \mathbb{R}^p\) are input and 
 output constraints set, respectively. Sequence \((r_0, r_1, ...) \) is the reference trajectory which we want to track, $N\in\mathbb{Z}_{>0}$ is the prediction horizon length. We use estimated state $\hat{x}$ instead of the true state because, generally,
-the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. This MPC optimization problem is usually a convex quadratic program (QP).
+the output is not the whole state i.e. we cannot measure the whole state thus we need to estimate it. This MPC optimization problem is usually a convex quadratic program (QP) \cite{boyd2004convex}.
 Now we will lay out the MPC algorithm for reference tracking.
 
 \begin{algorithm}
@@ -1108,7 +1115,7 @@ Now we will lay out the MPC algorithm for reference tracking.
 \end{algorithm}
 
 This formulation of MPC assumes stationary state inputs are 0, also terminal cost is omitted because when we transfer to DeePC we do not know the full state of the system. 
-It can be shown, under typical assumptions, that MPC algorithm is recursively feasable and stabilizing. This algorithm can produce excellent results
+It can be shown, under typical assumptions, that MPC algorithm is recursively feasable and stabilizing \cite{mayne2000constrainedmpc}. This algorithm can produce excellent results
 if the system model is precise and if it is possible to estimate the initial state $\hat{x}(t)$.
 
 
@@ -1208,8 +1215,8 @@ We can see that the limit on the input is working. Now lets try limiting the pos
     \label{fig:deepc-step-ylim}
 \end{figure}
 
-Tuning the paramters gave us this result (Figure \ref{fig:deepc-step-ylim}), which can be considered relatively good, we got a short settling time with no overshoot. For these simulations we used MATLAB with YALMIP
-toolbox and MOSEK solver.
+Tuning the paramters gave us this result (Figure \ref{fig:deepc-step-ylim}), which can be considered relatively good, we got a short settling time with no overshoot. For these simulations we used MATLAB with YALMIP \cite{lofberg2004yalmip}
+toolbox and MOSEK \cite{mosek2026} solver.
 
 \vspace{1em}
 
@@ -1220,7 +1227,7 @@ DeePC performs poorly - it is not robust. To improve on robustness we implement 
 
 
 \section{Regularized DeePC}
-The paper [todo: deepc] introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their results and illustrate them through simulations.
+The paper \cite{coulson2019data} introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their results and illustrate them through simulations.
 The Fundamental lemma is a result which falls apart when we introduce measurement noise (or nonlinearity) to our system since there is a high probability that the image of Hankel matrix of input-output
 data spans the whole space instead of the subspace which is identified with the behaviour of the system. There is an approach where we can maybe remove the noise from recorded data with SVD or similar techniques, that is good for recorded data but for DeePC where
 we use real-time data it is not that simple. Now we will formulate regularized DeePC optimization problem:
@@ -1239,7 +1246,7 @@ we use real-time data it is not that simple. Now we will formulate regularized D
 The hard equality constraint  (i.e. the equality representing data-based prediction) in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
 to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, while choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
 is infeasible i.e. when the data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by techniques from robust optimization,see, e.g., [ref] for more details.. 
-In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
+In the original paper \cite{coulson2019data} 1-norm regularization was used, but in a more recent paper \cite{huang2019deepcconverters} it was updated to 2-norm regularization.
 
 \subsection{Noisy measurements LTI example}
 
@@ -1314,7 +1321,7 @@ which should track the reference. The steady state input for $y=1 \ m$ can be ca
 
 Figure \ref{fig:deepc-step-nonlinear} shows that regularized DeePC can track the reference even when the system is nonlinear with noisy measurements. The result is not as good as for LTI systems, but when 
 its considered that it is completely data-based we can say that the result is good. While doing the simulations we have seen that noise has
-a more noticable effect when the underlying system is nonlinear. For improved behaviour, [] suggest significant changes to the DeePC algorithm, also Koopman operator approach is being researched 
+a more noticable effect when the underlying system is nonlinear. For improved behaviour, \cite{huang2024robustkernelizeddeepc} and \cite{lazar2024basisfunctionsdeepc} suggest significant changes to the DeePC algorithm, also Koopman operator approach \cite{xiong2025koopmanbilineardeepc} is being researched 
 for potential improvments for (data-based) nonlinear system control. 
 
 
@@ -1322,10 +1329,12 @@ for potential improvments for (data-based) nonlinear system control.
 % \chapter{Conclusion}
 % Summarize the main contributions, limitations, and possible directions for future work.
 
-    \chapter{Conclusion}
+\chapter{Conclusion}
 
 \appendix
-\chapter{Additional Material}
+\chapter{Appendix}
+
+Link to the GitHub repository containing all MATLAB code used in this thesis:  \\ \url{https://github.com/AndrijaAdamovic/bachelors-thesis}
 
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliography}

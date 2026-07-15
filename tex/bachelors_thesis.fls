@@ -404,9 +404,10 @@ INPUT ./figures/citations.pdf
 INPUT ./figures/citations.pdf
 INPUT ./figures/citations.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./figures/double_spring_mass_damper.tex
 INPUT ./figures/double_spring_mass_damper.tex
@@ -491,6 +492,10 @@ INPUT ./figures/deepc_step_nonlinear.pdf
 INPUT ./figures/deepc_step_nonlinear.pdf
 INPUT ./figures/deepc_step_nonlinear.pdf
 INPUT ./figures/deepc_step_nonlinear.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT ./bachelors_thesis.bbl
 INPUT ./bachelors_thesis.bbl
 INPUT bachelors_thesis.bbl
@@ -519,4 +524,5 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
