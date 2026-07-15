@@ -367,7 +367,7 @@ ZOH & Zero-order hold \\
 \clearpage
 
 \frontmatterchapter{SA\v{Z}ETAK}
-U ovom je radu detaljno obrađen rezultat poznat kao Willemsova fundamentalna lema, koji predstavlja temeljni rezultat za analizu linearnih sustava temeljenu na podacima.
+U ovom je radu obrađen rezultat poznat kao Willemsova fundamentalna lema, koji predstavlja temeljni rezultat za analizu linearnih sustava temeljenu na podacima.
 Najprije su obrađene teorijske osnove potrebne za razumijevanje same leme te je iznesen njezin dokaz. Potom je lema validirana na različitim numeričkim primjerima provedenima u simulacijskom okruženju.
 Demonstrirana je mogućnost simulacije budućeg ponašanja linearnih sustava isključivo na temelju snimljenih podataka, bez poznavanja njihova matematičkog modela. Također je istražena primjenjivost leme na određene nelinearne sustave.
 Lema je zatim primijenjena za sintezu prediktivnog regulatora za linearne sustave zasnovanog na podacima korištenjem optimizacijskih metoda. Regulator je dodatno nadograđen postupcima robustifikacije kako bi bio prikladniji za primjenu na stvarnim sustavima koji su pod utjecajem šuma i nelinearnosti.
@@ -378,7 +378,7 @@ Lema je zatim primijenjena za sintezu prediktivnog regulatora za linearne sustav
 \clearpage
 
 \frontmatterchapter{ABSTRACT}
-This thesis provides a detailed examination of Willems' Fundamental Lemma, a fundamental result in the data-based analysis of linear systems.
+This thesis provides an examination of Willems' Fundamental Lemma, a fundamental result in the data-based analysis of linear systems.
 First, the theoretical foundations required to understand the lemma are presented, together with its proof. The lemma is then validated through various numerical examples conducted in a simulation environment.
 The possibility of simulating the future behaviour of linear systems exclusively from recorded data, without any knowledge of their mathematical models, is demonstrated. The applicability of the lemma to certain nonlinear systems is also investigated.
 The lemma is subsequently used to design a data-based predictive controller for linear systems by applying optimization methods. The controller is further enhanced through robustification techniques to make it more suitable for practical systems affected by noise and nonlinearities.
@@ -392,7 +392,7 @@ The lemma is subsequently used to design a data-based predictive controller for 
 
 \chapter{Introduction}
 
-This chapter introduces the motivation for exploring the Willems' Fundamental Lemma which is a famous result in data-based approach to control. Literature overview is also presented, it lists 
+This chapter introduces the motivation for exploring the Willems' Fundamental Lemma which is a famous result in data-based approach to control. Literature overview is also presented, in which we list 
 papers and books that led to the development of the Lemma as well as some extensions and applications that are worth mentioning and are used in the rest of the thesis.
 
 
@@ -402,13 +402,13 @@ using first principles, i.e., the laws of physics. For complex systems both of t
 An alternative to model-based approach is the direct data-based approach to systems theory, which only uses measured data to simulate or control the system, completely avoiding the model. That approach has
 gained popularity since the rapid development of computers made data collection and processing relatively inexpensive. Data-based approach is a large field spanning multiple scientific disciplines, most
 famous is the development of machine learning, i.e., artificial intelligence. In this thesis we present a valuable result from linear systems theory which has enabled a vast number of significant results in the
-data-based approach. That result is called Willems' Fundamental Lemma which was first introduced by Willems et al. \cite{willems2005note}, informally, it states that if a linear system is inputed
+data-based approach. That result is called Willems' Fundamental Lemma which was first introduced by Willems et al. \cite{willems2005note}. Informally, it states that if a linear system is excited with
 a diverse enough input then using the recorded input-output data it is possible to describe (parametrize) every possible combination of inputs and outputs. That is essentially the same role of a model
-but using only the data. To illustrate how large of an impact the Fundamental Lemma had in the last few years we graphed the number of citations since its publication year until year 2025 in Figure \ref{fig:citations}. In the following sections we will state the famous results and explore its applications to various dynamical systems.
-
+but using only the data. To illustrate how large of an impact the Fundamental Lemma had in the last few years, since the data-based control has entered in the focus of control systems' society around the year 2020,
+we graphed the number of citations since its publication year until year 2025 in Figure \ref{fig:citations}. In the following sections we will state the famous results and explore its applications to various dynamical systems.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/citations.pdf}
+    \includegraphics[width=0.65\textwidth]{figures/citations.pdf}
     \caption{Citations per annum of \cite{willems2005note} - Google Scholar}
     \label{fig:citations}
 \end{figure}
