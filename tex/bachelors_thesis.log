@@ -992,4 +992,121 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 832.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [12
 
- <./fi
+ <./figures/PRBS.pdf>]
+<figures/step.pdf, id=506, 908.39375pt x 510.90875pt>
+File: figures/step.pdf Graphic file (type pdf)
+<use figures/step.pdf>
+Package pdftex.def Info: figures/step.pdf  used on input line 849.
+(pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
+<figures/prbs_out.pdf, id=507, 922.44624pt x 510.90875pt>
+File: figures/prbs_out.pdf Graphic file (type pdf)
+<use figures/prbs_out.pdf>
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 856.
+(pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
+ [13
+
+ <./figures/step.pdf> <./figures/prbs_out.pdf>]
+Chapter 3.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 880.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [14
+
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/dd_sim_linear.pdf, id=573, 804.00375pt x 424.58624pt>
+File: figures/dd_sim_linear.pdf Graphic file (type pdf)
+<use figures/dd_sim_linear.pdf>
+Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 936.
+(pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
+ [15
+
+ <./figures/dd_sim_linear.pdf>] (./figures/pendulum.tex) [16]
+<figures/pend_1.pdf, id=601, 797.98125pt x 424.58624pt>
+File: figures/pend_1.pdf Graphic file (type pdf)
+<use figures/pend_1.pdf>
+Package pdftex.def Info: figures/pend_1.pdf  used on input line 992.
+(pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
+ [17 <./figures/pend_1.pdf>]
+<figures/pend_sim_comp.pdf, id=621, 797.98125pt x 419.5675pt>
+File: figures/pend_sim_comp.pdf Graphic file (type pdf)
+<use figures/pend_sim_comp.pdf>
+Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 1017.
+(pdftex.def)             Requested size: 455.24411pt x 239.36082pt.
+ [18 <./figures/pend_sim_comp.pdf>]
+Chapter 4.
+(./figures/control_diagram.tex
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (./figures/predictive_control.tex) [19
+
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1107.
+ [20] [21]
+<figures/deepc_step_y.pdf, id=672, 794.97pt x 424.58624pt>
+File: figures/deepc_step_y.pdf Graphic file (type pdf)
+<use figures/deepc_step_y.pdf>
+Package pdftex.def Info: figures/deepc_step_y.pdf  used on input line 1195.
+(pdftex.def)             Requested size: 455.24411pt x 243.15044pt.
+ [22 <./figures/deepc_step_y.pdf>]
+<figures/deepc_step_u.pdf, id=693, 804.00375pt x 419.5675pt>
+File: figures/deepc_step_u.pdf Graphic file (type pdf)
+<use figures/deepc_step_u.pdf>
+Package pdftex.def Info: figures/deepc_step_u.pdf  used on input line 1207.
+(pdftex.def)             Requested size: 455.24411pt x 237.56824pt.
+<figures/deepc_step_ylim.pdf, id=694, 801.99625pt x 419.5675pt>
+File: figures/deepc_step_ylim.pdf Graphic file (type pdf)
+<use figures/deepc_step_ylim.pdf>
+Package pdftex.def Info: figures/deepc_step_ylim.pdf  used on input line 1216.
+(pdftex.def)             Requested size: 409.71692pt x 214.3479pt.
+ [23 <./figures/deepc_step_u.pdf> <./figures/deepc_step_ylim.pdf>] [24]
+<figures/deepc_step_robust.pdf, id=742, 808.01875pt x 424.58624pt>
+File: figures/deepc_step_robust.pdf Graphic file (type pdf)
+<use figures/deepc_step_robust.pdf>
+Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1282.
+(pdftex.def)             Requested size: 455.24411pt x 239.2179pt.
+ [25 <./figures/deepc_step_robust.pdf>]
+<figures/deepc_step_nonlinear.pdf, id=769, 804.00375pt x 424.58624pt>
+File: figures/deepc_step_nonlinear.pdf Graphic file (type pdf)
+<use figures/deepc_step_nonlinear.pdf>
+Package pdftex.def Info: figures/deepc_step_nonlinear.pdf  used on input line 1320.
+(pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
+ [26 <./figures/deepc_step_nonlinear.pdf>]
+Chapter 5.
+[27
+
+]
+Appendix A.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1340.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [28
+
+] (./bachelors_thesis.bbl [29
+
+
+]) [30] (./bachelors_thesis.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 22170C883BB858F1BFA88A01CA77A773;5413.
+ ) 
+Here is how much of TeX's memory you used:
+ 28363 strings out of 467533
+ 530833 string characters out of 5419495
+ 977649 words of memory out of 5000000
+ 56586 multiletter control sequences out of 15000+600000
+ 725224 words of font info for 102 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,17n,94p,588b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bachelors_thesis.pdf (42 pages, 1508362 bytes).
+PDF statistics:
+ 964 PDF objects out of 1000 (max. 8388607)
+ 796 compressed objects within 8 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
+
