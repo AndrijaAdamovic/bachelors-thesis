@@ -10,6 +10,7 @@
 \usepackage{amssymb}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -45,8 +46,9 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\cftbeforechapskip}{10pt}
-\setlength{\cftbeforesecskip}{5pt}
+\setlength{\cftbeforechapskip}{5pt}
+\setlength{\cftbeforesecskip}{2pt}
+\setlength{\cftbeforesubsecskip}{1pt}
 \setlength{\cftbeforefigskip}{5pt}
 \setlength{\cftbeforetabskip}{5pt}
 
@@ -217,19 +219,148 @@ acquired during my studies and the literature cited in the references.
 \listoffigures
 \clearpage
 
-\phantomsection{}
-\addcontentsline{toc}{chapter}{LIST OF TABLES}
-\listoftables
-\clearpage
 
 \frontmatterchapter{LIST OF SYMBOLS}
-\begin{tabular}{@{}p{0.18\textwidth}p{0.58\textwidth}p{0.16\textwidth}@{}}
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{0.18\textwidth}p{0.58\textwidth}p{0.16\textwidth}@{}}
 \toprule
 Symbol & Description & Unit \\
 \midrule
-$x$ & Example variable & / \\
+\endfirsthead
+\toprule
+Symbol & Description & Unit \\
+\midrule
+\endhead
+$\mathbb{N}$ & Set of natural numbers & \\
+$\mathbb{R}$ & Set of real numbers & \\
+$\mathbb{Z}_{\geq 0}$ & Set of non-negative integers & \\
+$\mathbb{Z}_{>0}$ & Set of positive integers & \\
+$\infty$ & Infinity; denotes an unbounded trajectory horizon & \\
+$A, B, C, D$ & State-space system matrices & \\
+$A_d, B_d, C_d, D_d$ & Discrete-time state-space system matrices & \\
+$I$ & Identity matrix & \\
+$\mathcal{C}$ & Controllability matrix & \\
+$\mathcal{O}$ & Observability matrix & \\
+$\Omega_L, \Omega_k$ & Finite-horizon observability matrix & \\
+$\Theta_L$ & Block Toeplitz matrix of Markov parameters & \\
+$M$ & Input--output trajectory mapping matrix in the proof & \\
+$M_{r\times c}(\mathbb{R})$ & Space of real matrices with $r$ rows and $c$ columns & \\
+$0$ & Zero scalar, vector, or matrix, as determined by context & \\
+$(\cdot)^T$ & Matrix or vector transpose & \\
+$(\cdot)^*$ & Optimal value or optimal sequence & \\
+$\operatorname{rank}(\cdot)$ & Matrix rank & \\
+$\ker(\cdot)$ & Kernel (null space) of a matrix or linear map & \\
+$\operatorname{im}(\cdot)$ & Image (column space) of a matrix or linear map & \\
+$\dim(\cdot)$ & Dimension of a vector space & \\
+$x(t), x_k, x_j$ & State vector at continuous time $t$, sample $k$, or prediction stage $j$ & \\
+$\dot{x}$ & Time derivative of the state vector & \\
+$x_0$ & Initial state & \\
+$x_{ini}$ & Initial state of a trajectory & \\
+$x_s$ & Steady-state state vector & \\
+$\hat{x}$ & Estimated state vector & \\
+$x_f$ & Desired final state & \\
+$x_1, x_2$ & Positions of the first and second masses & $\mathrm{m}$ \\
+$\dot{x}_1, \dot{x}_2$ & Velocities of the first and second masses & $\mathrm{m/s}$ \\
+$u(t), u_k, u_j$ & Input at time $t$, sample $k$, or prediction stage $j$ & \\
+$\bar{u}, \bar{u}_j$ & Stacked input trajectory and its value at prediction stage $j$ & \\
+$\bar{u}_{ini}$ & Initial segment of the input trajectory & \\
+$u_{ini}, y_{ini}$ & Initial input and output trajectories used by DeePC & \\
+$u_s$ & Steady-state input & $\mathrm{N}$ \\
+$u^*$ & Optimal input sequence & \\
+$y(t), y_k, y_j$ & Output at time $t$, sample $k$, or prediction stage $j$ & \\
+$\bar{y}, \bar{y}_j$ & Stacked output trajectory and its value at prediction stage $j$ & \\
+$\bar{y}_{ini}$ & Initial segment of the output trajectory & \\
+$\bar{y}^{\mathrm{data}}$ & Output trajectory obtained from data & \\
+$\bar{y}^{\mathrm{model}}$ & Output trajectory predicted by the system model & \\
+$\bar{y}^{\mathrm{lin.\ model}}$ & Output trajectory predicted by the linearized model & \\
+$y_s$ & Steady-state output & $\mathrm{m}$ \\
+$v_k$ & Measurement-noise sample & $\mathrm{m}$ \\
+$\sigma$ & Measurement-noise standard deviation & $\mathrm{m}$ \\
+$\mathcal{N}(0,\sigma^2)$ & Zero-mean normal distribution of the measurement noise & \\
+$\sigma_y$ & Output-trajectory slack variable & \\
+$t$ & Time & $\mathrm{s}$ \\
+$t_0, t_{ini}$ & Initial time or initial-trajectory time & $\mathrm{s}$ \\
+$T_s$ & Sampling period & $\mathrm{s}$ \\
+$i, j, k, l$ & Sequence, summation, or time-step indices & \\
+$\tau$ & Time shift; applied pendulum torque & \\
+$T$ & Length of the recorded trajectory & \\
+$L$ & Trajectory length or Hankel-matrix depth & \\
+$L_{ini}, L_{ref}$ & Initial and reference trajectory lengths & \\
+$\ell$ & Lag of the system & \\
+$n$ & State-space dimension & \\
+$N$ & State-dimension bound or prediction horizon & \\
+$m$ & Number of inputs & \\
+$m$ (pendulum) & Pendulum mass & $\mathrm{kg}$ \\
+$m_1, m_2$ & Masses in the spring--mass--damper system & $\mathrm{kg}$ \\
+$p$ & Number of outputs & \\
+$r, r_{t+j}$ & Reference trajectory and its value at prediction stage $t+j$ & \\
+$H_L, H_k$ & Hankel matrix of depth $L$ or $k$ & \\
+$U_p, U_f$ & Past and future input Hankel-matrix blocks & \\
+$Y_p, Y_f$ & Past and future output Hankel-matrix blocks & \\
+$X_{[0,T-L]}$ & Matrix of recorded state samples & \\
+$J_L$ & Stacked state and input data matrix in the proof & \\
+$g$ (trajectory) & Coefficient vector representing a trajectory & \\
+$g$ (pendulum) & Gravitational acceleration & $\mathrm{m/s^2}$ \\
+$a$ & Left-kernel vector component in the proof & \\
+$b_i$ & Input-vector coefficient in the proof & \\
+$v$ & Non-zero vector in the left kernel of $M$ & \\
+$\alpha_j$ & Coefficients of the characteristic polynomial of $A$ & \\
+$\beta_l$ & Input coefficients derived in the proof & \\
+$\lambda$ & Indeterminate of the characteristic polynomial & \\
+$p(\lambda)$ & Characteristic polynomial of $A$ & \\
+$P$ & Generic positive-semidefinite weighting matrix & \\
+$Q, R$ & Output and input cost matrices & \\
+$\norm{\cdot}$ & Norm of a vector & \\
+$\norm{\cdot}_2$ & Euclidean (2-)norm of a vector & \\
+$\norm{\cdot}_2^2$ & Squared Euclidean norm & \\
+$\norm{\cdot}_P^2$ & Squared weighted norm induced by $P$, $\norm{z}_P^2=z^TPz$ & \\
+$\norm{\cdot}_{\mathrm{average}}$ & Average trajectory-error norm & \\
+$\norm{\cdot}_{\max},\ \norm{\cdot}_{\min}$ & Maximum and minimum trajectory-error norms & \\
+$\succeq 0$ & Positive semidefinite matrix relation & \\
+$\succ 0$ & Positive definite matrix relation & \\
+$z$ & Vector in the weighted norm; integration variable & \\
+$s$ & Generic vector sequence in the Hankel-matrix notation & \\
+$s_{[i,j]}$ & Stacked segment of sequence $s$ from index $i$ through $j$ & \\
+$\sin(\cdot)$ & Sine function & \\
+$e^{A t}$ & Matrix exponential & \\
+$\dfrac{d}{dt}$ & Time-derivative operator & \\
+$\sum$ & Summation operator & \\
+$\int_a^b$ & Definite-integral operator with limits $a$ and $b$ & \\
+$d\tau,\ dz$ & Integration differentials & \\
+$\min,\ \max$ & Minimum and maximum operators & \\
+$\operatorname{col}(\cdot)$ & Column-stacking operator & \\
+$\times$ & Matrix-dimension or Cartesian-product separator & \\
+$:=$ & Equality by definition & \\
+$=$ & Equality relation & \\
+$\neq$ & Inequality relation & \\
+$<,\ >$ & Strict less-than and greater-than relations & \\
+$\leq,\ \geq$ & Less-than-or-equal and greater-than-or-equal relations & \\
+$\approx$ & Approximate equality & \\
+$\sim$ & Distributed as, or of approximately the indicated order & \\
+$\to$ & Mapping or limiting relation & \\
+$\iff$ & Logical equivalence (``if and only if'') & \\
+$\implies$ & Logical implication & \\
+$\in$ & Set-membership relation & \\
+$\subseteq, \subsetneq$ & Subset and strict-subset relations & \\
+$\forall$ & Universal quantifier (``for all'') & \\
+$\mathcal{U}, \mathcal{Y}$ & Input and output constraint sets & \\
+$\lambda_g, \lambda_y$ & Regularization weights & \\
+$b$ & Pendulum damping coefficient & $\mathrm{N\,m\,s}$ \\
+$c_1, c_2$ & Viscous damping coefficients & $\mathrm{N\,s/m}$ \\
+$k_1, k_2$ (springs) & Linear spring stiffness coefficients & $\mathrm{N/m}$ \\
+$k_{23}$ & Nonlinear spring stiffness coefficient & $\mathrm{N/m^3}$ \\
+$k_i$ (RK4) & Runge--Kutta stage derivative, $i=1,2,3,4$ & \\
+$E$ & Nonlinear spring coefficient vector & \\
+$F_2$ & Force exerted by the second spring & $\mathrm{N}$ \\
+$\delta l$ & Relative displacement of the nonlinear spring & $\mathrm{m}$ \\
+$l$ & Pendulum length; summation index in the proof & \\
+$\theta$ & Pendulum angle & $\mathrm{rad}$ \\
+$f(x,u)$ & Nonlinear state-dynamics function & \\
 \bottomrule
-\end{tabular}
+\end{longtable}
+\renewcommand{\arraystretch}{1}
+\normalsize
 \clearpage
 
 \frontmatterchapter{LIST OF ABBREVIATIONS}
@@ -237,7 +368,19 @@ $x$ & Example variable & / \\
 \toprule
 Abbreviation & Description \\
 \midrule
+C-H & Cayley--Hamilton theorem \\
+COD & Complete orthogonal decomposition \\
+DeePC & Data-enabled predictive control \\
+FL & Fundamental Lemma \\
 LTI & Linear time-invariant \\
+MIMO & Multiple-input, multiple-output \\
+MPC & Model predictive control \\
+PBH & Popov--Belevitch--Hautus test \\
+PRBS & Pseudo-random binary sequence \\
+QP & Quadratic program \\
+SISO & Single-input, single-output \\
+SVD & Singular value decomposition \\
+ZOH & Zero-order hold \\
 \bottomrule
 \end{tabular}
 \clearpage
@@ -458,8 +601,8 @@ for some $g \in \mathbb{R}^{T-L+1}.$
 \label{thm:lemma}
 \end{theorem}
 
-[TODO tekst prije dokaza]
-
+Original statement and proof was given by Willems et. al [] which uses behavioural framework. For completeness of presentation, we also present a proof of the Fundamental Lemma. This proof idea follows
+the proof given in [ref DBCBook], with a difference that in our proof we prove equality of subspaces slightly differently than in the [].
 \begin{proof}[Proof of Theorem \ref{thm:lemma}]
     From recursive application of the difference equations \eqref{eq:lti} we obtain the following expression:
     \begin{equation}
@@ -483,15 +626,7 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \end{equation}
 
     Since on the left side is a general input-output trajectory of length $L$ (assuming time-invariance), we conclude that the space of all such trajectories is spanned by the columns of the 
-    \(M := \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \). By setting the RHS of \eqref{eq:io} equal to 0 and applying 
-    the rank-nullity theorem (R-N) we get:
-    \[        \bar{u}_{[0, L-1]} = 0, \ \Omega_L x_{ini} = 0; \]
-    \begin{align*}
-        \implies \dim(\ker M) &= \dim(\ker \Omega_L) \underbrace{=}_\text{R-N} n - \mbox{rank}\ \Omega_L \\
-        \underbrace{\implies}_\text{R-N} \mbox{rank} \ M &= (n + mL) - \dim(\ker M) = \\ 
-        &= (n + mL) - (n - \mbox{rank}\ \Omega_L) = \\
-        &= \mbox{rank}\ \Omega_L + mL
-    \end{align*}
+    \(M := \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \). 
     % \[ \dim(\ker M)\]
     % \[\mbox{rank} \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = dim \ im \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = \mbox{rank}(\Omega_L) + mL \]
     The columns of the Hankel matrix \(\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix}\) are input-output trajectories so we conclude that:
@@ -545,20 +680,23 @@ for some $g \in \mathbb{R}^{T-L+1}.$
     \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} = im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
     Which means there exists a $g\in\mathbb{R}^{T-L+1}$ such that for any restricted input-output trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we have:
     \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
+
+    The proof above is just the only if direction, however, since each column of the stacked Hankel matrix is an restricted input-output trajectory the 
+    if direction follows directly from that.
+
 \end{proof}
 
-Technically, the proof above is just the ($\implies$) direction, however, since each column of the stacked Hankel matrix is an restricted input-output trajectory the 
-($\impliedby$) direction follows directly from that. Stability of the system is not needed because the Lemma uses finite-horizon trajectories and thus doesn't require boundedness of state as $t \to \infty$, also the observability
+Stability of the system is not needed because the Lemma uses finite-horizon trajectories and thus doesn't require boundedness of state as $t \to \infty$, also the observability
 is not needed as it can be seen in the formulation and proof. In the proof we have also showed that the matrix:
 \[\begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
-is of full rank. Also we have made an indirect assumption regarding row rank for PE. For a matrix to have full row rank, a necessary condition is that the number of columns needs to be atleast equal to the
-number of rows, thus PE condition needs that condition fullfilled. When we impose that condition on $H_{N+L}(u_{[0, T-1]})$ we get that:
+is of full rank. Also we have made an indirect assumption regarding row rank for persistence of excitation. For a matrix to have full row rank, a necessary condition is that the number of columns needs to be atleast equal to the
+number of rows, thus persistence of excitation condition needs that condition fullfilled. When we impose that condition on $H_{N+L}(u_{[0, T-1]})$ we get that:
 \begin{equation}
     T - (N + L + 1) \geq m(N+L) \iff T \geq (m+1)(N+L) - 1
     \label{eq:length}
 \end{equation}
 
-So for PE the length of initial trajectory $T$ needs to satisfy the condition above for a given $L$. Generally, for a long enough recorded trajectory we can use the Lemma
+So for persistence of excitation the length of initial trajectory $T$ needs to satisfy the condition above for a given $L$. Generally, for a long enough recorded trajectory we can use the Lemma
 for a shorter length trajectory. In our Lemma formulation we only used trajectories of length $L$ starting from 0, but it can be shown that the Lemma holds for a general restricted
 input output trajectory of length $L$, i.e. for time window of $[i, i + L -1] \ \forall i \in \mathbb{Z}_{\geq 0}$ we have:
 \begin{equation}
@@ -568,7 +706,10 @@ input output trajectory of length $L$, i.e. for time window of $[i, i + L -1] \ 
 
 Now we will define the lag \label{lag} $\ell$ of the system. Smallest positive integer $k$ s.t. rank \(\Omega_k = \) rank \(\Omega_{k+1}\), where $\Omega_k$ is the observability matrix from 
 \eqref{eq:io}, is called the lag of the system, in other words, the smallest $k$ after which the rank of the observability matrix does not change. Clearly, by C-H theorem, $\ell \leq n$. For an observable system that is the minimal trajectory length such that the initial state
-$x_{ini}$ can be reconstructed.
+$x_{ini}$ can be reconstructed. It can also be shown that the \(\mbox{rank}(M) = \mbox{rank}(\Omega_L) + mL\), where $m$ is the number of inputs. Since in the right column of $M$ there is an identity matrix
+and on the left is the zero matrix than those right columns are linearly independent and none of the left columns cannot be gotten as a linear combination of right columns, thus the rank of M is the rank of right columns - $mL$ added
+with the rank of left columns which is the rank of $\Omega_L$.
+\newpage
 
 
 \section{Lemma - Numerical Examples}
@@ -598,7 +739,7 @@ as a least-squares problem since the Hankel matrix is generally not square and t
     \label{eq:gmin}
 \end{equation}
 
-In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} rather than \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
+In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} instead of \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
 both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
 get result in MATLAB:
 \begin{equation}
@@ -675,11 +816,11 @@ that signal with a positive real number (amplitude) and feed it through a low-pa
 \end{figure}
 
 Since this type of input data has enough "randomnes" it is a good choice for a persistently exciting input. And after testing the rank condition
-for PE it was always satisfied. 
+for persistence of excitation it was always satisfied. 
 
 \clearpage
 
-Now, as before, we input that PE signal to the system and place the recorded trajectories into the according Hankel matrix. We will test the Lemma on two inputs, first will be a step
+Now, as before, we input that persistently exciting signal to the system and place the recorded trajectories into the according Hankel matrix. We will test the Lemma on two inputs, first will be a step
 function and second will be a new PRBS signal. We simulate the output trajectories using the system model and solve for vector g like in \eqref{eq:gmin}.
 
 \begin{figure}[ht]
@@ -824,7 +965,7 @@ Assuming initial state \(x_0 = (0, 0)^T\) and that the output is the full state 
 \newpage
 
 Since $\theta$ is small enough and the model is approximately linear around 0 we will try to simulte the future trajectory of the system using the Fundamental lemma.
-We chose the following trajectory lengths \(L_{ini} = 50, \ L_{ref} = 600 \implies L = 650\), we assumed $N=4$. Since a PRBS input is PE of order $N + L$  we can repeat the procedure in \ref{sec:lti-sim}.
+We chose the following trajectory lengths \(L_{ini} = 50, \ L_{ref} = 600 \implies L = 650\), we assumed $N=4$. Since a PRBS input is persistently exciting of order $N + L$  we can repeat the procedure in \ref{sec:lti-sim}.
 We give a zero input and set the initial state to $\left(\dfrac{\pi}{10}, 0\right)^T$ for the simulating trajectory - autonomous system.
 
 \begin{figure}[htbp]
@@ -871,7 +1012,7 @@ each one, the linearized model error \eqref{eq:lin-model-err} is constant becaus
     \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{min} &= 0.238929 
 \end{align*}
 
-This illustrated that in some cases with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" PE input we can get worse results. 
+This illustrated that in some cases with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" persistently exciting input we can get worse results. 
 
 \vspace{1em}
 
@@ -969,7 +1110,7 @@ The following are required for the DeePC algorithm:
 \begin{itemize}
     \item[(i)] an upper bound on state dimension $N$,
     \item[(ii)] past/future trajectory lengths $L_{ini}$ and $L_{ref}$, with $L_{ini} \geq \ell$; $L:=L_{ini}+L_{ref}$,  
-    \item[(iii)] recorded restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $u_{[0, T-1]}$ is PE of order N+L and $T \geq (m+1)(N+L) - 1$, $m$ is the number of inputs,
+    \item[(iii)] recorded restricted input-output trajectory \((u_{[0, T-1]}, y_{[0, T-1]})\), where $u_{[0, T-1]}$ is persistently exciting of order N+L and $T \geq (m+1)(N+L) - 1$, $m$ is the number of inputs,
     \item[(iv)] initial (past) trajectory \((\bar{u}_{ini}, \bar{y}_{ini}) = (\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\), 
     \item[(v)] reference trajectory $(r_0, r_1, ...) \in (\mathbb{R}^p)^{\mathbb{Z}_{\geq 0}}$, 
     \item[(vi)] input and output cost matrices $Q \succeq 0,\ R \succeq 0$,
@@ -1178,15 +1319,11 @@ for potential improvments for nonlinear system control.
 \appendix
 \chapter{Additional Material}
 
-\begin{thebibliography}{9}
+\clearpage
 \addcontentsline{toc}{chapter}{Bibliography}
-
-\bibitem{example}
-Author Name.
-\textit{Title of the Book or Article}.
-Publisher or Journal, year.
-
-\end{thebibliography}
+\bibliographystyle{unsrt}
+\nocite{*}
+\bibliography{references}
 
 
 

@@ -1,11 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{CONTENTS}{i}{section*.1}%
-\contentsline {chapter}{LIST OF FIGURES}{iii}{section*.2}%
-\contentsline {chapter}{LIST OF TABLES}{iv}{section*.3}%
-\contentsline {chapter}{LIST OF SYMBOLS}{v}{chapter*.4}%
-\contentsline {chapter}{LIST OF ABBREVIATIONS}{vi}{chapter*.5}%
-\contentsline {chapter}{SA\v {Z}ETAK}{vii}{chapter*.6}%
-\contentsline {chapter}{ABSTRACT}{viii}{chapter*.7}%
+\contentsline {chapter}{LIST OF FIGURES}{ii}{section*.2}%
+\contentsline {chapter}{LIST OF SYMBOLS}{iii}{chapter*.3}%
+\contentsline {chapter}{LIST OF ABBREVIATIONS}{vi}{chapter*.4}%
+\contentsline {chapter}{SA\v {Z}ETAK}{vii}{chapter*.5}%
+\contentsline {chapter}{ABSTRACT}{viii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Literature Overview}{1}{section.1.2}%
@@ -32,4 +31,4 @@
 \contentsline {subsection}{\numberline {4.4.2}Nonlinear system example}{24}{subsection.4.4.2}%
 \contentsline {chapter}{\numberline {5}Conclusion}{26}{chapter.5}%
 \contentsline {chapter}{\numberline {A}Additional Material}{27}{appendix.A}%
-\contentsline {chapter}{Bibliography}{28}{appendix*.22}%
+\contentsline {chapter}{Bibliography}{28}{appendix.A}%

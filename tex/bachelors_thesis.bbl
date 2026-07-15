@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{willems2005note}
+Jan~C Willems, Paolo Rapisarda, Ivan Markovsky, and Bart~LM De~Moor.
+\newblock A note on persistency of excitation.
+\newblock {\em Systems \& Control Letters}, 54(4):325--329, 2005.
+
+\bibitem{dbcbook}
+H.~J. van Waarde, M.~K. Camlibel, and H.~L. Trentelman.
+\newblock {\em Data-Based Linear Systems and Control Theory}.
+\newblock Kindle Direct Publishing, first edition, 2025.
+
+\bibitem{coulson2019data}
+Jeremy Coulson, John Lygeros, and Florian D{\"o}rfler.
+\newblock {Data-Enabled Predictive Control: In the Shallows of the DeePC}.
+\newblock In {\em 2019 18th European control conference (ECC)}, pages 307--312, June 2019.
+
+\bibitem{dorfler2023datadrivencontrol}
+Florian D{\"o}rfler.
+\newblock Data-driven control: Part one of two: A special issue sampling from a vast and dynamic landscape.
+\newblock {\em IEEE Control Systems}, 43(5):24--27, October 2023.
+
+\bibitem{polderman1998mathematicalsystems}
+Jan~Willem Polderman and Jan~C. Willems.
+\newblock {\em Introduction to Mathematical Systems Theory: A Behavioral Approach}, volume~26 of {\em Texts in Applied Mathematics}.
+\newblock Springer, New York, NY, 1 edition, 1998.
+
+\bibitem{markovsky2023behavioral}
+Ivan Markovsky, Linbin Huang, and Florian D{\"o}rfler.
+\newblock Data-driven control based on the behavioral approach: From theory to applications in power systems.
+\newblock {\em IEEE Control Systems}, 43(5):28--68, October 2023.
+
+\bibitem{kalman1960newapproach}
+Rudolf~E. Kalman.
+\newblock A new approach to linear filtering and prediction problems.
+\newblock {\em Journal of Basic Engineering}, 82(1):35--45, March 1960.
+
+\bibitem{boyd2004convex}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, Cambridge, UK, 2004.
+
+\bibitem{trentelman2001control}
+Harry~L. Trentelman, Anton~A. Stoorvogel, and Malo Hautus.
+\newblock {\em Control Theory for Linear Systems}.
+\newblock Communications and Control Engineering. Springer, London, 1 edition, 2001.
+
+\bibitem{huang2019deepcconverters}
+Linbin Huang, Jeremy Coulson, John Lygeros, and Florian D{\"o}rfler.
+\newblock Data-enabled predictive control for grid-connected power converters.
+\newblock In {\em 2019 IEEE 58th Conference on Decision and Control (CDC)}, pages 8130--8135. IEEE, December 2019.
+
+\bibitem{huang2024robustkernelizeddeepc}
+Linbin Huang, John Lygeros, and Florian D{\"o}rfler.
+\newblock Robust and kernelized data-enabled predictive control for nonlinear systems.
+\newblock {\em IEEE Transactions on Control Systems Technology}, 32(2):611--624, 2024.
+
+\bibitem{lazar2024basisfunctionsdeepc}
+Mircea Lazar.
+\newblock Basis-functions nonlinear data-enabled predictive control: Consistent and computationally efficient formulations.
+\newblock In {\em 2024 European Control Conference (ECC)}, pages 888--893. IEEE, 2024.
+
+\bibitem{xiong2025koopmanbilineardeepc}
+Zuxun Xiong, Zhenyi Yuan, Keyan Miao, Han Wang, Jorge Cort{\'e}s, and Antonis Papachristodoulou.
+\newblock Data-enabled predictive control for nonlinear systems based on a {Koopman} bilinear realization.
+\newblock In {\em 2025 IEEE 64th Conference on Decision and Control (CDC)}, pages 6498--6503. IEEE, 2025.
+
+\bibitem{matlab2025b}
+{The MathWorks Inc.}
+\newblock {MATLAB} version 25.2 ({R2025b}).
+\newblock The MathWorks Inc., Natick, Massachusetts, United States, 2025.
+
+\bibitem{lofberg2004yalmip}
+Johan L{\"o}fberg.
+\newblock {YALMIP}: A toolbox for modeling and optimization in {MATLAB}.
+\newblock In {\em Proceedings of the 2004 IEEE International Symposium on Computer Aided Control Systems Design}, pages 284--289, Taipei, Taiwan, 2004. IEEE.
+
+\bibitem{mosek2026}
+{MOSEK ApS}.
+\newblock {\em {MOSEK Optimization Toolbox for MATLAB} Manual, Version 11.2}, 2026.
+
+\end{thebibliography}
