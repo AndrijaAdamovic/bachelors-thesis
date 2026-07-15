@@ -7,28 +7,28 @@
 \contentsline {chapter}{ABSTRACT}{viii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Literature Overview}{1}{section.1.2}%
-\contentsline {chapter}{\numberline {2}The Fundamental Lemma}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Theoretical Background}{2}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}LTI Dynamical Systems}{2}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Contollability and Observability}{3}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Persistency of Excitation}{4}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}The Willems' Fundamental Lemma}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Lemma - Numerical Examples}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Simple SISO System}{9}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Mechanical MIMO System}{10}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}Data driven simulation of LTI systems}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem statement and solution}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Simulating LTI system from data}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Simulating a nonlinear system around equilibrium}{15}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Data-Enabled Predictive Control (DeePC)}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{18}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Model predictive control}{19}{section.4.2}%
-\contentsline {section}{\numberline {4.3}DeePC for LTI systems}{20}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Exact LTI system example}{21}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Regularized DeePC}{23}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Noisy measurements LTI example}{23}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Nonlinear system example}{24}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusion}{26}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Additional Material}{27}{appendix.A}%
-\contentsline {chapter}{Bibliography}{28}{appendix.A}%
+\contentsline {section}{\numberline {1.2}Literature Overview}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}The Fundamental Lemma}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Theoretical Background}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}LTI Dynamical Systems}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Contollability and Observability}{4}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Persistency of Excitation}{5}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}The Willems' Fundamental Lemma}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Lemma - Numerical Examples}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Simple SISO System}{10}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Mechanical MIMO System}{11}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Data driven simulation of LTI systems}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem statement and solution}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Simulating LTI system from data}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Simulating a nonlinear system around equilibrium}{16}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Data-Enabled Predictive Control (DeePC)}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Model predictive control}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}DeePC for LTI systems}{21}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Exact LTI system example}{22}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Regularized DeePC}{24}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Noisy measurements LTI example}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Nonlinear system example}{25}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusion}{27}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Additional Material}{28}{appendix.A}%
+\contentsline {chapter}{Bibliography}{29}{appendix.A}%

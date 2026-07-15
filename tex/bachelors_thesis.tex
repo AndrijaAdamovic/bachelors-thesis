@@ -88,7 +88,6 @@
 \newcommand{\thesistitlecroatian}{Naslov rada}
 \newcommand{\studentid}{}
 \newcommand{\keywords}{keyword one; keyword two; keyword three}
-\newcommand{\kljucnerijeci}{klju\v{c}na rije\v{c} jedan; klju\v{c}na rije\v{c} dva}
 
 
 \pagestyle{fancy}
@@ -185,7 +184,7 @@
 \clearemptypage{}
 \vspace*{\fill}
 \noindent I hereby declare that I have written this thesis independently, using the knowledge
-acquired during my studies and the literature cited in the references.
+acquired during my studies and the literature cited in the bibliography.
 
 \vspace{8mm}
 \noindent TODO\@: Zahvale
@@ -222,7 +221,7 @@ acquired during my studies and the literature cited in the references.
 
 \frontmatterchapter{LIST OF SYMBOLS}
 \footnotesize
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.5}
 \begin{longtable}{@{}p{0.18\textwidth}p{0.58\textwidth}p{0.16\textwidth}@{}}
 \toprule
 Symbol & Description & Unit \\
@@ -236,7 +235,6 @@ $\mathbb{N}$ & Set of natural numbers & \\
 $\mathbb{R}$ & Set of real numbers & \\
 $\mathbb{Z}_{\geq 0}$ & Set of non-negative integers & \\
 $\mathbb{Z}_{>0}$ & Set of positive integers & \\
-$\infty$ & Infinity; denotes an unbounded trajectory horizon & \\
 $A, B, C, D$ & State-space system matrices & \\
 $A_d, B_d, C_d, D_d$ & Discrete-time state-space system matrices & \\
 $I$ & Identity matrix & \\
@@ -246,7 +244,6 @@ $\Omega_L, \Omega_k$ & Finite-horizon observability matrix & \\
 $\Theta_L$ & Block Toeplitz matrix of Markov parameters & \\
 $M$ & Input--output trajectory mapping matrix in the proof & \\
 $M_{r\times c}(\mathbb{R})$ & Space of real matrices with $r$ rows and $c$ columns & \\
-$0$ & Zero scalar, vector, or matrix, as determined by context & \\
 $(\cdot)^T$ & Matrix or vector transpose & \\
 $(\cdot)^*$ & Optimal value or optimal sequence & \\
 $\operatorname{rank}(\cdot)$ & Matrix rank & \\
@@ -282,7 +279,6 @@ $\sigma_y$ & Output-trajectory slack variable & \\
 $t$ & Time & $\mathrm{s}$ \\
 $t_0, t_{ini}$ & Initial time or initial-trajectory time & $\mathrm{s}$ \\
 $T_s$ & Sampling period & $\mathrm{s}$ \\
-$i, j, k, l$ & Sequence, summation, or time-step indices & \\
 $\tau$ & Time shift; applied pendulum torque & \\
 $T$ & Length of the recorded trajectory & \\
 $L$ & Trajectory length or Hankel-matrix depth & \\
@@ -315,30 +311,15 @@ $\norm{\cdot}$ & Norm of a vector & \\
 $\norm{\cdot}_2$ & Euclidean (2-)norm of a vector & \\
 $\norm{\cdot}_2^2$ & Squared Euclidean norm & \\
 $\norm{\cdot}_P^2$ & Squared weighted norm induced by $P$, $\norm{z}_P^2=z^TPz$ & \\
-$\norm{\cdot}_{\mathrm{average}}$ & Average trajectory-error norm & \\
-$\norm{\cdot}_{\max},\ \norm{\cdot}_{\min}$ & Maximum and minimum trajectory-error norms & \\
 $\succeq 0$ & Positive semidefinite matrix relation & \\
 $\succ 0$ & Positive definite matrix relation & \\
-$z$ & Vector in the weighted norm; integration variable & \\
-$s$ & Generic vector sequence in the Hankel-matrix notation & \\
 $s_{[i,j]}$ & Stacked segment of sequence $s$ from index $i$ through $j$ & \\
 $\sin(\cdot)$ & Sine function & \\
 $e^{A t}$ & Matrix exponential & \\
-$\dfrac{d}{dt}$ & Time-derivative operator & \\
-$\sum$ & Summation operator & \\
-$\int_a^b$ & Definite-integral operator with limits $a$ and $b$ & \\
-$d\tau,\ dz$ & Integration differentials & \\
 $\min,\ \max$ & Minimum and maximum operators & \\
 $\operatorname{col}(\cdot)$ & Column-stacking operator & \\
-$\times$ & Matrix-dimension or Cartesian-product separator & \\
 $:=$ & Equality by definition & \\
-$=$ & Equality relation & \\
-$\neq$ & Inequality relation & \\
-$<,\ >$ & Strict less-than and greater-than relations & \\
-$\leq,\ \geq$ & Less-than-or-equal and greater-than-or-equal relations & \\
-$\approx$ & Approximate equality & \\
 $\sim$ & Distributed as, or of approximately the indicated order & \\
-$\to$ & Mapping or limiting relation & \\
 $\iff$ & Logical equivalence (``if and only if'') & \\
 $\implies$ & Logical implication & \\
 $\in$ & Set-membership relation & \\
@@ -386,29 +367,56 @@ ZOH & Zero-order hold \\
 \clearpage
 
 \frontmatterchapter{SA\v{Z}ETAK}
-Ovdje upi\v{s}ite sa\v{z}etak rada na hrvatskom jeziku.
+U ovom je radu detaljno obrađen rezultat poznat kao Willemsova fundamentalna lema, koji predstavlja temeljni rezultat za analizu linearnih sustava temeljenu na podacima.
+Najprije su obrađene teorijske osnove potrebne za razumijevanje same leme te je iznesen njezin dokaz. Potom je lema validirana na različitim numeričkim primjerima provedenima u simulacijskom okruženju.
+Demonstrirana je mogućnost simulacije budućeg ponašanja linearnih sustava isključivo na temelju snimljenih podataka, bez poznavanja njihova matematičkog modela. Također je istražena primjenjivost leme na određene nelinearne sustave.
+Lema je zatim primijenjena za sintezu prediktivnog regulatora za linearne sustave zasnovanog na podacima korištenjem optimizacijskih metoda. Regulator je dodatno nadograđen postupcima robustifikacije kako bi bio prikladniji za primjenu na stvarnim sustavima koji su pod utjecajem šuma i nelinearnosti.
+
 
 \vspace{8mm}
-\noindent\textbf{KLJU\v{C}NE RIJE\v{C}I:} \kljucnerijeci{}
+\noindent\textbf{KLJU\v{C}NE RIJE\v{C}I:} {Willemsova fundamentalna Lema, analiza temeljena na podacima, simulacija budućeg ponašanja, upravljanje temeljeno na podacima, optimizacija}.
 \clearpage
 
 \frontmatterchapter{ABSTRACT}
-Write the thesis abstract in English here.
+This thesis provides a detailed examination of Willems' Fundamental Lemma, a fundamental result in the data-based analysis of linear systems.
+First, the theoretical foundations required to understand the lemma are presented, together with its proof. The lemma is then validated through various numerical examples conducted in a simulation environment.
+The possibility of simulating the future behaviour of linear systems exclusively from recorded data, without any knowledge of their mathematical models, is demonstrated. The applicability of the lemma to certain nonlinear systems is also investigated.
+The lemma is subsequently used to design a data-based predictive controller for linear systems by applying optimization methods. The controller is further enhanced through robustification techniques to make it more suitable for practical systems affected by noise and nonlinearities.
 
 \vspace{8mm}
-\noindent\textbf{Keywords:} \keywords{}
+\noindent\textbf{Keywords:} {Willems' Fundamental Lemma, data-based analysis, simulating the future behaviour, data-based control, optimization}
 \clearpage
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
 \chapter{Introduction}
-Classical control systems almost always use a system model to synthesise a control algorithm.
+
+This chapter introduces the motivation for exploring the Willems' Fundamental Lemma which is a famous result in data-based approach to control. Literature overview is also presented, it lists 
+papers and books that led to the development of the Lemma as well as some extensions and applications that are worth mentioning and are used in the rest of the thesis.
+
 
 \section{Motivation}
-Describe the background and motivation for the thesis.
+Classical control theory, generally, assumes that a mathematical model of a system is known for controller design. That model is typically found using system identification and/or 
+using first principles, i.e., the laws of physics. For complex systems both of those approaches can fail to create a high fidelity model, thus limiting the ability to control those systems with precision.
+An alternative to model-based approach is the direct data-based approach to systems theory, which only uses measured data to simulate or control the system, completely avoiding the model. That approach has
+gained popularity since the rapid development of computers made data collection and processing relatively inexpensive. Data-based approach is a large field spanning multiple scientific disciplines, most
+famous is the development of machine learning, i.e., artificial intelligence. In this thesis we present a valuable result from linear systems theory which has enabled a vast number of significant results in the
+data-based approach. That result is called Willems' Fundamental Lemma which was first introduced by Willems et al. \cite{willems2005note}, informally, it states that if a linear system is inputed
+a diverse enough input then using the recorded input-output data it is possible to describe (parametrize) every possible combination of inputs and outputs. That is essentially the same role of a model
+but using only data. To illustrate how large of an impact the Fundamental Lemma had in the last few years we graphed the number of citations since its publication year until year 2025 in Figure \ref{fig:citations}. In the following sections we will state the famous results and explore its applications to various dynamical systems.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/citations.pdf}
+    \caption{Citations per annum of \cite{willems2005note} - Google Scholar}
+    \label{fig:citations}
+\end{figure}
+
 
 \section{Literature Overview}
+
+
 
 \chapter{The Fundamental Lemma}
 
@@ -739,7 +747,7 @@ as a least-squares problem since the Hankel matrix is generally not square and t
     \label{eq:gmin}
 \end{equation}
 
-In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} instead of \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
+In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} rather than \textit{singular value decomposition (SVD)} to compute $g$, however, for our example
 both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
 get result in MATLAB:
 \begin{equation}
@@ -1212,8 +1220,8 @@ DeePC performs poorly - it is not robust. To improve on robustness we implement 
 
 
 \section{Regularized DeePC}
-The paper [todo: deepc] introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their result and simulate it.
-The Fundamental lemma is an result which completely falls apart when we introduce measurement noise (or nonlinearity) to our system since there is a high probability that the image of Hankel matrix of input-output
+The paper [todo: deepc] introduced robustifications to the DeePC algorithm \eqref{eq:deepc} to make it applicable to realistic systems. We will lay out their results and illustrate them through simulations.
+The Fundamental lemma is a result which falls apart when we introduce measurement noise (or nonlinearity) to our system since there is a high probability that the image of Hankel matrix of input-output
 data spans the whole space instead of the subspace which is identified with the behaviour of the system. There is an approach where we can maybe remove the noise from recorded data with SVD or similar techniques, that is good for recorded data but for DeePC where
 we use real-time data it is not that simple. Now we will formulate regularized DeePC optimization problem:
 
@@ -1228,9 +1236,9 @@ we use real-time data it is not that simple. Now we will formulate regularized D
     \label{eq:deepc-reg}
 \end{equation}
 
-The hard equality constraint in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
-to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
-is infeasible i.e. that data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by previous robust optimization problems, more detail in [ref]. 
+The hard equality constraint  (i.e. the equality representing data-based prediction) in the original problem can cause problems when noise is added, so we impose a soft constraint with slack variable $\sigma_y \in \mathbb{R}^{pL_{ini}}$
+to ensure the feasibility of the constraint. We penalize the 2-norm squared of the slack variable with the weight $\lambda_y \in \mathbb{R}$, while choosing sufficiently large $\lambda_y$ "ensures" that $\sigma_y \neq 0$ only if the constraint
+is infeasible i.e. when the data is inconsistent. Two-norm squared regularization on $g$ with weight $\lambda_g \in \mathbb{R}$ is motivated by techniques from robust optimization,see, e.g., [ref] for more details.. 
 In the original paper [ref] 1-norm regularization was used, but in a more recent paper [ref] it was updated to 2-norm regularization.
 
 \subsection{Noisy measurements LTI example}
@@ -1241,13 +1249,13 @@ This steady state input is, generally, not necessary for DeePC and it can be cal
 We calculate the steady state input from the model by solving for $u_s$:
 \begin{equation}
 \begin{aligned}
-    (I-A_d)x_s - B_du_s = 0 \\
-    Cx_s + Du_s = y_s
+    (I-A_d)x_s - B_du_s = 0, \\
+    Cx_s + Du_s = y_s,
 \end{aligned}
 \label{eq:steady}
 \end{equation}
 
-Where $y_s$ is the steady state output, for our example where $y_s = 1\ m$ solving \eqref{eq:steady} yields $u_s \approx 71.94\ N$.
+where $y_s$ is the desired steady state output. In our example we have $y_s = 1\ m$ and solving \eqref{eq:steady} yields $u_s \approx 71.94\ N$.
 We introduce Gaussian measurement noise to the system model like this:
 \begin{equation}
     y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2)
@@ -1271,14 +1279,14 @@ performs poorly with the same parameters and data.
 
 \subsection{Nonlinear system example}
 
-Since DeePC regularizations improve performance when noise is added, in this subsection we will test its performance on a mildly nonlinear system with measurement noise. We modify the double spring damper system \ref{fig:double-spring-mass-damper}
+Since DeePC regularizations improve performance when noise is added, in this subsection we will test its performance on a mildly nonlinear system with measurement noise. We modify the double spring damper system (\ref{fig:double-spring-mass-damper})
 such that the second spring has a nonlinear force-displacement relationship. Concretely, the force exerted by the nonlinear spring is given by:
 \begin{equation}
     F_2(\delta l) = k_2\delta l + k_{23}(\delta l)^{3}
     \label{eq:nonlinear-spring}
 \end{equation}  
 
-Where $\delta l$ is the displacement, and $k_{23} > 0$ the nonlinear spring constant, we chose $k_{23} = 40 \frac{N}{m^3}$, all other constants are unchanged from \ref{fig:double-spring-mass-damper}.Thus, the nonlinear dynamics can be written as:
+Where $\delta l$ is the displacement, and $k_{23} > 0$ the nonlinear spring constant. We chose $k_{23} = 40 \frac{N}{m^3}$, while all other parameters are unchanged from \ref{fig:double-spring-mass-damper}.Thus, the nonlinear dynamics can be written as:
 \begin{equation}
     \begin{aligned}
         \dot{x} &= Ax + Bu + E(x_2 - x_1)^3 = f(x, u), \\
@@ -1287,13 +1295,13 @@ Where $\delta l$ is the displacement, and $k_{23} > 0$ the nonlinear spring cons
     \label{eq:nonlinear-spr-dyn}
 \end{equation}
 
-Where $x = (x_1, \dot{x_1}, x_2, \dot{x_2})^T$ is the state, $A$ and $B$ are identical as in \eqref{eq:dsmd-abcd}, \(C = [0\ 0\ 1\ 0], \\ D=0$, $E = \begin{bmatrix}
+Where $x = (x_1, \dot{x_1}, x_2, \dot{x_2})^T$ is the state vector, $A$ and $B$ are identical as in \eqref{eq:dsmd-abcd}, \(C = [0\ 0\ 1\ 0], \\ D=0$, $E = \begin{bmatrix}
     0 & \frac{k_{23}}{m_1} & 0 & -\frac{k_{23}}{m_2}
 \end{bmatrix}^T\).
 Since, this is in continuos state space format, we again discretize it using the Runge-Kutta 4 method \eqref{eq:rk4}. The nonlinearity is largely expressed for larger displacements and system
 is \textit{de facto} linear for small displacement which can be deduced from \eqref{eq:nonlinear-spring}, i.e., $(\delta l)^3 \approx 0$ for small enough $\delta l$. Choosing $k_{23}$ we can tune how 
 much nonlinearity there will be. It is possible for $k_{23} < 0$, then the spring becomes less stiff for larger displacements. Next, we commence the same procedure for designing a DeePC controller
-which can. The steady state input for $y=1 \ m$ can be calculated by solving \eqref{eq:nonlinear-spr-dyn}, we get $u_s \approx 72.96N$.
+which should track the reference. The steady state input for $y=1 \ m$ can be calculated by solving \eqref{eq:nonlinear-spr-dyn}, we get $u_s \approx 72.96N$.
 
 \newpage
 
@@ -1304,10 +1312,10 @@ which can. The steady state input for $y=1 \ m$ can be calculated by solving \eq
     \label{fig:deepc-step-nonlinear}
 \end{figure}
 
-Figure \ref{fig:deepc-step-nonlinear} is showing that regularized DeePC can track the reference even when the system is nonlinear with noisy measurements. The result is not as good as for LTI systems, but when 
+Figure \ref{fig:deepc-step-nonlinear} shows that regularized DeePC can track the reference even when the system is nonlinear with noisy measurements. The result is not as good as for LTI systems, but when 
 its considered that it is completely data-based we can say that the result is good. While doing the simulations we have seen that noise has
 a more noticable effect when the underlying system is nonlinear. For improved behaviour, [] suggest significant changes to the DeePC algorithm, also Koopman operator approach is being researched 
-for potential improvments for nonlinear system control. 
+for potential improvments for (data-based) nonlinear system control. 
 
 
 
