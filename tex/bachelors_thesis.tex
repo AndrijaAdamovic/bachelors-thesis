@@ -34,6 +34,11 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
+\addto\captionsenglish{%
+    \renewcommand{\contentsname}{CONTENTS}%
+    \renewcommand{\listfigurename}{LIST OF FIGURES}%
+}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -356,7 +361,6 @@ Abbreviation & Description \\
 C-H & Cayley--Hamilton theorem \\
 COD & Complete orthogonal decomposition \\
 DeePC & Data-enabled predictive control \\
-FL & Fundamental Lemma \\
 LTI & Linear time-invariant \\
 MIMO & Multiple-input, multiple-output \\
 MPC & Model predictive control \\
@@ -649,19 +653,19 @@ the proof given in \cite{dbcbook}, with a difference that in our proof we prove 
     % \[ \dim(\ker M)\]
     % \[\mbox{rank} \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = dim \ im \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} = \mbox{rank}(\Omega_L) + mL \]
     The columns of the Hankel matrix \(\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix}\) are input-output trajectories, so we conclude that:
-    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subseteq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
+    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subseteq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}.\]
     To prove the Lemma we need to prove the equality of those spaces. We assume the strict inclusion:
-    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subsetneq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}\]
+    \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} \subsetneq im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix}.\]
     The expression \eqref{eq:io} can be used to formulate an analogous expression using Hankel matrices like this:
-    \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\]
-    Where \(X_{[0, T-L]} := [x(0) \ x(1) \ ... \ x(T-L)]\).
+    \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]}) \end{bmatrix} = \begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix} \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}, \]
+    where \(X_{[0, T-L]} := [x(0) \ x(1) \ ... \ x(T-L)]\). \\ 
     By our assumption the matrix \(J_L := \begin{bmatrix} X_{[0, T-L]} \\ H_{L}(u_{[0, T-1]})\end{bmatrix}\) must not have full row rank. If it were full row rank, than the rank of Hankel matrix on the left would be
     equal to the rank of $J_L$ and thus the image spaces would be equal. That implies that the left kernel of $M$ is non-trivial, in other words,
     there exists a non-zero vector \(v = (a^T, b_{0}^T, b_{1}^T, ... , b_{L-1}^T), \ a\in\mathbb{R}^n, \ b_{i} \ \in\mathbb{R}^{m}\) such that \(vJ_L = 0\). Expanding we get:
     \begin{equation}a^{T}x(t) + \sum_{k=0}^{L-1}b_{k}^Tu(t+k) = 0, \ \ \forall t \in \{0, 1, ..., T-L\}. \label{eq:p0}\end{equation} Shifting the above equation by an arbitrary $j\in\mathbb{N}$ and solving the difference equations of \eqref{eq:lti} for the shifted state
     (similar to \eqref{eq:io}) we obtain:
     \begin{equation}
-        a^{T}A^{j}x(t) +  \sum_{i=0}^{j-1}a^{T}A^{j-i-1}Bu(t+i) + \sum_{k=0}^{L-1}b_{k}^{T}u(t+k+j) = 0
+        a^{T}A^{j}x(t) +  \sum_{i=0}^{j-1}a^{T}A^{j-i-1}Bu(t+i) + \sum_{k=0}^{L-1}b_{k}^{T}u(t+k+j) = 0.
         \label{eq:p1}
     \end{equation}
     We want to remove the state $x(t)$ from the equation. The easiest way to do it is to leverage the Cayley-Hamilton theorem, which states that matrix A satisfies its characteristic polynomial
@@ -671,34 +675,34 @@ the proof given in \cite{dbcbook}, with a difference that in our proof we prove 
     Now, if we take $n+1$ copies of equation \eqref{eq:p1} for each $j = 0, 1, ..., n$, and multiply each one with its corresponding $\alpha_j$ and sum them all, the terms with $x(t)$ cancel
     as a result of C-H theorem. Now we get the following expression with only the inputs:
     \begin{equation}
-        \sum_{l=0}^{n+L-1}\beta_{l}u(t+l) = 0, \ \ \forall t \in \{0, 1, ..., T-L\}
+        \sum_{l=0}^{n+L-1}\beta_{l}u(t+l) = 0, \ \ \forall t \in \{0, 1, ..., T-L\}.
         \label{eq:beta}
     \end{equation}
 
     The expression for $\beta_l$-s can be computed by equating terms with the sum in which C-H was used and the result is:
     \begin{equation}
-        \beta_l := \sum_{j = max(0, l-L+1)}^{min(n, l)}\alpha_{j}b_{l-j}^T + a^T\sum_{j = l+1}^{n}\alpha_{j}A^{j-l-1}B
+        \beta_l := \sum_{j = max(0, l-L+1)}^{min(n, l)}\alpha_{j}b_{l-j}^T + a^T\sum_{j = l+1}^{n}\alpha_{j}A^{j-l-1}B.
         \label{eq:beta2}
     \end{equation}
 
 
     Equation \eqref{eq:beta}, by the definition of a Hankel matrix, can be rewritten as:
-    \[\begin{bmatrix} \beta_0 & \beta_1 & \dots & \beta_{n+L-1}\end{bmatrix}H_{n+L}(u_{[0, T-1]}) = 0\]
+    \[\begin{bmatrix} \beta_0 & \beta_1 & \dots & \beta_{n+L-1}\end{bmatrix}H_{n+L}(u_{[0, T-1]}) = 0.\]
     Since $u_{[0, T-1]}$ is persistently exciting of order $N+L$, and $N \geq n$, it is clear that $H_{n+L}(u_{[0, T-1]})$ is of full row rank, so we conclude that:
-    \[\beta_0 = \beta_1 = ... = \beta_{n+L-1} = 0\]
+    \[\beta_0 = \beta_1 = ... = \beta_{n+L-1} = 0 .\]
 
     From \eqref{eq:beta2} if $l\geq n$ the right sum is empty so \(\beta_n, ..., \beta_{n+L-1}\) depend only on $b_k$-s. Now we get:
-    \[\beta_{n+L-1} = \alpha_{n}b_{L-1}^T \underbrace{=}_\text{$\alpha_n = 1$} b_{L-1}^T = 0 \]
-    \[\beta_{n+L-2} = b_{L-2}^T + \alpha_{n-1}b_{L-1}^T = b_{L-2}^T = 0 \]
-    Continuing until $l = n$, we get \(b_0 = b_1 = ... = b_{L-1} = 0\); so, the left sum of \eqref{eq:beta2} is 0, and thus, for $l \leq n$, the right sum remains. Now:
-    \[\beta_{n-1} = \alpha_{n}a^{T}B = a^{T}B = 0\]
-    \[\beta_{n-2} = a^{T}(AB + \alpha_{n-1}B) = a^{T}AB + a^{T}\alpha_{n-1}B \implies a^{T}AB = 0\]
+    \[\beta_{n+L-1} = \alpha_{n}b_{L-1}^T \underbrace{=}_\text{$\alpha_n = 1$} b_{L-1}^T = 0, \]
+    \[\beta_{n+L-2} = b_{L-2}^T + \alpha_{n-1}b_{L-1}^T = b_{L-2}^T = 0, \]
+    continuing until $l = n$, we get \(b_0 = b_1 = ... = b_{L-1} = 0\); so, the left sum of \eqref{eq:beta2} is 0, and thus, for $l \leq n$, the right sum remains. Now:
+    \[\beta_{n-1} = \alpha_{n}a^{T}B = a^{T}B = 0,\]
+    \[\beta_{n-2} = a^{T}(AB + \alpha_{n-1}B) = a^{T}AB + a^{T}\alpha_{n-1}B \implies a^{T}AB = 0.\]
     continuing until $l = 0$ we obtain the following result:
-    \[a^{T}\underbrace{\begin{bmatrix} B & AB & \dots & A^{n-1}B \end{bmatrix}}_\text{$\mathcal{C}$} = 0\]
+    \[a^{T}\underbrace{\begin{bmatrix} B & AB & \dots & A^{n-1}B \end{bmatrix}}_\text{$\mathcal{C}$} = 0.\]
     Since (A, B) is controllable then $\mathcal{C}$ is of full rank, and thus \(a = 0 \implies v = 0\), which contradicts our assumption. Thus:
     \[im\begin{bmatrix} H_{L}(u_{[0, T-1]})\\ H_{L}(y_{[0, T-1]})\end{bmatrix} = im\begin{bmatrix}0 & I \\ \Omega_L & \Theta_L \end{bmatrix},\]
     which means there exists a $g\in\mathbb{R}^{T-L+1}$ such that for any restricted input-output trajectory \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) we have:
-    \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
+    \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g. \]
 
     The proof above is just the only if direction; however, since each column of the stacked Hankel matrix is an restricted input-output trajectory, the
     if direction follows directly from that.
@@ -711,7 +715,7 @@ is not needed as it can be seen in the formulation and proof. In the proof we ha
 is of full rank. Also we have made an indirect assumption regarding row rank for persistence of excitation. For a matrix to have full row rank, a necessary condition is that the number of columns needs to be at least equal to the
 number of rows, thus the persistence of excitation condition needs that condition fulfilled. When we impose that condition on $H_{N+L}(u_{[0, T-1]})$ we get that:
 \begin{equation}
-    T - (N + L + 1) \geq m(N+L) \iff T \geq (m+1)(N+L) - 1
+    T - (N + L + 1) \geq m(N+L) \iff T \geq (m+1)(N+L) - 1.
     \label{eq:length}
 \end{equation}
 
@@ -719,7 +723,7 @@ So for persistence of excitation the length of initial trajectory $T$ needs to s
 for a shorter length trajectory. In our Lemma formulation we only used trajectories of length $L$ starting from 0, but it can be shown that the Lemma holds for a general restricted
 input-output trajectory of length $L$, i.e., for time window of $[i, i + L -1] \ \forall i \in \mathbb{Z}_{\geq 0}$ we have:
 \begin{equation}
-    \begin{bmatrix} \bar{u}_{[i, i+L-1]} \\ \bar{y}_{[i, i+L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g
+    \begin{bmatrix} \bar{u}_{[i, i+L-1]} \\ \bar{y}_{[i, i+L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g.
     \label{eq:fl-i}
 \end{equation}
 
@@ -754,15 +758,15 @@ testing the lemma we check the rank of the $H_{N+L}(u_{[0, T-1]})$. We input the
 Now we generate a new random input-output trajectory of the system \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\). We now use the Hankel matrix and the new data to find the vector $g$. We impose that
 as a least-squares problem since the Hankel matrix is generally not square and the system of equations is underdetermined (fewer rows than columns). The objective for a minimization problem is the following:
 \begin{equation}
-    \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}}_{2}^{2}
+    \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}}_{2}^{2}.
     \label{eq:gmin}
 \end{equation}
 
-In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} rather than \textit{singular value decomposition (SVD)} to compute $g$; however, for our example
+In MATLAB we solve the following problem using the \textit{lsqminnorm} function, which uses \textit{complete orthogonal decomposition (COD)} instead of \textit{singular value decomposition (SVD)} to compute $g$. However, for our example
 both SVD and COD should yield similar results. Now the Lemma states that $g$ should make that norm of the difference equal to zero. That means the $g$ is an exact solution, not an approximation. Computing the norm for the calculated g we
 get result in MATLAB:
 \begin{equation}
-\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} \leq 10^{-10}
+\norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}} \leq 10^{-10}.
 \label{eq:norm}
 \end{equation}
 
@@ -805,22 +809,22 @@ For this example the parameters are: $m_1 = 1.0\,kg,\ m_2 = 0.8\,kg,\ k_1=120\,N
 The above presented is a continuous state-space model, but we need a discrete model so we need to discretize it. There are many ways of discretizing the continuous model. We will derive the discrete version matrices
 $A_d, B_d, C_d, D_d$ using zero-order hold (ZOH). Assume sampling period $T_s$, we chose $T_s = 10^{-2}\,s$. Now we will begin from the solution of the general continuous state-space system:
 
-\[x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau\]
+\[x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau.\]
 
 \clearpage
 
 Let \(k \in \mathbb{Z}_{\geq 0}\) and \(t_0 = kT_s, \ t = (k+1)T_s\). Define \(x_k:=x(kT_s), \ u_k:=u(kT_s)\). Now we have:
-\[x_{k+1} = e^{AT_s}x_k + \int_{kT_s}^{(k+1)T_s}e^{A[(k+1)T_s - \tau]}Bu(\tau)d\tau\]
+\[x_{k+1} = e^{AT_s}x_k + \int_{kT_s}^{(k+1)T_s}e^{A[(k+1)T_s - \tau]}Bu(\tau)d\tau.\]
 
 Now assume \(u(\tau) = u(kT_s) = u_k = const. \ \forall \tau \in (kT_s, (k+1)T_s), \ \forall k \in \mathbb{Z}_{\geq 0}\). This is the ZOH. We assume the input is constant between sampling. After a change of variables
 for integration, we arrive at this result. Since B and $u_k$ are constants, they can go outside the integral.
 \begin{align*}
-    x_{k+1} &= e^{AT_s}x_k + \left(\int_{0}^{T_s}e^{Az}dz\right)Bu_k \\
-    y_k &= Cx_k + Du_k
+    x_{k+1} &= e^{AT_s}x_k + \left(\int_{0}^{T_s}e^{Az}dz\right)Bu_k, \\
+    y_k &= Cx_k + Du_k.
 \end{align*}
 
 We can now see that this is essentially \eqref{eq:lti} but where:
-\[A_d = e^{AT_s}, \ B_d = \left(\int_{0}^{T_s}e^{Az}dz\right)B, \ C_d = C, \ D_d = D\]
+\[A_d = e^{AT_s}, \ B_d = \left(\int_{0}^{T_s}e^{Az}dz\right)B, \ C_d = C, \ D_d = D.\]
 
 This was a general derivation. In MATLAB we use the function \textit{c2d} to convert the system from continuous to discrete time. Now we can see that $n=4, \ m=1, \ p=2$. The initial trajectory we recorded
 is 30 seconds long, in MATLAB this was converted to number of samples with \textit{T = round(30/Ts)}. The length of reconstructed trajectories $L$ is 12 seconds. We set $N=n$ because the systems has four
@@ -898,9 +902,9 @@ as it is done in \cite{dbcbook}.
     and reference input \(\bar{u}_{[L_{ini}, L-1]}\) are known. Then the following statements hold:
     \begin{enumerate}
         \item[(i)] There exists $g\in\mathbb{R}^{T-L+1}$ such that: \[\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g =
-                \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}\]
+                \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}.\]
         \item[(ii)] If $g$ is a solution to (i) then define the output \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\). Such defined output
-                    makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) a restricted input-output trajectory of \eqref{eq:lti}
+                    makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\) a restricted input-output trajectory of \eqref{eq:lti}.
         \item[(iii)] If $L_{ini} \geq \ell$ (the lag of the system \ref{lag}) then such output in (ii) is the only one that makes \((\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})\)
                     a restricted input-output trajectory, i.e., it is unique.
     \end{enumerate}
@@ -915,19 +919,19 @@ as it is done in \cite{dbcbook}.
 Theorem \ref{thm:sim} in fact presents the method of how to simulate the future trajectory of the system, based on the past data. We will test this result on numerical examples. Firstly, we will future output trajectory
 for the LTI MIMO example from the previous chapter (\ref{fig:double-spring-mass-damper}). We simulate the system with a PRBS input for 50 seconds ($T_s = 0.01\,s,\ T = 5000$) and recorded the trajectory
 \((u_{[0, T-1]}, y_{[0, T-1]})\). We chose the following lengths of past and future (simulated) part of the trajectory:
-\[L_{ini} = 500, \ L_{ref} = 1000, \ L = L_{ini} + L_{ref} = 1500\]
+\[L_{ini} = 500, \ L_{ref} = 1000, \ L = L_{ini} + L_{ref} = 1500.\]
 
 We populated the $H_{L}(u_{[0, T-1]})$ and $H_{L}(y_{[0, T-1]})$ and split them into $(U_p, Y_p, U_f, Y_f)$ parts. Result from (\ref{thm:sim}, (i)) tells us $g$ exists and we calculate it using the modified
 least-squares problem from the previous section \eqref{eq:gmin}:
 \begin{equation}
-    \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}}_{2}^{2}
+    \mbox{Find} \ g\in\mathbb{R}^{T-L-1} \ \mbox{that minimizes} \norm{\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}}_{2}^{2}.
     \label{eq:sim-gmin}
 \end{equation}
 
 Solving with MATLAB's \textit{lsqminnorm}, we obtain the vector $g$. Using $g$ we calculate the future output trajectory \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\). By theorem (\ref{thm:sim}) this
 output part is unique since $L_{ini} \geq \ell = 2 $ (for the parameters given in \eqref{eq:dsmd-abcd}); generally, the lag is unknown, but if we take large enough $L_{ini}$ we can be sure that it is larger.
 Next, we compare the data-based future output trajectories with one calculated using the system model --- the first $L_{ini}$ points using the model. For the input signal we used a multi-sine input like this:
-\[u(k) = 10\sin(2\pi kT_s) + \frac{1}{3}\sin(2\pi 3 kT_s), \ k \in \{0, 1, \dots, L-1\}\]
+\[u(k) = 10\sin(2\pi kT_s) + \frac{1}{3}\sin(2\pi 3 kT_s), \ k \in \{0, 1, \dots, L-1\}.\]
 
 The simulation output presented in Figure \ref{fig:dd-lin}:
 
@@ -941,7 +945,7 @@ The simulation output presented in Figure \ref{fig:dd-lin}:
 \newpage
 
 We can see that the data-based simulated trajectories perfectly match the model-based ones. Numerically, like before, we get the following confirmation that the future output trajectories coincide:
-\[\norm{\bar{y}_{[L_{ini}, L-1]} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \leq 10^{-10}\]
+\[\norm{\bar{y}_{[L_{ini}, L-1]} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \leq 10^{-10}.\]
 
 \section{Simulating a nonlinear system around equilibrium}
 In the last section we showed that it is possible to simulate a LTI system directly from recorded data, without a model. For nonlinear systems, a classical approach is to linearize the
@@ -995,7 +999,7 @@ We give a zero input and set the initial state to $\left(\dfrac{\pi}{10}, 0\righ
 \end{figure}
 
 If we now calculate the norm of the difference between the two output trajectories we get:
-\[\norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \sim 10^{-2}\]
+\[\norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} \sim 10^{-2}.\]
 
 Our trajectories do not coincide exactly, but that is to be expected because the model is nonlinear. Since the error is small, we can say that
 data-based simulation works well for small angles. Now we will try simulating with a larger angle and we changed $L_{ini} = 10$. We will also compare
@@ -1003,8 +1007,8 @@ a linearized model of \eqref{eq:pend-dyn} which uses \(\sin(\theta) \approx \the
 the following results (for a specific simulation):
 
 \begin{align}
-    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 0.428618 \\
-    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ lin. model} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 1.446429
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 0.428618, \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ lin. model} - \bar{y}_{[L_{ini}, L-1]}^{\ model}} &\approx 1.446429.
     \label{eq:lin-model-err}
 \end{align}
 
@@ -1026,9 +1030,9 @@ with PRBS and keeping the one which makes the data-based simulation the best. We
 each one. The linearized model error \eqref{eq:lin-model-err} is constant because it does not depend on a PRBS input. These are the results:
 
 \begin{align*}
-    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{average} &= 0.685848 \\
-    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{max} &=  3.47226 \\
-    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{min} &= 0.238929
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{average} &= 0.685848, \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{max} &=  3.47226, \\
+    \norm{\bar{y}_{[L_{ini}, L-1]}^{\ data} - \bar{y}_{[L_{ini}, L-1]}^{\ model}}_{min} &= 0.238929.
 \end{align*}
 
 This illustrated that in some cases with data-based simulation we can get a better result than a linearized model, however, if we do not supply a "good" persistently exciting input we can get worse results.
@@ -1268,7 +1272,7 @@ We calculate the steady-state input from the model by solving for $u_s$:
 where $y_s$ is the desired steady-state output. In our example we have $y_s = 1\ m$ and solving \eqref{eq:steady} yields $u_s \approx 71.94\ N$.
 We introduce Gaussian measurement noise to the system model like this:
 \begin{equation}
-    y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2)
+    y_k = Cx_k + Du_k + v_k, \ v_k \sim \mathcal{N}(0, \sigma^2).
     \label{eq:noise}
 \end{equation}
 
@@ -1280,7 +1284,7 @@ Now we run regularized DeePC algorithm to track the steady state.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/deepc_step_robust.pdf}
-    \caption{Regularized DeePC vs. DeePC; Noisy measurement LTI system}
+    \caption{Regularized DeePC vs. DeePC; Noisy measurements LTI system}
     \label{fig:deepc-step-reg}
 \end{figure}
 
@@ -1292,7 +1296,7 @@ performs poorly with the same parameters and data.
 Since DeePC regularizations improve performance when noise is added, in this subsection we will test its performance on a mildly nonlinear system with measurement noise. We modify the double spring damper system (\ref{fig:double-spring-mass-damper})
 such that the second spring has a nonlinear force-displacement relationship. Concretely, the force exerted by the nonlinear spring is given by:
 \begin{equation}
-    F_2(\delta l) = k_2\delta l + k_{23}(\delta l)^{3}
+    F_2(\delta l) = k_2\delta l + k_{23}(\delta l)^{3}.
     \label{eq:nonlinear-spring}
 \end{equation}
 
@@ -1318,7 +1322,7 @@ which should track the reference. The steady-state input for $y=1 \ m$ can be ca
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/deepc_step_nonlinear.pdf}
-    \caption{Regularized DeePC on nonlinear system}
+    \caption{Regularized DeePC on a nonlinear system}
     \label{fig:deepc-step-nonlinear}
 \end{figure}
 
@@ -1334,6 +1338,14 @@ for potential improvements for (data-based) nonlinear system control.
 
 \chapter{Conclusion}
 
+In this thesis, Willems' Fundamental Lemma was presented from both a theoretical and an applied perspective. The necessary theoretical
+background was introduced and a proof of the Lemma was provided. Subsequently, the lemma was validated on several numerical examples and used for data-based simulation of the future trajectories of linear systems.
+The applicability of the Lemma for simulating the behaviour of nonlinear systems was investigated.
+Furthermore, a data-based predictive control algorithm was formulated, which incorporates the Lemma within a suitable optimization problem to control linear systems. Regularization terms were introduced to make the
+controller more robust to working with realistic systems affected by noise and nonlinearities. Future work could focus on further examining the theoretical aspects of the Lemma and exploring a broader range of applications, 
+as well as on experimental validation of the data-based control methods on a real-world system. 
+Overall, the wide range of applications enabled by the Willems' Fundamental Lemma justifies its fundamental role in modern data-based systems and control theory.
+
 \appendix
 \chapter{Appendix}
 
@@ -1344,7 +1356,5 @@ Link to the GitHub repository containing all MATLAB code used in this thesis:  \
 \bibliographystyle{unsrt}
 \nocite{*}
 \bibliography{references}
-
-
 
 \end{document}

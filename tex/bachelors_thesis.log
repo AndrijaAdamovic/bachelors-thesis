@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  16 JUL 2026 00:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.21)  16 JUL 2026 10:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -761,11 +761,11 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 45.
-Package hyperref Info: Option `pageanchor' set `false' on input line 45.
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+Package hyperref Info: Option `pageanchor' set `false' on input line 50.
 \c@definition=\count376
 \c@theorem=\count377
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 127.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 132.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -774,24 +774,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (./bachelors_thesis.aux)
 \openout1 = `bachelors_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -858,7 +858,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 127.
+Package hyperref Info: Link coloring ON on input line 132.
  (./bachelors_thesis.out) (./bachelors_thesis.out)
 \@outlinefile=\write4
 \openout4 = `bachelors_thesis.out'.
@@ -871,34 +871,34 @@ Package hyperref Info: Link coloring ON on input line 127.
 <figures/assignment.pdf, id=151, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf>
-Package pdftex.def Info: figures/assignment.pdf  used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf  used on input line 213.
 (pdftex.def)             Requested size: 596.52715pt x 843.65987pt.
 <figures/assignment.pdf, id=153, page=1, 596.52861pt x 843.66193pt>
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 213.
 (pdftex.def)             Requested size: 597.50787pt x 845.07591pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 213.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 213.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 213.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
 File: figures/assignment.pdf Graphic file (type pdf)
 <use figures/assignment.pdf, page 1>
-Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 208.
+Package pdftex.def Info: figures/assignment.pdf , page1 used on input line 213.
 (pdftex.def)             Requested size: 596.55444pt x 843.69847pt.
  [2
 
 
  <./figures/assignment.pdf>]
-Package hyperref Info: Option `pageanchor' set `true' on input line 213.
+Package hyperref Info: Option `pageanchor' set `true' on input line 218.
  (./bachelors_thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -941,11 +941,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 238.
+(Font)              <10> on input line 243.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 238.
+(Font)              <7> on input line 243.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 238.
+(Font)              <5> on input line 243.
  [3
 
 
@@ -963,7 +963,7 @@ Chapter 1.
 <figures/citations.pdf, id=323, 607.26875pt x 370.38374pt>
 File: figures/citations.pdf Graphic file (type pdf)
 <use figures/citations.pdf>
-Package pdftex.def Info: figures/citations.pdf  used on input line 415.
+Package pdftex.def Info: figures/citations.pdf  used on input line 419.
 (pdftex.def)             Requested size: 295.90588pt x 180.47798pt.
 [1
 
@@ -974,12 +974,7 @@ Chapter 2.
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [4
 
-] [5] [6] [7] [8] [9]
-Overfull \hbox (1.39806pt too wide) in paragraph at lines 761--764
-\T1/lmr/m/it/12 com-plete or-thog-o-nal de-com-po-si-tion (COD) \T1/lmr/m/n/12 rather than \T1/lmr/m/it/12 sin-gu-lar value de-com-po-si-tion (SVD)
- []
-
-[10] (./figures/double_spring_mass_damper.tex
+] [5] [6] [7] [8] [9] [10] (./figures/double_spring_mass_damper.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 25.
 ) [11
@@ -988,7 +983,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <figures/PRBS.pdf, id=489, 913.4125pt x 496.85625pt>
 File: figures/PRBS.pdf Graphic file (type pdf)
 <use figures/PRBS.pdf>
-Package pdftex.def Info: figures/PRBS.pdf  used on input line 832.
+Package pdftex.def Info: figures/PRBS.pdf  used on input line 836.
 (pdftex.def)             Requested size: 364.19667pt x 198.10213pt.
  [12
 
@@ -996,18 +991,18 @@ Package pdftex.def Info: figures/PRBS.pdf  used on input line 832.
 <figures/step.pdf, id=506, 908.39375pt x 510.90875pt>
 File: figures/step.pdf Graphic file (type pdf)
 <use figures/step.pdf>
-Package pdftex.def Info: figures/step.pdf  used on input line 849.
+Package pdftex.def Info: figures/step.pdf  used on input line 853.
 (pdftex.def)             Requested size: 432.48051pt x 243.23767pt.
 <figures/prbs_out.pdf, id=507, 922.44624pt x 510.90875pt>
 File: figures/prbs_out.pdf Graphic file (type pdf)
 <use figures/prbs_out.pdf>
-Package pdftex.def Info: figures/prbs_out.pdf  used on input line 856.
+Package pdftex.def Info: figures/prbs_out.pdf  used on input line 860.
 (pdftex.def)             Requested size: 432.48051pt x 239.53465pt.
  [13
 
  <./figures/step.pdf> <./figures/prbs_out.pdf>]
 Chapter 3.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 880.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 884.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [14
@@ -1017,7 +1012,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <figures/dd_sim_linear.pdf, id=573, 804.00375pt x 424.58624pt>
 File: figures/dd_sim_linear.pdf Graphic file (type pdf)
 <use figures/dd_sim_linear.pdf>
-Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 936.
+Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 940.
 (pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
  [15
 
@@ -1025,13 +1020,13 @@ Package pdftex.def Info: figures/dd_sim_linear.pdf  used on input line 936.
 <figures/pend_1.pdf, id=601, 797.98125pt x 424.58624pt>
 File: figures/pend_1.pdf Graphic file (type pdf)
 <use figures/pend_1.pdf>
-Package pdftex.def Info: figures/pend_1.pdf  used on input line 992.
+Package pdftex.def Info: figures/pend_1.pdf  used on input line 996.
 (pdftex.def)             Requested size: 455.24411pt x 242.22398pt.
  [17 <./figures/pend_1.pdf>]
 <figures/pend_sim_comp.pdf, id=621, 797.98125pt x 419.5675pt>
 File: figures/pend_sim_comp.pdf Graphic file (type pdf)
 <use figures/pend_sim_comp.pdf>
-Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 1017.
+Package pdftex.def Info: figures/pend_sim_comp.pdf  used on input line 1021.
 (pdftex.def)             Requested size: 455.24411pt x 239.36082pt.
  [18 <./figures/pend_sim_comp.pdf>]
 Chapter 4.
@@ -1042,35 +1037,35 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) (./figures/predictive_control.tex) [19
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1107.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1111.
  [20] [21]
 <figures/deepc_step_y.pdf, id=672, 794.97pt x 424.58624pt>
 File: figures/deepc_step_y.pdf Graphic file (type pdf)
 <use figures/deepc_step_y.pdf>
-Package pdftex.def Info: figures/deepc_step_y.pdf  used on input line 1195.
+Package pdftex.def Info: figures/deepc_step_y.pdf  used on input line 1199.
 (pdftex.def)             Requested size: 455.24411pt x 243.15044pt.
  [22 <./figures/deepc_step_y.pdf>]
 <figures/deepc_step_u.pdf, id=693, 804.00375pt x 419.5675pt>
 File: figures/deepc_step_u.pdf Graphic file (type pdf)
 <use figures/deepc_step_u.pdf>
-Package pdftex.def Info: figures/deepc_step_u.pdf  used on input line 1207.
+Package pdftex.def Info: figures/deepc_step_u.pdf  used on input line 1211.
 (pdftex.def)             Requested size: 455.24411pt x 237.56824pt.
 <figures/deepc_step_ylim.pdf, id=694, 801.99625pt x 419.5675pt>
 File: figures/deepc_step_ylim.pdf Graphic file (type pdf)
 <use figures/deepc_step_ylim.pdf>
-Package pdftex.def Info: figures/deepc_step_ylim.pdf  used on input line 1216.
+Package pdftex.def Info: figures/deepc_step_ylim.pdf  used on input line 1220.
 (pdftex.def)             Requested size: 409.71692pt x 214.3479pt.
  [23 <./figures/deepc_step_u.pdf> <./figures/deepc_step_ylim.pdf>] [24]
 <figures/deepc_step_robust.pdf, id=742, 808.01875pt x 424.58624pt>
 File: figures/deepc_step_robust.pdf Graphic file (type pdf)
 <use figures/deepc_step_robust.pdf>
-Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1282.
+Package pdftex.def Info: figures/deepc_step_robust.pdf  used on input line 1286.
 (pdftex.def)             Requested size: 455.24411pt x 239.2179pt.
  [25 <./figures/deepc_step_robust.pdf>]
 <figures/deepc_step_nonlinear.pdf, id=769, 804.00375pt x 424.58624pt>
 File: figures/deepc_step_nonlinear.pdf Graphic file (type pdf)
 <use figures/deepc_step_nonlinear.pdf>
-Package pdftex.def Info: figures/deepc_step_nonlinear.pdf  used on input line 1320.
+Package pdftex.def Info: figures/deepc_step_nonlinear.pdf  used on input line 1324.
 (pdftex.def)             Requested size: 455.24411pt x 240.40996pt.
  [26 <./figures/deepc_step_nonlinear.pdf>]
 Chapter 5.
@@ -1078,7 +1073,7 @@ Chapter 5.
 
 ]
 Appendix A.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1340.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1352.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [28
@@ -1097,13 +1092,13 @@ Package rerunfilecheck Info: File `bachelors_thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  28363 strings out of 467533
  530833 string characters out of 5419495
- 977649 words of memory out of 5000000
+ 977688 words of memory out of 5000000
  56586 multiletter control sequences out of 15000+600000
  725224 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,94p,588b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bachelors_thesis.pdf (42 pages, 1508362 bytes).
+Output written on bachelors_thesis.pdf (42 pages, 1509498 bytes).
 PDF statistics:
  964 PDF objects out of 1000 (max. 8388607)
  796 compressed objects within 8 object streams
