@@ -1,16 +1,23 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 \usetheme{Madrid}
 
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage[croatian]{babel}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
-\title[Bachelor's Thesis]{Willems' Fundamental Lemma with Applications}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+
+\title[Završni rad]{Willemsova Fundamentalna Lema s primjenama}
 \author{Andrija Adamović}
 \institute[]{
-    \inst{} University of Zagreb \\
-    \inst{} Faculty of Mechanical Engineering and Naval Architecture
+    \inst{} Sveučilište u Zagrebu \\
+    \inst{} Fakultet Strojarstva i Brodogradnje
 }
-\date[July 2026]{July 21, 2026}
+\date[ak.god. 2025./2026.]{21.7.2026.}
 
 \begin{document}
 
@@ -18,4 +25,264 @@
     \titlepage
 \end{frame}
 
+\begin{frame}
+    \frametitle{Pregled}
+    \tableofcontents
+\end{frame}
+
+\section{Motivacija}
+\begin{frame}
+    \frametitle{Motivacija}
+    \begin{itemize}
+        \item data-based vs. model-based
+        \item kompleksni sustavi $\implies$ problemi s identifikacijom
+        \item danas je jeftino sakupljanje i obrada podataka
+        \item Fundamentalna lemma omogućava parametriziranje trajektorija LTI sustava isključivo sa snimljenim podacima
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.375]{../figures/citations.pdf}
+        \caption{\textit{A note on persistency of excitation} - broj citata godišnje}
+    \end{figure}
+
+\end{frame}
+
+\section{Willemsova Fundamentalna Lema}
+
+\subsection{Uvod}
+\begin{frame}
+    \frametitle{Lema - Uvod}
+    \begin{itemize}
+        \item Willems et. al - \textit{A note on persistency of excitation}
+        \item Snimljena ulazno-izlazna trajektorija LTI sustava koji je \textit{perzistentno pobuđen} može parametrizirati bilo koje moguće trajektorije te duljine
+    \end{itemize}
+    
+    \begin{block}{Definicija - Perzistentna pobuda}
+        Za niz ulaza $u(0), \dots, u(T-1) \in \mathbb{R}^{mT}$, $m$ - broj ulaza u sustav, kažemo da je perzistentna pobuda reda $k \in \{1, \dots, T\}$
+        ako je Hankelova matrica:
+        \[H_{k}(u_{[0, T-1]}) =
+        \begin{bmatrix}
+        u(0) & u(1) & \cdots & u(T-k) \\
+        u(1) & u(2) & \cdots & u(T-k+1)\\
+        \vdots & \vdots &  & \vdots \\
+        u(k-1) & u(k) & \cdots & u(T-1)
+        \end{bmatrix}\]    
+
+        punog retčanog ranga.
+
+\end{block}
+
+\end{frame}
+
+\subsection{Formulacija}
+
+\begin{frame}
+    \frametitle{Lema - Formulacija}
+    \begin{itemize}
+        \item onznačimo ulazno-izlaznu trajektoriju s $(u_{[0, T-1]}, y_{[0, T-1]})$ - par vektor stupaca
+        \item označimo s $N\in\mathbb{N}$ neku gornju među na broj stanja sustava
+        \begin{block}{Willemsova Fundamentalna Lema}
+        Neka je dan kontrolabilan LTI sustav te $(u_{[0, T-1]}, y_{[0, T-1]})$ ulazno-izlazna trajektorija. Neka je $L\in\{1, ..., T\}$.
+        Ako je ulaz $u_{[0, T-1]}$ perzistentna pobuda reda $N+L$ tada je $(\bar{u}_{[0, L-1]}, \bar{y}_{[0, L-1]})$ trajektorija sustava ako i samo ako:
+        \[\begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix} = \begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g \]
+        za neki $g \in \mathbb{R}^{T-L+1}$
+        \end{block}
+
+        \item svaka trajektorija duljine $L$ se nalazi u slici Hankelove matrice tj. stupci
+        Hankelove matrice razapinju prostor svih mogućih trajektorija duljine L.
+        \item dokaz Leme u završnom radu
+    \end{itemize}
+\end{frame}
+
+\subsection{Primjer za LTI sustave}
+\begin{frame}
+    \frametitle{Lema - LTI primjer}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.2]{dsmd.png}
+        \caption{Dvostruki MDS sustav sa silom na drugoj masi kao ulaz}
+        \label{fig:dsmd}
+    \end{figure}
+
+    \begin{itemize}
+        \item Linearni sustav - diskretizacija pomoću ZOH (zero-order-hold)
+        \item za perzistentnu pobudu uzimamo pseudo-nasumičan binarni niz (PRBS) 
+        \item Odaberemo $T, L$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lema - LTI primjer}
+    \begin{itemize}
+        \item \(\mbox{Tražimo} \ g\in\mathbb{R}^{T-L-1} \ \mbox{koji minimizira} \norm{\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix}g - \begin{bmatrix} \bar{u}_{[0, L-1]} \\ \bar{y}_{[0, L-1]} \end{bmatrix}}_{2}^{2}\)
+        \item linearni problem najmanjih kvadrata - rješevanje s MATLABom
+        \item Lema tvrdi da postoji g takav da je gornja norma 0 tj. egzaktno rješenje za taj sustav jednadžbi
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.275]{../figures/step.pdf}
+        \caption{Rekonstruirana trajektorija vs. originalna }
+    \end{figure}
+
+\end{frame}
+
+\section{Simulacija LTI sustava temeljena na podacima}
+\subsection{Formulacija problema simulacije}
+\begin{frame}
+    \frametitle{Formulacija problema simulacije}
+    \begin{itemize}
+        \item poznata početna trajektorija \((\bar{u}_{[0, L_{ini}-1]}, \bar{y}_{[0, L_{ini}-1]})\), duljine $L_{ini}$. Želimo simulirati nastavak trajektorije duljine
+              $L_{ref}$ ako je poznat ulaz \(\bar{u}_{[L_{ini}, L-1]}\), gdje $L = L_{ini} + L_{ref}$
+        \item imamo snimljenu trajektoriju \((u_{[0, T-1]}, y_{[0, T-1]})\),  duljine $T$ čiji je ulaz perzistentna pobuda reda $N + L$
+        \item particioniramo Hankelovu matricu na sljedeći način:
+              \[\begin{bmatrix} H_{L}(u_{[0, T-1]}) \\ H_{L}(y_{[0, T-1]})\end{bmatrix} = \begin{bmatrix}U_p \\ U_f \\ Y_p \\ Y_f\end{bmatrix},\]
+              gdje $U_p, Y_p, U_f, Y_f$ imaju redom $mL_{ini}$, $pL_{ini}, mL_{ref}$, $pL_{ref}$ redaka, $m$ - broj ulaza, a $p$ broj izlaza sustava
+    \end{itemize}
+\end{frame}
+
+\subsection{Simulacija LTI sustava}
+\begin{frame}
+    \frametitle{Simulacija LTI sustava}
+    \begin{itemize}
+        \item tada postoji $g\in\mathbb{R}^{T-L+1}$ takav da :
+                \[\begin{bmatrix}U_p \\ Y_p \\ U_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{[0, L_{ini} -1]} \\ \bar{y}_{[0, L_{ini} -1]} \\ \bar{u}_{[L_{ini}, L-1]}\end{bmatrix}.\]
+        \item nastavak (budućnost) trajektorije je tada \(\bar{y}_{[L_{ini}, L-1]} = Y_{f}g\)
+        \item primjer za dvostruki MDS sustav (\ref{fig:dsmd}) sa sinusnom pobudom, $g$ se analogno računa rješevanjem problema najmanjih kvadrata 
+        \end{itemize}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.25]{../figures/dd_sim_linear.pdf}
+            \caption{data-based vs. model-based simulacija}
+        \end{figure}
+
+\end{frame}
+\subsection{Simulacija nelinearnog sustava oko ravnotežnog položaja}
+\begin{frame}
+    \frametitle{Simulacija nelinearnog sustava oko ravnotežnog položaja}
+    \begin{itemize}
+        \item analogan postupak je testiran na primjeru jednostavnog prigušenog njihala oko ravnotežnog položaja
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{../figures/pend_1.pdf}
+            \caption{simulacija njihala data-based vs model based, mali kutevi}
+            \label{fig:pend-1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{../figures/pend_sim_comp.pdf}
+            \caption{simulacija njihala data-based vs model based, veliki kutevi}
+            \label{fig:pend-2}
+        \end{subfigure}
+    \end{figure}
+
+\end{frame}
+
+\section{Prediktivno upravljanje temeljeno podacima - DeePC}
+\subsection{Uvod i usporedba s MPC}
+\begin{frame}
+    \frametitle{DeePC - uvod}
+    \begin{itemize}
+        \item vidjeli smo da je moguće simulirati buduću trajektoriju sustava temeljeno samo na podacima
+        \item pitanje je može li se to koristiti za prediktivno upravljanje poput MPC-a
+        \item odgovor je da i prvo su ga formulirali Coulson, et al. u članku \textit{Data-Enabled Predictive Control: In the Shallows of the DeePC}
+        
+        \begin{equation}
+            \begin{aligned}
+                \min_{g,y,u} \quad  &\sum_{j=0}^{L_{ref}-1} \left(\norm{\bar{y}_j - r_{t+j}}^{2}_{Q} + \norm{\bar{u}_j}^{2}_{R}\right) \\
+                \text{subject to:} \quad & \begin{bmatrix} U_p \\ Y_p \\ U_f \\ Y_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{ini} \\ \bar{y}_{ini} \\ \bar{u} \\ \bar{y}\end{bmatrix}\\
+                &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1, \\
+                &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1, \\
+            \end{aligned}
+            \label{eq:deepc}
+        \end{equation}
+
+        \item ovo je \textit{de facto} MPC jedino umjesto modela sustava koriste se podaci, tj. Hankelove matrice
+    \end{itemize}
+\end{frame}
+
+\subsection{DeePC za LTI sustave}
+
+\begin{frame}[t]
+    \frametitle{DeePC za LTI sustave}
+    \vspace{-0.6em}
+    \begingroup
+    \setlength{\intextsep}{0pt}
+    \begin{algorithm}[H]
+        \scriptsize
+        \caption{Data-Enabled predictive control (DeePC)}
+        \begin{algorithmic}[1]
+            \Require Requirements (i) - (vii) listed above
+            \For{$t = 0, 1, ...$}
+                \State Solve \eqref{eq:deepc} for the vector g
+                \State Compute optimal input sequence $\bar{u}^{*} = U_{f}g$
+                \State Apply the first input $u(t) = \bar{u}^{*}(0)$
+                \State Update the initial trajectory $(u_{ini}, y_{ini})$ with new inputs/measurements
+            \EndFor
+        \end{algorithmic}
+    \end{algorithm}
+    \endgroup
+    \vspace{-0.6em}
+    \begin{itemize}\small
+        \item primjer za dvostruki MDS sustav (\ref{fig:dsmd}) sa jediničnim step-om kao referenca
+    \end{itemize}
+    \vspace{-0.8em}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{../figures/deepc_step_y.pdf}
+        \caption{Pozicije mase 2 regulirane s DeePC-om}
+        \label{fig:deepc-step-y}
+    \end{figure}
+\end{frame}
+
+\subsection{Regularizacije}
+\begin{frame}
+    \frametitle{DeePC Regularizacije}
+    \begin{itemize}
+        \item zbog šuma i nelinearnosti stvarnih sustava stupci Hankelove matrice ne razapinju potprostor s trajektorijama već, načelno, cijeli prostor
+        \item Lema tada ne vrijedi direktno time DeePC ne funkcionira dobro, stoga se uvode regularizacije 
+        \begin{equation}
+            \begin{aligned}
+                \min_{g,y,u, \sigma_y} \quad  &\sum_{j=0}^{L_{ref}-1} \left(\norm{\bar{y}_j - r_{t+j}}^{2}_{Q} + \norm{\bar{u}_j}^{2}_{R}\right) \\
+                &+ \textcolor{red}{\lambda_g\norm{g}_2^{2}}\ + \textcolor{orange}{\lambda_y\norm{\sigma_y}_2^{2}}\\
+                \text{subject to:} \quad & \begin{bmatrix} U_p \\ Y_p \\ U_f \\ Y_f\end{bmatrix}g = \begin{bmatrix} \bar{u}_{ini} \\ \bar{y}_{ini} + \sigma_y \\ \bar{u} \\ \bar{y}\end{bmatrix}\\
+                &\bar{y}_j \in \mathcal{Y}, \quad j=0,\dots,L_{ref}-1; \\
+                &\bar{u}_j \in \mathcal{U}, \quad j=0,\dots,L_{ref}-1; \\
+            \end{aligned}
+            \label{eq:deepc-reg}
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{DeePC Regularizacije - mjerni šum}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1.0\textwidth]{../figures/deepc_step_robust.pdf}
+        \caption{Regularizirani DeePC vs. DeePC; Dvostruki MDS sustav (\ref{fig:dsmd}) - zašumljena mjerenja}
+        \label{fig:deepc-step-reg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{DeePC Regularizacije - nelinearnost i šum}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1.0\textwidth]{../figures/deepc_step_nonlinear.pdf}
+        \caption{Regularizirani DeePC vs. DeePC; Dvostruki MDS sustav (\ref{fig:dsmd}) - nelinearna opruga i zašumljena mjerenja}
+        \label{fig:deepc-nonlinear}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \centering
+    \Large Hvala na pozornosti! \\
+    \vspace{1em}
+    \large Pitanja?
+\end{frame}
 \end{document}

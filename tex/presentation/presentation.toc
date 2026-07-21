@@ -1,0 +1,14 @@
+\babel@toc {croatian}{}\relax 
+\beamer@sectionintoc {1}{Motivacija}{3}{0}{1}
+\beamer@sectionintoc {2}{Willemsova Fundamentalna Lema}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Uvod}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Formulacija}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Primjer za LTI sustave}{6}{0}{2}
+\beamer@sectionintoc {3}{Simulacija LTI sustava temeljena na podacima}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Formulacija problema simulacije}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Simulacija LTI sustava}{9}{0}{3}
+\beamer@subsectionintoc {3}{3}{Simulacija nelinearnog sustava oko ravnotežnog položaja}{10}{0}{3}
+\beamer@sectionintoc {4}{Prediktivno upravljanje temeljeno podacima - DeePC}{11}{0}{4}
+\beamer@subsectionintoc {4}{1}{Uvod i usporedba s MPC}{11}{0}{4}
+\beamer@subsectionintoc {4}{2}{DeePC za LTI sustave}{12}{0}{4}
+\beamer@subsectionintoc {4}{3}{Regularizacije}{13}{0}{4}

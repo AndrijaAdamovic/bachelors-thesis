@@ -1,7 +1,67 @@
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\beamer@partpages {1}{1}}
-\headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\beamer@sectionpages {1}{1}}
-\headcommand {\beamer@documentpages {1}}
-\headcommand {\gdef \inserttotalframenumber {1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Motivacija}{3}{Motivacija}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@sectionpages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\sectionentry {2}{Willemsova Fundamentalna Lema}{4}{Willemsova Fundamentalna Lema}{0}}
+\headcommand {\beamer@subsectionpages {4}{3}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Uvod}}
+\headcommand {\slideentry {2}{1}{1}{4/4}{Uvod}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{5}{Formulacija}}
+\headcommand {\slideentry {2}{2}{1}{5/5}{Formulacija}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{6}{Primjer za LTI sustave}}
+\headcommand {\slideentry {2}{3}{1}{6/6}{Primjer za LTI sustave}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {2}{3}{2}{7/7}{Primjer za LTI sustave}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@sectionpages {4}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\sectionentry {3}{Simulacija LTI sustava temeljena na podacima}{8}{Simulacija LTI sustava temeljena na podacima}{0}}
+\headcommand {\beamer@subsectionpages {8}{7}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{8}{Formulacija problema simulacije}}
+\headcommand {\slideentry {3}{1}{1}{8/8}{Formulacija problema simulacije}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{9}{Simulacija LTI sustava}}
+\headcommand {\slideentry {3}{2}{1}{9/9}{Simulacija LTI sustava}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{10}{Simulacija nelinearnog sustava oko ravnotežnog položaja}}
+\headcommand {\slideentry {3}{3}{1}{10/10}{Simulacija nelinearnog sustava oko ravnotežnog položaja}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@sectionpages {8}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\sectionentry {4}{Prediktivno upravljanje temeljeno podacima - DeePC}{11}{Prediktivno upravljanje temeljeno podacima - DeePC}{0}}
+\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{11}{Uvod i usporedba s MPC}}
+\headcommand {\slideentry {4}{1}{1}{11/11}{Uvod i usporedba s MPC}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{12}{DeePC za LTI sustave}}
+\headcommand {\slideentry {4}{2}{1}{12/12}{DeePC za LTI sustave}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{13}{Regularizacije}}
+\headcommand {\slideentry {4}{3}{1}{13/13}{Regularizacije}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {4}{3}{2}{14/14}{Regularizacije}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {4}{3}{3}{15/15}{Regularizacije}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {4}{3}{4}{16/16}{Regularizacije}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@partpages {1}{16}}
+\headcommand {\beamer@subsectionpages {13}{16}}
+\headcommand {\beamer@sectionpages {11}{16}}
+\headcommand {\beamer@documentpages {16}}
+\headcommand {\gdef \inserttotalframenumber {16}}
